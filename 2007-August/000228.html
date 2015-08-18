@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] USBprog mega644 Problem update
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20USBprog%20mega644%20Problem%20update&In-Reply-To=%3C003b01c7df37%244e8e6a60%24e0a29582%40sonne%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000227.html">
+   <LINK REL="Next"  HREF="000229.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] USBprog mega644 Problem update</H1>
+    <B>Joachim Bohs(web.de)</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20USBprog%20mega644%20Problem%20update&In-Reply-To=%3C003b01c7df37%244e8e6a60%24e0a29582%40sonne%3E"
+       TITLE="[Usbprog-pub] USBprog mega644 Problem update">joachim-bohs at web.de
+       </A><BR>
+    <I>Wed Aug 15 14:25:03 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000227.html">[Usbprog-pub] USBprog Problem mit dem mega644
+</A></li>
+        <LI>Next message: <A HREF="000229.html">[Usbprog-pub] mega644 USBprog Problem gel&#246;st, ISP war mit 1 MHz zu hoch
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#228">[ date ]</a>
+              <a href="thread.html#228">[ thread ]</a>
+              <a href="subject.html#228">[ subject ]</a>
+              <a href="author.html#228">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>lag an dem crystal statement
+
+nun l&#228;uft es unter BASCOM richtig, aber aus USBprog nicht ansprechbar :-(
+
+
+
+siehe oben, alles wie erwartet unter BASCOM und ST200
+also unter Bascon kann ich ihn proggen, aber er l&#228;uft lahm
+
+egal was ich versuche, ext. Quarz on oder off
+
+aus folgendem Programm wird ein on/off von 40/160ms
+
+das ist 8 mal lahmer
+
+'We will use port D for output
+Config Portd = Output
+
+'assign value
+
+Rem  PORTA.0Set Portd.7                                                 'set 
+bit 0 of port B to 1
+
+'Now a light show on the STK200
+Do
+  Set Portd.7
+  Waitms 5
+  Reset Portd.7
+  Waitms 20
+Loop
+
+End                                                         'end program
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000227.html">[Usbprog-pub] USBprog Problem mit dem mega644
+</A></li>
+	<LI>Next message: <A HREF="000229.html">[Usbprog-pub] mega644 USBprog Problem gel&#246;st, ISP war mit 1 MHz zu hoch
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#228">[ date ]</a>
+              <a href="thread.html#228">[ thread ]</a>
+              <a href="subject.html#228">[ subject ]</a>
+              <a href="author.html#228">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

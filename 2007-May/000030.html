@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20PRoblem%20mit%20USBprog%20nach%20Erfolgreichem%20USB-Connect&In-Reply-To=%3C1179263672.28657.6.camel%40server.gecius.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000028.html">
+   <LINK REL="Next"  HREF="000031.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect</H1>
+    <B>Jens Gecius</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20PRoblem%20mit%20USBprog%20nach%20Erfolgreichem%20USB-Connect&In-Reply-To=%3C1179263672.28657.6.camel%40server.gecius.de%3E"
+       TITLE="[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect">jens at gecius.de
+       </A><BR>
+    <I>Tue May 15 23:14:31 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000028.html">[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+</A></li>
+        <LI>Next message: <A HREF="000031.html">[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+nun habe ich den usbprog auch aufgebaut, ging auch recht gut. den
+atmega32 konnte ich einwandfrei mit ponyprog &#252;ber ein serielles kabel
+programmieren, auch problemlos.
+
+allerdings, wenn ich den usbprog an den usbbus anschalte, dann passiert
+folgendes:
+[366196.146744] usb 1-2.5: config 1 interface 0 altsetting 0 has 1
+endpoint descriptor, different from the interface descriptor's value: 2
+[366196.146867] usb 1-2.5: configuration #1 chosen from 1 choice
+
+Mich irrietiert die erste Meldung. Aber das ist alles was ich im syslog
+habe.
+Der usbprog ist dann im /sys/bus/usb/devices/1-2.5/ zu erkennen
+(idVendor und idProduct stimmen &#252;berein).
+
+Allerdings, wenn ich dann usbprog-online starte, dauert es eine Weile
+und der usbprog wird nicht gefunden. Daf&#252;r habe ich die folgenden
+Meldungen im syslog:
+
+[366226.385105] usb 1-2.5: USB disconnect, address 27
+[366226.459002] usb 1-2.5: new full speed USB device using uhci_hcd and
+address 28
+[366226.542880] usb 1-2.5: device descriptor read/64, error -71
+[366226.726601] usb 1-2.5: device descriptor read/64, error -71
+[366226.902336] usb 1-2.5: new full speed USB device using uhci_hcd and
+address 29
+[366226.982229] usb 1-2.5: device descriptor read/64, error -71
+[366227.165950] usb 1-2.5: device descriptor read/64, error -71
+[366227.341689] usb 1-2.5: new full speed USB device using uhci_hcd and
+address 30
+[366227.751708] usb 1-2.5: device not accepting address 30, error -71
+[366227.824981] usb 1-2.5: new full speed USB device using uhci_hcd and
+address 31
+[366228.235100] usb 1-2.5: device not accepting address 31, error -71
+
+Offensichtlich klappt da etwas nicht.
+
+Irgendeine Idee? Den USB9604N habe ich sauber gel&#246;tet (ich Messe meist
+die Basis (L&#246;tzinn auf der Platine) zum Beinchen direkt am Eingang zum
+Chip -&gt; ordentliche elektrische Verbindung, kein Kurzschlu&#223;), ein Oszi
+steht mir leider nicht zur Verf&#252;gung.
+
+Danke schonmal f&#252;r Eure Hilfe,
+CC an meine Mail w&#228;re nett, da ich nicht auf der Liste eingetragen bin.
+
+-- 
+Tschoe,
+ Jens
+
+
+
+!DSPAM:2306,464a22c8323872100413516!
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000028.html">[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+</A></li>
+	<LI>Next message: <A HREF="000031.html">[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#30">[ date ]</a>
+              <a href="thread.html#30">[ thread ]</a>
+              <a href="subject.html#30">[ subject ]</a>
+              <a href="author.html#30">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

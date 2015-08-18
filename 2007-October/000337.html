@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] XSVF Player
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20XSVF%20Player&In-Reply-To=%3C200710061348.49847.sven%40sl-ware.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000336.html">
+   <LINK REL="Next"  HREF="000338.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] XSVF Player</H1>
+    <B>Sven L&#252;tkemeier</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20XSVF%20Player&In-Reply-To=%3C200710061348.49847.sven%40sl-ware.de%3E"
+       TITLE="[Usbprog-pub] XSVF Player">sven at sl-ware.de
+       </A><BR>
+    <I>Sat Oct  6 13:48:48 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000336.html">[Usbprog-pub] XSVF Player
+</A></li>
+        <LI>Next message: <A HREF="000338.html">[Usbprog-pub] Usbprog V3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#337">[ date ]</a>
+              <a href="thread.html#337">[ thread ]</a>
+              <a href="subject.html#337">[ subject ]</a>
+              <a href="author.html#337">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi!
+
+Am Donnerstag, 4. Oktober 2007 schrieb Benedikt Sauter:
+&gt;<i> Hello Sven,
+</I>&gt;<i>
+</I>&gt;<i> &gt;As I have already mentioned in the forum, I am very much interested in
+</I>&gt;<i> &gt;starting development of an XSVF player for usbprog. I am currently having
+</I>&gt;<i> &gt; a look at some of the usbprog code in the svn and also at the XSVF
+</I>&gt;<i> &gt; Executor code from the Ethernut project. Up to now I think it shouldn't
+</I>&gt;<i> &gt; be too difficult to port the Ethernut code to usbprog. I have made up
+</I>&gt;<i> &gt; some ideas:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;As XSVF instructions can become quite long I think it's best to send one
+</I>&gt;<i> &gt;instruction at a time via usb. This way usbprog can also send back
+</I>&gt;<i> &gt;information to the player software running on the computer wether the
+</I>&gt;<i> &gt; current XSVF instruction was successful or not.
+</I>&gt;<i>
+</I>&gt;<i> Yes you can use the simpleport firmware as draft.
+</I>&gt;<i>
+</I>&gt;<i> &gt;Is it correct that a USB packet has a maximum payload size of 1023 bytes
+</I>&gt;<i> &gt; in our case, so that XSVF instructions of nearly 1kB could be supported
+</I>&gt;<i> &gt; without fragmentation? I think that should be enough for the beginning,
+</I>&gt;<i> &gt; as we only have 2kB static RAM anyway.
+</I>&gt;<i>
+</I>&gt;<i> This is only the theoretical rate. The max packet size with USBN9604 is
+</I>&gt;<i> 64 Byte. It is possible so send with the libusb and the atmega32 on  the
+</I>&gt;<i> otherside max 3 packets in a USB Frame (1 ms), but there we need some
+</I>&gt;<i> further hacks.
+</I>&gt;<i>
+</I>&gt;<i> The easiest way for the first version is that you use 64 Byte. Because
+</I>&gt;<i> than you can work 1:1 like in simpleport. If you are on an USB 2.0
+</I>&gt;<i> Interface after an HUB the usb stack also transfer 8x 64 Byte per
+</I>&gt;<i> Second. Without extra modifying anything!
+</I>&gt;<i>
+</I>&gt;<i> I can try to build easy functions for a bigger transfer but the max is
+</I>&gt;<i> about  200 KB/s. But actual I have to much work. When you can start with
+</I>&gt;<i> a 64 Byte version I would be very pleasure :-)
+</I>&gt;<i>
+</I>&gt;<i> Is that ok?
+</I>
+Yes, that's no problem, and thank you for the information. I've created some 
+code yesterday to split an entire XSVF file into seperate XSVF instructions 
+in order to see how long they become. I tested with two different XSVF files, 
+created for programming a single Xilinx XC9572 CPLD in the JTAG chain. The 
+resulting XSVF instructions had a maximum length of 11 bytes, so I think 64 
+bytes maximum should be more than enough for the beginning.
+
+Regards
+Sven
+
+&gt;<i>
+</I>&gt;<i> Also the avrisp mk2 works only with 64 byte packages. All people write
+</I>&gt;<i> how fast it is :-) So I think its ok for the first version.
+</I>&gt;<i>
+</I>&gt;<i> Regards Bene
+</I>&gt;<i>
+</I>&gt;<i> &gt;Has anyone any other suggestions?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Regards
+</I>&gt;<i> &gt;Sven
+</I>&gt;<i> &gt;_______________________________________________
+</I>&gt;<i> &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000336.html">[Usbprog-pub] XSVF Player
+</A></li>
+	<LI>Next message: <A HREF="000338.html">[Usbprog-pub] Usbprog V3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#337">[ date ]</a>
+              <a href="thread.html#337">[ thread ]</a>
+              <a href="subject.html#337">[ subject ]</a>
+              <a href="author.html#337">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

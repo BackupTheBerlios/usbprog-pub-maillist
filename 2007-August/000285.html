@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Usbprog funzt nicht wirklich
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Usbprog%20funzt%20nicht%20wirklich&In-Reply-To=%3C20070820202955.89139103941%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000284.html">
+   <LINK REL="Next"  HREF="000286.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Usbprog funzt nicht wirklich</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Usbprog%20funzt%20nicht%20wirklich&In-Reply-To=%3C20070820202955.89139103941%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Usbprog funzt nicht wirklich">sauter at sistecs.de
+       </A><BR>
+    <I>Mon Aug 20 22:29:29 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000284.html">[Usbprog-pub] Usbprog funzt nicht wirklich
+</A></li>
+        <LI>Next message: <A HREF="000286.html">[Usbprog-pub] usbprog mit cygwin, gnu-arm und insight debugger
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#285">[ date ]</a>
+              <a href="thread.html#285">[ thread ]</a>
+              <a href="subject.html#285">[ subject ]</a>
+              <a href="author.html#285">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Simon,
+
+gib beim programmieren mit deinem Druckerkabel und avrdude mal -i 10 oder
+so an
+und sags obs besser ist.
+
+
+Gruss Bene
+
+Am 20.8.2007 schrieb &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">flotzinger at gmx.at</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">flotzinger at gmx.at</A>&gt;:
+
+&gt;<i>Hallo, liebe usbprog Gemeinde,
+</I>&gt;<i>
+</I>&gt;<i>vor kurzem hab ich meinen Usbprog bekommen - nat&#252;rlich hab ich ihn gleich zusammengel&#246;tet - leider nicht mit 100%igen erfolt...eher 0%igen...
+</I>&gt;<i>
+</I>&gt;<i>Was hab ich gemacht:
+</I>&gt;<i>-) zun&#228;chst hab ich alles zusammengel&#246;tet.
+</I>&gt;<i>-) dann hab ich mir einen Parallelport genommen und ihn entsprechend mit dem ISP-Stecker verbunden. Stromversorgung gibts durch USB - LED2 leuchtet. Den Jumper hab ich auf Prog gestellt.
+</I>&gt;<i>-) Als n&#228;chstes hab ich programmiert, und da gab es Probleme: 
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>  avrdude -p m32 -c bsd -u -U lfuse:w:0xe0:m -U hfuse:w:0xd9:m 
+</I>&gt;<i>
+</I>&gt;<i>avrdude: AVR device initialized and ready to accept instructions
+</I>&gt;<i>
+</I>&gt;<i>Reading | ################################################## | 100% 0.00s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: Device signature = 0x000102
+</I>&gt;<i>avrdude: Expected signature for ATMEGA32 is 1E 95 02
+</I>&gt;<i>         Double check chip, or use -F to override this check.
+</I>&gt;<i>
+</I>&gt;<i>avrdude done.  Thank you.
+</I>&gt;<i>
+</I>&gt;<i>  avrdude -p m32 -c bsd -u -U lfuse:w:0xe0:m -U hfuse:w:0xd9:m -F
+</I>&gt;<i>
+</I>&gt;<i>avrdude: AVR device initialized and ready to accept instructions
+</I>&gt;<i>
+</I>&gt;<i>Reading | ################################################## | 100% 0.00s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: Device signature = 0x000102
+</I>&gt;<i>avrdude: Expected signature for ATMEGA32 is 1E 95 02
+</I>&gt;<i>avrdude: current erase-rewrite cycle count is -50462977 (if being tracked)
+</I>&gt;<i>avrdude: reading input file &quot;0xe0&quot;
+</I>&gt;<i>avrdude: writing lfuse (1 bytes):
+</I>&gt;<i>
+</I>&gt;<i>Writing |                                                    | 0% 0.00s ***failed;  
+</I>&gt;<i>Writing | ################################################## | 100% 0.03s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: 1 bytes of lfuse written
+</I>&gt;<i>avrdude: verifying lfuse memory against 0xe0:
+</I>&gt;<i>avrdude: load data lfuse data from input file 0xe0:
+</I>&gt;<i>avrdude: input file 0xe0 contains 1 bytes
+</I>&gt;<i>avrdude: reading on-chip lfuse data:
+</I>&gt;<i>
+</I>&gt;<i>Reading | ################################################## | 100% 0.00s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: verifying ...
+</I>&gt;<i>avrdude: verification error, first mismatch at byte 0x0000
+</I>&gt;<i>         0xe0 != 0x00
+</I>&gt;<i>avrdude: verification error; content mismatch
+</I>&gt;<i>
+</I>&gt;<i>avrdude done.  Thank you.
+</I>&gt;<i>
+</I>&gt;<i>Irgendwie &#252;bernimmt er beim Brennen nicht ganz die FUSES, bzw. hab ich da schon was falsch gemacht.
+</I>&gt;<i>
+</I>&gt;<i>Ich hoffe einer hat vl. einen Ansatz.
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e Simon
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>-- 
+</I>&gt;<i>-
+</I>&gt;<i>
+</I>&gt;<i>GMX FreeMail: 1 GB Postfach, 5 E-Mail-Adressen, 10 Free SMS.
+</I>&gt;<i>Alle Infos und kostenlose Anmeldung: <A HREF="http://www.gmx.net/de/go/freemail">http://www.gmx.net/de/go/freemail</A>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000284.html">[Usbprog-pub] Usbprog funzt nicht wirklich
+</A></li>
+	<LI>Next message: <A HREF="000286.html">[Usbprog-pub] usbprog mit cygwin, gnu-arm und insight debugger
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#285">[ date ]</a>
+              <a href="thread.html#285">[ thread ]</a>
+              <a href="subject.html#285">[ subject ]</a>
+              <a href="author.html#285">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

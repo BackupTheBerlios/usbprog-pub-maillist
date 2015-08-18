@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20PRoblem%20mit%20USBprog%20nach%20Erfolgreichem%20USB-Connect&In-Reply-To=%3C20070516045748.36F1AEF4DF%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000030.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20PRoblem%20mit%20USBprog%20nach%20Erfolgreichem%20USB-Connect&In-Reply-To=%3C20070516045748.36F1AEF4DF%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect">sauter at sistecs.de
+       </A><BR>
+    <I>Wed May 16 06:55:39 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000030.html">[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Jens,
+
+F&#252;r usbprog-online musst du erst usbprog_base.hex flashen und die Fuse
+Bits entsprechend setzen: lfuse 0xe0 und hfuse 0xd9.
+
+Dann brauchst du die richtigen Rechte, oder machst es als Root.
+
+Hattest du diese Bedingungen?
+
+Gruss Bene
+
+
+Am 16.5.2007 schrieb &quot;Jens Gecius&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">jens at gecius.de</A>&gt;:
+
+&gt;<i>Hallo,
+</I>&gt;<i>
+</I>&gt;<i>nun habe ich den usbprog auch aufgebaut, ging auch recht gut. den
+</I>&gt;<i>atmega32 konnte ich einwandfrei mit ponyprog &#195;&#188;ber ein serielles kabel
+</I>&gt;<i>programmieren, auch problemlos.
+</I>&gt;<i>
+</I>&gt;<i>allerdings, wenn ich den usbprog an den usbbus anschalte, dann passiert
+</I>&gt;<i>folgendes:
+</I>&gt;<i>[366196.146744] usb 1-2.5: config 1 interface 0 altsetting 0 has 1
+</I>&gt;<i>endpoint descriptor, different from the interface descriptor's value: 2
+</I>&gt;<i>[366196.146867] usb 1-2.5: configuration #1 chosen from 1 choice
+</I>&gt;<i>
+</I>&gt;<i>Mich irrietiert die erste Meldung. Aber das ist alles was ich im syslog
+</I>&gt;<i>habe.
+</I>&gt;<i>Der usbprog ist dann im /sys/bus/usb/devices/1-2.5/ zu erkennen
+</I>&gt;<i>(idVendor und idProduct stimmen &#195;&#188;berein).
+</I>&gt;<i>
+</I>&gt;<i>Allerdings, wenn ich dann usbprog-online starte, dauert es eine Weile
+</I>&gt;<i>und der usbprog wird nicht gefunden. Daf&#195;&#188;r habe ich die folgenden
+</I>&gt;<i>Meldungen im syslog:
+</I>&gt;<i>
+</I>&gt;<i>[366226.385105] usb 1-2.5: USB disconnect, address 27
+</I>&gt;<i>[366226.459002] usb 1-2.5: new full speed USB device using uhci_hcd and
+</I>&gt;<i>address 28
+</I>&gt;<i>[366226.542880] usb 1-2.5: device descriptor read/64, error -71
+</I>&gt;<i>[366226.726601] usb 1-2.5: device descriptor read/64, error -71
+</I>&gt;<i>[366226.902336] usb 1-2.5: new full speed USB device using uhci_hcd and
+</I>&gt;<i>address 29
+</I>&gt;<i>[366226.982229] usb 1-2.5: device descriptor read/64, error -71
+</I>&gt;<i>[366227.165950] usb 1-2.5: device descriptor read/64, error -71
+</I>&gt;<i>[366227.341689] usb 1-2.5: new full speed USB device using uhci_hcd and
+</I>&gt;<i>address 30
+</I>&gt;<i>[366227.751708] usb 1-2.5: device not accepting address 30, error -71
+</I>&gt;<i>[366227.824981] usb 1-2.5: new full speed USB device using uhci_hcd and
+</I>&gt;<i>address 31
+</I>&gt;<i>[366228.235100] usb 1-2.5: device not accepting address 31, error -71
+</I>&gt;<i>
+</I>&gt;<i>Offensichtlich klappt da etwas nicht.
+</I>&gt;<i>
+</I>&gt;<i>Irgendeine Idee? Den USB9604N habe ich sauber gel&#195;&#182;tet (ich Messe meist
+</I>&gt;<i>die Basis (L&#195;&#182;tzinn auf der Platine) zum Beinchen direkt am Eingang zum
+</I>&gt;<i>Chip -&gt; ordentliche elektrische Verbindung, kein Kurzschlu&#195;&#159;), ein Oszi
+</I>&gt;<i>steht mir leider nicht zur Verf&#195;&#188;gung.
+</I>&gt;<i>
+</I>&gt;<i>Danke schonmal f&#195;&#188;r Eure Hilfe,
+</I>&gt;<i>CC an meine Mail w&#195;&#164;re nett, da ich nicht auf der Liste eingetragen bin.
+</I>&gt;<i>
+</I>&gt;<i>-- 
+</I>&gt;<i>Tschoe,
+</I>&gt;<i> Jens
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>!DSPAM:2306,464a22c8323872100413516!
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000030.html">[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

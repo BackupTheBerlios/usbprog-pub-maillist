@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] XSVF Player
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20XSVF%20Player&In-Reply-To=%3C20071017094556.7FFA51110A7%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000339.html">
+   <LINK REL="Next"  HREF="000341.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] XSVF Player</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20XSVF%20Player&In-Reply-To=%3C20071017094556.7FFA51110A7%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] XSVF Player">sauter at sistecs.de
+       </A><BR>
+    <I>Wed Oct 17 11:45:10 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000339.html">[Usbprog-pub] Usbprog-pub Digest, Vol 7, Issue 4
+</A></li>
+        <LI>Next message: <A HREF="000341.html">[Usbprog-pub] XSVF Player
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#340">[ date ]</a>
+              <a href="thread.html#340">[ thread ]</a>
+              <a href="subject.html#340">[ subject ]</a>
+              <a href="author.html#340">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Sven
+
+wow great job! I think Ethernut has got also an open source license or?
+So it should be  ok. I will read it at this evening.
+
+Can I publish your version under the name usbprogXSVF ?
+
+USBNDeviceManufacture(&quot;USBprog EmbeddedProjects&quot;);
+USBNDeviceProduct(&quot;usbprogXSVF&quot;);
+USBNDeviceSerialNumber(&quot;GNU/GPL2&quot;);
+
+Only the folder and the device I would give this name.
+
+
+(here are the other firmwares, which are grow
+<A HREF="http://svn.berlios.de/svnroot/repos/usbprog/trunk/">http://svn.berlios.de/svnroot/repos/usbprog/trunk/</A>)
+
+
+
+Am 17.10.2007 schrieb &quot;Sven L&#252;tkemeier&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sven at sl-ware.de</A>&gt;:
+
+&gt;<i>Hi!
+</I>&gt;<i>
+</I>&gt;<i>Well, that's funny... I've completed my CPLD test board yesterday, so that I 
+</I>&gt;<i>could check my XSVF player firmware and command line tool. It's working, I've 
+</I>&gt;<i>tested it with an XC9572. Speed is ok, programming the XC9572 took 30 seconds 
+</I>&gt;<i>or so. All the code you need is attached, if you have any questions or 
+</I>&gt;<i>comments do not hesitate to ask. Oh, and do not wonder, if the programming 
+</I>&gt;<i>progress stays at 0% for a while, I had a look at the XSVF code I created 
+</I>&gt;<i>with Xilinx ISE for my test board and at the beginning there are some JTAG 
+</I>&gt;<i>device tests executed, which take some time (in my case 1,3 seconds each, and 
+</I>&gt;<i>they are repeated if they fail). I guess that's normal.
+</I>&gt;<i>
+</I>&gt;<i>By the way, I've taken the XSVF execution code from the ethernut project and 
+</I>&gt;<i>modified it so that we can use it. I think that way we have to keep the 
+</I>&gt;<i>copyright notes from the ethernut people in these files, right? Or do you 
+</I>&gt;<i>think it would be better to rewrite all the XSVF code and put it under GPL?
+</I>&gt;<i>
+</I>&gt;<i>I've noticed, that the &quot;local file&quot; option in usbprog-gui does not work. It 
+</I>&gt;<i>seems that the conversion from wxString to char* does not work. I found 
+</I>&gt;<i>something in the internet saying that this has to do something with encoding 
+</I>&gt;<i>issues, but I did not manage to solve it. I have to admit that I am not very 
+</I>&gt;<i>deep into wxGTK ;-) For me, I solved the problem by hard-coding my firmware 
+</I>&gt;<i>file name into the gui code, which is somewhat dirty, but works.
+</I>&gt;<i>
+</I>&gt;<i>Regards
+</I>&gt;<i>Sven
+</I>&gt;<i>
+</I>&gt;<i>Am Mittwoch, 17. Oktober 2007 schrieb Benedikt Sauter:
+</I>&gt;&gt;<i> Hello Sven,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> have you got any results? Today I am building me a small board with an
+</I>&gt;&gt;<i> XC9572.
+</I>&gt;&gt;<i> I need also a programmer :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Regards Bene
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Am 6.10.2007 schrieb &quot;Sven L&#252;tkemeier&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sven at sl-ware.de</A>&gt;:
+</I>&gt;&gt;<i> &gt;Hi!
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;Am Donnerstag, 4. Oktober 2007 schrieb Benedikt Sauter:
+</I>&gt;&gt;<i> &gt;&gt; Hello Sven,
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;As I have already mentioned in the forum, I am very much interested in
+</I>&gt;&gt;<i> &gt;&gt; &gt;starting development of an XSVF player for usbprog. I am currently
+</I>&gt;&gt;<i> &gt;&gt; &gt; having a look at some of the usbprog code in the svn and also at the
+</I>&gt;&gt;<i> &gt;&gt; &gt; XSVF Executor code from the Ethernut project. Up to now I think it
+</I>&gt;&gt;<i> &gt;&gt; &gt; shouldn't be too difficult to port the Ethernut code to usbprog. I
+</I>&gt;&gt;<i> &gt;&gt; &gt; have made up some ideas:
+</I>&gt;&gt;<i> &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;As XSVF instructions can become quite long I think it's best to send
+</I>&gt;&gt;<i> &gt;&gt; &gt; one instruction at a time via usb. This way usbprog can also send back
+</I>&gt;&gt;<i> &gt;&gt; &gt; information to the player software running on the computer wether the
+</I>&gt;&gt;<i> &gt;&gt; &gt; current XSVF instruction was successful or not.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Yes you can use the simpleport firmware as draft.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;Is it correct that a USB packet has a maximum payload size of 1023
+</I>&gt;&gt;<i> &gt;&gt; &gt; bytes in our case, so that XSVF instructions of nearly 1kB could be
+</I>&gt;&gt;<i> &gt;&gt; &gt; supported without fragmentation? I think that should be enough for the
+</I>&gt;&gt;<i> &gt;&gt; &gt; beginning, as we only have 2kB static RAM anyway.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; This is only the theoretical rate. The max packet size with USBN9604 is
+</I>&gt;&gt;<i> &gt;&gt; 64 Byte. It is possible so send with the libusb and the atmega32 on  the
+</I>&gt;&gt;<i> &gt;&gt; otherside max 3 packets in a USB Frame (1 ms), but there we need some
+</I>&gt;&gt;<i> &gt;&gt; further hacks.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; The easiest way for the first version is that you use 64 Byte. Because
+</I>&gt;&gt;<i> &gt;&gt; than you can work 1:1 like in simpleport. If you are on an USB 2.0
+</I>&gt;&gt;<i> &gt;&gt; Interface after an HUB the usb stack also transfer 8x 64 Byte per
+</I>&gt;&gt;<i> &gt;&gt; Second. Without extra modifying anything!
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; I can try to build easy functions for a bigger transfer but the max is
+</I>&gt;&gt;<i> &gt;&gt; about  200 KB/s. But actual I have to much work. When you can start with
+</I>&gt;&gt;<i> &gt;&gt; a 64 Byte version I would be very pleasure :-)
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Is that ok?
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;Yes, that's no problem, and thank you for the information. I've created
+</I>&gt;&gt;<i> &gt; some code yesterday to split an entire XSVF file into seperate XSVF
+</I>&gt;&gt;<i> &gt; instructions in order to see how long they become. I tested with two
+</I>&gt;&gt;<i> &gt; different XSVF files, created for programming a single Xilinx XC9572 CPLD
+</I>&gt;&gt;<i> &gt; in the JTAG chain. The resulting XSVF instructions had a maximum length
+</I>&gt;&gt;<i> &gt; of 11 bytes, so I think 64 bytes maximum should be more than enough for
+</I>&gt;&gt;<i> &gt; the beginning.
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;Regards
+</I>&gt;&gt;<i> &gt;Sven
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;&gt; Also the avrisp mk2 works only with 64 byte packages. All people write
+</I>&gt;&gt;<i> &gt;&gt; how fast it is :-) So I think its ok for the first version.
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; Regards Bene
+</I>&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;Has anyone any other suggestions?
+</I>&gt;&gt;<i> &gt;&gt; &gt;
+</I>&gt;&gt;<i> &gt;&gt; &gt;Regards
+</I>&gt;&gt;<i> &gt;&gt; &gt;Sven
+</I>&gt;&gt;<i> &gt;&gt; &gt;_______________________________________________
+</I>&gt;&gt;<i> &gt;&gt; &gt;Usbprog-pub mailing list
+</I>&gt;&gt;<i> &gt;&gt; &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;&gt;<i> &gt;&gt; &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;&gt;<i> &gt;
+</I>&gt;&gt;<i> &gt;_______________________________________________
+</I>&gt;&gt;<i> &gt;Usbprog-pub mailing list
+</I>&gt;&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000339.html">[Usbprog-pub] Usbprog-pub Digest, Vol 7, Issue 4
+</A></li>
+	<LI>Next message: <A HREF="000341.html">[Usbprog-pub] XSVF Player
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#340">[ date ]</a>
+              <a href="thread.html#340">[ thread ]</a>
+              <a href="subject.html#340">[ subject ]</a>
+              <a href="author.html#340">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

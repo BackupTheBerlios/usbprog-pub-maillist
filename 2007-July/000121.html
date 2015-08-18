@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Atmega32 funktioniert nicht
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Atmega32%20funktioniert%20nicht&In-Reply-To=%3C1184230474.6069.6.camel%40random%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000123.html">
+   <LINK REL="Next"  HREF="000122.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Atmega32 funktioniert nicht</H1>
+    <B>Christian Studt</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Atmega32%20funktioniert%20nicht&In-Reply-To=%3C1184230474.6069.6.camel%40random%3E"
+       TITLE="[Usbprog-pub] Atmega32 funktioniert nicht">christian at it-studt.de
+       </A><BR>
+    <I>Thu Jul 12 10:54:34 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000123.html">[Usbprog-pub] usbprog mit OpenOCD unter Windows
+</A></li>
+        <LI>Next message: <A HREF="000122.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+habe usbprog zusammengebaut und geflasht (AVRISP mkII Klon)
+Kann damit allerdings einen Atmega32 nicht auslesen (Fuses):
+
+./avrdude -C ./avrdude.conf -c avrispv2 -P usb -p m32
+avrdude: stk500v2_recv_mk2: error in USB receive
+
+avrdude: stk500v2_command(): command failed
+avrdude: initialization failed, rc=-1
+         Double check connections and try again, or use -F to override
+         this check.
+
+Wenn ich meinen alten seriellen Programmer anschlie&#223;e geht es, es liegt
+also nicht an der Schaltung, Kabel oder am Atmega32.
+
+Habe avrdude 5.2 und 5.4 unter Linux (Ubuntu) probiert.
+
+Bei einem Atmega8 funktioniert das ganze, auch wenn zum Schluss, nachdem
+alles fertig ist trotzdem eine Fehlermeldung kommt:
+
+/usr/bin/avrdude -q -u -C /etc/avrdude.conf -p m8 -P usb -c avrispv2 -E
+noreset,novcc  -U
+flash:w:/test.hex:a 
+avrdude: WARNING: -E option not supported by this programmer type
+
+avrdude: AVR device initialized and ready to accept instructions
+avrdude: Device signature = 0x1e9307
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be
+performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file
+&quot;test.hex&quot;
+avrdude: input file test.hex
+auto detected as Intel Hex
+avrdude: writing flash (5664 bytes):
+avrdude: 5664 bytes of flash written
+avrdude: verifying flash memory
+against test.hex:
+avrdude: load data flash data from input
+file test.hex:
+avrdude: test.hex
+auto detected as Intel Hex
+avrdude: test.hex
+contains 5664 bytes
+avrdude: reading on-chip flash data:
+avrdude: verifying ...
+avrdude: 5664 bytes of flash verified
+avrdude: stk500v2_recv_mk2: error in USB receive
+
+Was k&#246;nnte das Problem sein?
+
+Christian
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000123.html">[Usbprog-pub] usbprog mit OpenOCD unter Windows
+</A></li>
+	<LI>Next message: <A HREF="000122.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

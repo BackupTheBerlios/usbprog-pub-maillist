@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] AVR ISP MK2: AT90S2313
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20AVR%20ISP%20MK2%3A%20AT90S2313&In-Reply-To=%3C20070410091453.242D0E1E85%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000014.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] AVR ISP MK2: AT90S2313</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20AVR%20ISP%20MK2%3A%20AT90S2313&In-Reply-To=%3C20070410091453.242D0E1E85%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] AVR ISP MK2: AT90S2313">sauter at sistecs.de
+       </A><BR>
+    <I>Tue Apr 10 11:12:55 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[Usbprog-pub] AVR ISP MK2: AT90S2313
+</A></li>
+        <LI>Next message: <A HREF="000014.html">[Usbprog-pub] AVR ISP MK2: AT90S2313
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello mes,
+Kennst du ein gutes Programm in Windows mit dem man eine Setup.exe
+erstellen kann? In dieser sollte dann alles samt Treiber drinnen sein.
+
+
+Gruss Bene
+
+
+
+
+Am 10.4.2007 schrieb &quot;Benedikt Sauter&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;:
+
+&gt;<i>Hello Mes,
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>Hmm, ich habe gerade weiter gesucht, und festgestellt, das der AVRISP mk II
+</I>&gt;&gt;<i>den Typen von Haus aus nicht unterst&#252;tzt.
+</I>&gt;&gt;<i><A HREF="http://www.atmel.com/dyn/resources/prod_documents/AVRISPmkII_UG.pdf">http://www.atmel.com/dyn/resources/prod_documents/AVRISPmkII_UG.pdf</A>
+</I>&gt;&gt;<i>Naja, schade.
+</I>&gt;<i>
+</I>&gt;<i>Wie ich stehe da gerade total auf dem Schlauch. Wer wird nicht
+</I>&gt;<i>unterst&#252;tzt? Auf welcher Seite steht das in dem Dokument?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>Das Problem mit der Firmware bleibt jedoch.
+</I>&gt;&gt;<i>Die hfuse und lfuse sch&#252;tzen allerdings den Bootloader nicht. M&#252;ssen evtl.
+</I>&gt;&gt;<i>Die LockBits gesetzt werden? Es gibt daf&#252;r spezielle &quot;Boot Loader Protection
+</I>&gt;&gt;<i>Mode&quot;. W&#228;hre interessant ob die bei dir gesetzt sind.
+</I>&gt;<i>
+</I>&gt;<i>Also das usbprog.exe ist noch nicht 100% getestet aber auf meinem Rechner
+</I>&gt;<i>l&#228;uft es aber das heisst nichts im Windows wie ich gelernt hab.
+</I>&gt;<i>
+</I>&gt;&gt;<i>Ich nutze WXP und nach der Installation des Bootloaders kann ich auch mit
+</I>&gt;&gt;<i>dem Test-Programm von LibUSB die Schaltung identifizieren. Nach dem Upload
+</I>&gt;&gt;<i>per usbprog.exe meldet sich das USB-Ger&#228;t jedoch unter neuem Namen an: In
+</I>&gt;&gt;<i>der Kategorie &quot;Jungo&quot; als &quot;AVRISP mkII&quot;, was ja auch richtig ist. Ab da
+</I>&gt;&gt;<i>meldet das Test Programm jedoch auch das Ger&#228;t unter neuem Namen. Starte ich
+</I>&gt;&gt;<i>nun usbprog.exe findet er das Device nicht mehr. 
+</I>&gt;<i>
+</I>&gt;<i>Hast du die Atmel USB Treiber installiert und die usb filter Treiber von
+</I>&gt;<i>meiner Homepage? Diese beiden werden ben&#246;tigt. Das kommt daher, da ich
+</I>&gt;<i>das AVRISP in den Upgrade Modus zwingen muss, und das kann ich nur &#252;ber
+</I>&gt;<i>den Jungo Treiber machen. Da diese aber alle kommerziell sind, kann ich
+</I>&gt;<i>mit der libusb mit diesen Filtern einfach &#252;ber aktive Treiber  mich mit
+</I>&gt;<i>auf die USB Verbindung haengen.
+</I>&gt;<i>
+</I>&gt;&gt;<i>Firmware lediglich per Hex &#252;bertragen (da m&#252;sste ich jedoch das Geh&#228;use
+</I>&gt;&gt;<i>&#246;ffnen, um den Jumper wieder auf 2-3 zu stecken, zu programmieren, und
+</I>&gt;&gt;<i>wieder zur&#252;ck)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Nur so aus Interesse: Wie viele USBProg wurden denn mittlerweile aufgebaut?
+</I>&gt;<i>
+</I>&gt;<i>Ich hab jetzt knappe 100 verschickt. Wuerde aber auch gerne mehr Feedback
+</I>&gt;<i>bekommen. Viele schreiben mir das Sie gl&#252;cklich sind, aber ich kenne
+</I>&gt;<i>noch einige Fehler. Entweder entdeck ich dir nur oder keine Ahnung.
+</I>&gt;<i>Vielleicht bemerkt man diese auch beim nicht so intensiven arbeiten mit
+</I>&gt;<i>dem Adapter nicht.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Gruss Bene
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Gr&#252;&#223;e,
+</I>&gt;&gt;<i>mes
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>-----Urspr&#252;ngliche Nachricht-----
+</I>&gt;&gt;<i>Von: Benedikt Sauter [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>] 
+</I>&gt;&gt;<i>Gesendet: Samstag, 7. April 2007 08:34
+</I>&gt;&gt;<i>An: mes; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+</I>&gt;&gt;<i>Betreff: Re: AW: [Usbprog-pub] AVR ISP MK2: AT90S2131
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Hallo Mes,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Das Plugin zum AVR-Studio hei&#223;t &quot;stk500&quot; und ist eine dll.
+</I>&gt;&gt;&gt;<i>Das ganze ist die &#252;bliche Methode AVRs zu programieren, quasi die
+</I>&gt;&gt;&gt;<i>Originalsoftware.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Ich glaub diese verwenden 99% die den Adapter haben. Also eigentlich geht
+</I>&gt;&gt;<i>das ohne Probleme. Hast du die USB Treiber mit installiert beim AVR
+</I>&gt;&gt;<i>Studio? Die kann mab beim installieren extra anhacken.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Die Programmiersoftware scheint abzufragen, welche Typen m&#246;glich sind, und
+</I>&gt;&gt;&gt;<i>&#252;bernimmt nur diese in die Combobox.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>also bei mir tauchen da alle auf (Also die Liste sieht aus wie bei dir).
+</I>&gt;&gt;<i>Ist die bei dir sonst leer oder wie?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Der Adapter wird nicht gefragt welche Typen er kannt. Ich denk das AVR
+</I>&gt;&gt;<i>Studio weiss welche Typen der AVRISP mk2 kann. Also im Protokoll ist da
+</I>&gt;&gt;<i>meines wissens nach nichts drin.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>Noch ne andere Frage: warum muss ich den bootloader immer neu
+</I>&gt;&gt;&gt;<i>&quot;installieren&quot;, wenn ich die firmware wechseln will, nachdem ich per
+</I>&gt;&gt;&gt;<i>usbprog.exe eine firmware aufgespult habe?
+</I>&gt;&gt;&gt;<i>Muss man den bereich des bootloaders sch&#252;tzen?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Hm eigentlich muss man das nicht. Normal spielt man usbprog_base.hex auf
+</I>&gt;&gt;<i>und setzt hfuse auf 0xd9. Dann kann man mit usbprog.exe eine neue
+</I>&gt;&gt;<i>firmware einspielen (hier solltest du vielleicht nochmal das neuste
+</I>&gt;&gt;<i>nehmen).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Mit welchem Betriebssystem machst du das?
+</I>&gt;&gt;<i>Unter windows 2000 gibt es anscheinend Probleme.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Wenn dann eine FIrmware mit dem Tool aufgespielt worden ist und man
+</I>&gt;&gt;<i>wechseln will starten man nur usbprog.exe mit der neuene Firmware als
+</I>&gt;&gt;<i>Parameter und er sollte nur die Auswechseln. Also so ist es bei mir.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>P.S. Ich glaub die Woche k&#246;nnte das grafische Tool online gehen. Das
+</I>&gt;&gt;<i>macht ein Freund von mit. Bin auch schon sehr gespannt.
+</I>&gt;&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[Usbprog-pub] AVR ISP MK2: AT90S2313
+</A></li>
+	<LI>Next message: <A HREF="000014.html">[Usbprog-pub] AVR ISP MK2: AT90S2313
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

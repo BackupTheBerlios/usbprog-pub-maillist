@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] FUSE Bits
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20FUSE%20Bits&In-Reply-To=%3C20070803103256.127400%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000197.html">
+   <LINK REL="Next"  HREF="000201.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] FUSE Bits</H1>
+    <B>Fred Sonnenrein</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20FUSE%20Bits&In-Reply-To=%3C20070803103256.127400%40gmx.net%3E"
+       TITLE="[Usbprog-pub] FUSE Bits">Fred.Sonnenrein at gmx.de
+       </A><BR>
+    <I>Fri Aug  3 12:32:56 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000197.html">[Usbprog-pub] FUSE Bits
+</A></li>
+        <LI>Next message: <A HREF="000201.html">[Usbprog-pub] FUSE Bits
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#200">[ date ]</a>
+              <a href="thread.html#200">[ thread ]</a>
+              <a href="subject.html#200">[ subject ]</a>
+              <a href="author.html#200">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Bene
+&gt;<i> 
+</I>&gt;<i> die damit usbprog_base.hex startet und richtig arbeitet
+</I>&gt;<i> 
+</I>&gt;<i> lfuse 0xe0
+</I>&gt;<i> und hfuse 0xd9
+</I>
+Mit <A HREF="http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=&amp;P=ATmega32">http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=&amp;P=ATmega32</A>
+einfach ermittelt:
+
+BODLEVEL=1
+BODEN=1
+-&gt; keine Brown-Out-Detection (sollte besser anders sein...)
+SUT1=1
+SUT0=0    
+-&gt; Startup-Time = 6 CK + 64 ms
+CKSEL3..0 = 0000
+-&gt; externer Takt
+OCDEN=1
+-&gt; On-Chipo-Debug disabled
+JTAGEN=1
+-&gt; JTAG aus
+SPIEN=0
+-&gt; Serial program download enabled
+CKOPT=1
+-&gt; ??? h&#228;ngt mit externem Takt zusammen
+EESAVE=1
+-&gt; Chip erase l&#246;scht auch EEPROM
+BOOTSZ1..0 = 00
+-&gt; Boot start adress = $3800
+BOOTRST=1
+-&gt; Reset startet bei 0
+
+wenn avrprog_base drauf ist, mu&#223; BOOTRST=0 sein,
+daher 0xE0 und 0xD8
+
+Fred
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000197.html">[Usbprog-pub] FUSE Bits
+</A></li>
+	<LI>Next message: <A HREF="000201.html">[Usbprog-pub] FUSE Bits
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#200">[ date ]</a>
+              <a href="thread.html#200">[ thread ]</a>
+              <a href="subject.html#200">[ subject ]</a>
+              <a href="author.html#200">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

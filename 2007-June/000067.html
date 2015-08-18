@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog - firmware wechseln unter Windows
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C000001c7ae4d%2453df81e0%2417b2a8c0%40mes%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000066.html">
+   <LINK REL="Next"  HREF="000068.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog - firmware wechseln unter Windows</H1>
+    <B>mes</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C000001c7ae4d%2453df81e0%2417b2a8c0%40mes%3E"
+       TITLE="[Usbprog-pub] usbprog - firmware wechseln unter Windows">usbprog at mestro.de
+       </A><BR>
+    <I>Thu Jun 14 08:29:13 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000066.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+        <LI>Next message: <A HREF="000068.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Also ich bekomme das nicht hin.
+Ich kann nur extern &#252;ber ein zweites Programmierger&#228;t flashen. Nachdem ich
+den Bootloader geladen habe kann ich auch usbprog.exe nutzen. Danach aber
+nicht ein zweites mal.
+
+Klingt f&#252;r mich, als wenn der Bootloader &#252;berschrieben wird, oder nicht
+aktiv ist.
+
+Aber leider hab ich im mom keine Zeit, das zu &#252;berpr&#252;fen.
+
+Im AVR Studio hab ich zwei m&#246;glichkieten gefunden: einmal direkt im Men&#252;
+&quot;AVRISP MK2 aktuallisieren&quot;. Da kommt eine meldung, eine LED soll flashen
+und dann kann man ok dr&#252;cken.
+Danach kommt nur die Meldung kein Target gefunden, das sich im updatemodus
+befindet.
+
+Oder alternativ im STK500 Plugin. Dort ist auch firmware updaten. Wenn ich
+da klicke ist der dialog sofort weg, und ich starte usbprog.exe. - klappt
+aber auch nicht.
+
+Oder direkt nach dem einstecken (2sek hat man zeit?) aber da klappt
+usbprog.exe auch nicht.
+
+Usbprog.exe f&#252;hre ich mit adminrechten aus und wie unten beschrieben mit der
+bin-Datei als Parameter.
+
+Gr&#252;&#223;e,
+mes
+
+-----Urspr&#252;ngliche Nachricht-----
+Von: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>] Im Auftrag von Benedikt Sauter
+Gesendet: Donnerstag, 14. Juni 2007 07:16
+An: Frank Ulbrich; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+Betreff: Re: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+
+&gt;<i>Frage : Was mu&#223; ich tun, um eine andere firmware auf den &quot;usbprog&quot; zu
+</I>&gt;<i>brennen ? Das Programm usbprog erkennt das Ger&#228;t nicht mehr als &quot;usbprog
+</I>&gt;<i>(Update Modus). Mu&#223; ich irgendwelche Br&#252;cken stecken ? Hat jemand das
+</I>&gt;<i>gleiche Problem ?
+</I>
+Nein, entweder mit usbprog neue Software aufspielen.
+
+usbprog neuesoftware.bin.
+
+Oder man kann auch vom AVR Studio aus dieses  Firmware auf Adapter
+austauschen klicken, dann wird der Adapter ebenfalls in den Update Modus
+geschalten.
+
+Gruss Bene
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000066.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+	<LI>Next message: <A HREF="000068.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

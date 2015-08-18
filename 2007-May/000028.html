@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20MOSI-Pin%20im%20Leerlauf%20auf%201%3F&In-Reply-To=%3C20070504123416.BF699E67B8%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000027.html">
+   <LINK REL="Next"  HREF="000030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20MOSI-Pin%20im%20Leerlauf%20auf%201%3F&In-Reply-To=%3C20070504123416.BF699E67B8%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?">sauter at sistecs.de
+       </A><BR>
+    <I>Fri May  4 14:32:06 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000027.html">[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+</A></li>
+        <LI>Next message: <A HREF="000030.html">[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Christian,
+
+Danke! Habs gleich eingebaut und in dem Zug gleich mal den Quelltext
+etwas bereinigt.
+
+Hab hier einen ATMega128 immer programmiert und da hat es auch nicht
+immer geklappt. Lag auch an dem das dich auch gest&#246;rt hat. Geht jetzt
+einwandfrei.
+
+Danke nochmal!
+
+H&#228;ngt der Adapter im BSD bei dir hinter einem HUB? Ich hatte letztens das
+Problem
+das ich den Adapter nicht hinter einem HUB verwenden konnte. Werd das
+nochmal pr&#252;fen.
+
+Ich hab eigentlich auch gerade nen frischen Kernel:
+Aber ich seh gerade bei mir ist das auch:
+usb 2-2: config 1 descriptor has 1 excess byte, ignoring
+
+Werd mal bei Gelegenheit schauen was da los ist.
+
+
+
+Gruss Bene
+
+Am 4.5.2007 schrieb &quot;Christian Taube&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">christian.taube at telebel.de</A>&gt;:
+
+&gt;<i>Hallo Benedikt,
+</I>&gt;<i>
+</I>&gt;<i>ein neues Patch-File! Hab noch einen kleinen Fehler entdeckt, der
+</I>&gt;<i>anscheinend dadurch aufgetreten ist das ich in spi_idle() den PORTB
+</I>&gt;<i>auf 0 gesetzt habe. Diese Version sollte jetzt &quot;stable&quot; sein.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hallo Christian,
+</I>&gt;<i>
+</I>&gt;&gt;<i> sag mir doch bitte bescheid wenn du meinst es es jetzt passt, dann spiel
+</I>&gt;&gt;<i> ich den Patch ein. Danke nochmal!
+</I>&gt;<i>
+</I>&gt;<i>Also rein hardwaretechnisch sieht das gut aus (mit Logiktester und
+</I>&gt;<i>Oszilloskop &#252;berpr&#252;ft). Wichtig ist halt, das der ISP-Adapter
+</I>&gt;<i>m&#246;glichst schnell nach dem &quot;freigeben&quot; der RESET-Leitung auf
+</I>&gt;<i>High-Zustand die anderen Programmierleitungen hochohmig schaltet.
+</I>&gt;<i>Schlie&#223;lich l&#228;uft der Mikrocontroller der Zielschaltung ja an und der
+</I>&gt;<i>kann die MISO/MOSI/SCK Pins ja f&#252;r irgendwelche Zwecke verwenden (in
+</I>&gt;<i>meinem Fall wird da ein LC-Display angesteuert). Dann arbeiten die
+</I>&gt;<i>beiden Microcontroller gegeneinander und in meinem Fall wurden die
+</I>&gt;<i>sogar leicht warm. Auf der MISO-Leitung haben sich statt Low-Pegel
+</I>&gt;<i>immer 2,5 Volt eingestellt wodurch das LC-Display nicht mehr
+</I>&gt;<i>funktionierte.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Was mir noch aufgefallen ist:
+</I>&gt;<i>
+</I>&gt;<i>Linux (Kernel 2.6.18) sagt nach dem Einstecken des usbprog:
+</I>&gt;<i>
+</I>&gt;<i>usb 2-1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>
+</I>&gt;<i>Ein &#252;bersch&#252;ssiges Byte irgendwo im config 1 descriptor?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>&#220;brigens, FreeBSD 6.2 st&#246;rt sich auch an irgendwas und schaltet
+</I>&gt;<i>kurzerhand den USB port ab:
+</I>&gt;<i>
+</I>&gt;<i>uhub1: device problem (TIMEOUT), disabling port 1
+</I>&gt;<i>
+</I>&gt;<i>Leider habe ich da noch nicht mehr Informationen rausholen k&#246;nnen, mu&#223;
+</I>&gt;<i>wahrscheinlich erst irgendwo im Kernel das debugging einschalten.
+</I>&gt;<i>Wei&#223;t Du ob irgendjemand das ganze schonmal unter FreeBSD ans laufen
+</I>&gt;<i>bekommen hat?
+</I>&gt;<i>
+</I>&gt;<i>avrdude meckert immer beim schreiben wenn er die lfuse &#252;berpr&#252;fen
+</I>&gt;<i>will. Das k&#246;nnte aber evtl. auch am avrdude liegen, weil ich mir nicht
+</I>&gt;<i>sicher bin ob die zu schreibende test.hex &#252;berhaupt ein Fuse-Bytes
+</I>&gt;<i>enth&#228;lt. Explizites Auslesen der Fusebytes auf der Kommandozeile (mit
+</I>&gt;<i>&quot;-U lfuse:r:...&quot;) funktioniert anstandslos.
+</I>&gt;<i>
+</I>&gt;<i>-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+</I>&gt;<i>avrdude: stk500v2_recv_mk2: error in USB receive
+</I>&gt;<i>avrdude: stk500v2_cmd(): short reply, len = 0
+</I>&gt;<i>avrdude: safemode: Verify error - unable to read lfuse properly. Programmer may not be reliable.
+</I>&gt;<i>-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Hier die gesamte Befehlszeile und Ausgabe von avrdude. Der Fehler
+</I>&gt;<i>kommt ganz unten:
+</I>&gt;<i>
+</I>&gt;<i>-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+</I>&gt;<i>Script started on Fr 04 Mai 2007 13:39:46 CEST
+</I>&gt;<i>zap:~/z180# avrdude -c avrispmkII -P usb -p m8535 -U flash:w:test.hex:i
+</I>&gt;<i>
+</I>&gt;<i>avrdude: AVR device initialized and ready to accept instructions
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Reading | ################################################## | 100% 0.01s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: Device signature = 0x1e9308
+</I>&gt;<i>avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+</I>&gt;<i>         To disable this feature, specify the -D option.
+</I>&gt;<i>avrdude: erasing chip
+</I>&gt;<i>avrdude: reading input file &quot;test.hex&quot;
+</I>&gt;<i>avrdude: writing flash (2876 bytes):
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Writing | ################################################## | 100% 1.04s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: 2876 bytes of flash written
+</I>&gt;<i>avrdude: verifying flash memory against test.hex:
+</I>&gt;<i>avrdude: load data flash data from input file test.hex:
+</I>&gt;<i>avrdude: input file test.hex contains 2876 bytes
+</I>&gt;<i>avrdude: reading on-chip flash data:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Reading | ################################################## | 100% 0.16s
+</I>&gt;<i>
+</I>&gt;<i>avrdude: verifying ...
+</I>&gt;<i>avrdude: 2876 bytes of flash verified
+</I>&gt;<i>
+</I>&gt;<i>avrdude: stk500v2_recv_mk2: error in USB receive
+</I>&gt;<i>avrdude: stk500v2_cmd(): short reply, len = 0
+</I>&gt;<i>avrdude: safemode: Verify error - unable to read lfuse properly. Programmer may not be reliable.
+</I>&gt;<i>avrdude: safemode: Fuses OK
+</I>&gt;<i>
+</I>&gt;<i>avrdude done.  Thank you.
+</I>&gt;<i>
+</I>&gt;<i>zap:~/z180#
+</I>&gt;<i>Script done on Fr 04 Mai 2007 13:40:22 CEST
+</I>&gt;<i>-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>--
+</I>&gt;<i> Christian Taube  &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">christian.taube at telebel.de</A>&gt;)
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000027.html">[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+</A></li>
+	<LI>Next message: <A HREF="000030.html">[Usbprog-pub] PRoblem mit USBprog nach Erfolgreichem USB-Connect
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

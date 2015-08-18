@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Problems with first own firmware
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problems%20with%20first%20own%20firmware&In-Reply-To=%3C4811E815.1060506%40gmx.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000402.html">
+   <LINK REL="Next"  HREF="000404.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Problems with first own firmware</H1>
+    <B>Thomas Wittmann</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problems%20with%20first%20own%20firmware&In-Reply-To=%3C4811E815.1060506%40gmx.de%3E"
+       TITLE="[Usbprog-pub] Problems with first own firmware">thomwitt at gmx.de
+       </A><BR>
+    <I>Fri Apr 25 16:17:57 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000402.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+        <LI>Next message: <A HREF="000404.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#403">[ date ]</a>
+              <a href="thread.html#403">[ thread ]</a>
+              <a href="subject.html#403">[ subject ]</a>
+              <a href="author.html#403">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello again,
+
+finally I found the problem.
+Topic can be closed.
+
+Regards,
+Thomas
+
+
+
+
+Thomas Wittmann schrieb:
+&gt;<i> Hello!
+</I>&gt;<i>
+</I>&gt;<i> I tried to build my first own firmware. It emulates a standard
+</I>&gt;<i> game-controller. Actually only the throttle.
+</I>&gt;<i> For model i choose the firmware from the &quot;usbserial&quot; and &quot;PS2 to USB&quot;
+</I>&gt;<i> from ixbat.de.
+</I>&gt;<i>
+</I>&gt;<i> The enumeration works, i think. The USBprog is recognized by windows as
+</I>&gt;<i> a HID and is listed as &quot;HID-konformer Gamecontroller&quot;.
+</I>&gt;<i> But after the enumeration there is no datatransmission from the USBprog
+</I>&gt;<i> to the Host. I choose the interrupt-transfer and two requests
+</I>&gt;<i> for data were send from host to USBprog. In adiition to the sourcecode I
+</I>&gt;<i> included a logfile from usbsnoop in the link [1].
+</I>&gt;<i> I have a real game-controller which protocol during enumeration i used
+</I>&gt;<i> for model. So there shouldn't be any big mistakes.
+</I>&gt;<i>
+</I>&gt;<i> During the research of my firmware I had two problems:
+</I>&gt;<i> - When i choosed the &quot;main&quot;-part from usbn2mc, i wasn't able to assign
+</I>&gt;<i> the report descriptor. How can I do this?
+</I>&gt;<i>
+</I>&gt;<i> - Actually i choose the &quot;tiny&quot;-part. There it is easy to build the
+</I>&gt;<i> report descriptor. But in this Version I can't convince the USBprog
+</I>&gt;<i>     to send data after enumeration.
+</I>&gt;<i>
+</I>&gt;<i> [1] <A HREF="http://www.etechnik.info.ms/FirstTry.zip">http://www.etechnik.info.ms/FirstTry.zip</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Please have a look on my files. Did i overlook a flag or a comment? I
+</I>&gt;<i> forage for the solution since days.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Thomas
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Usbprog-pub mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000402.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+	<LI>Next message: <A HREF="000404.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#403">[ date ]</a>
+              <a href="thread.html#403">[ thread ]</a>
+              <a href="subject.html#403">[ subject ]</a>
+              <a href="author.html#403">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

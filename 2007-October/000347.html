@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] [PATCH] Improve error handling
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%5BPATCH%5D%20Improve%20error%20handling&In-Reply-To=%3C20071020153627.368781108C0%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000346.html">
+   <LINK REL="Next"  HREF="000348.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] [PATCH] Improve error handling</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%5BPATCH%5D%20Improve%20error%20handling&In-Reply-To=%3C20071020153627.368781108C0%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] [PATCH] Improve error handling">sauter at sistecs.de
+       </A><BR>
+    <I>Sat Oct 20 17:35:42 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000346.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+        <LI>Next message: <A HREF="000348.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#347">[ date ]</a>
+              <a href="thread.html#347">[ thread ]</a>
+              <a href="subject.html#347">[ subject ]</a>
+              <a href="author.html#347">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>wow fine!
+
+Can you send me your complete folder when you are ready? I think its
+easier!
+
+Regards Benedikt
+
+
+Am 20.10.2007 schrieb &quot;Bernhard Walle&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Bernhard.Walle at gmx.de</A>&gt;:
+
+&gt;<i>This patch improves error handling. If the process has no permission, the
+</I>&gt;<i>current implementation silently ignores this, i.e. reports success.
+</I>&gt;<i>
+</I>&gt;<i>Even worse, if the device is not available (i.e. the IDs 0x1781,0x0c62 which
+</I>&gt;<i>could be in case other firmware is loaded -- but this will be a new patch), the
+</I>&gt;<i>behaviour was undefined because the return was missing and the usb_handle was
+</I>&gt;<i>not checked.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Signed-off-by: Bernhard Walle &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">bernhard.walle at gmx.de</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>---
+</I>&gt;<i> lib/avrupdate.c    |   28 +++++++++++++++++++++++++---
+</I>&gt;<i> lib/avrupdate.h    |    2 +-
+</I>&gt;<i> usbprog-old/main.c |   17 +++++++++++++----
+</I>&gt;<i> 3 files changed, 39 insertions(+), 8 deletions(-)
+</I>&gt;<i>
+</I>&gt;<i>--- a/lib/avrupdate.c
+</I>&gt;<i>+++ b/lib/avrupdate.c
+</I>&gt;<i>@@ -14,10 +14,11 @@
+</I>&gt;<i> #define SETVERSION     0x04
+</I>&gt;<i> #define STOPPROGMODE   0x05
+</I>&gt;<i>
+</I>&gt;<i>-void avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file)
+</I>&gt;<i>+int avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file)
+</I>&gt;<i> {
+</I>&gt;<i>     char buf[64];
+</I>&gt;<i>     char cmd[64];
+</I>&gt;<i>+    int ret;
+</I>&gt;<i>
+</I>&gt;<i>     FILE *fd;
+</I>&gt;<i>
+</I>&gt;<i>@@ -55,10 +56,19 @@ void avrupdate_flash_bin(struct usb_dev_
+</I>&gt;<i>           // command message
+</I>&gt;<i>           cmd[0]=WRITEPAGE;
+</I>&gt;<i>           cmd[1]=(char)page; // page number
+</I>&gt;<i>-          usb_bulk_write(usb_handle,2,cmd,64,100);
+</I>&gt;<i>+          ret = usb_bulk_write(usb_handle,2,cmd,64,100);
+</I>&gt;<i>+          if (ret &lt; 0) {
+</I>&gt;<i>+              printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
+</I>&gt;<i>+              return -1;
+</I>&gt;<i>+          }
+</I>&gt;<i>+
+</I>&gt;<i>
+</I>&gt;<i>           // data message
+</I>&gt;<i>-          usb_bulk_write(usb_handle,2,buf,64,100);
+</I>&gt;<i>+          ret = usb_bulk_write(usb_handle,2,buf,64,100);
+</I>&gt;<i>+          if (ret &lt; 0) {
+</I>&gt;<i>+              printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
+</I>&gt;<i>+              return -1;
+</I>&gt;<i>+          }
+</I>&gt;<i>           offset = 0;
+</I>&gt;<i>           page++;
+</I>&gt;<i>       }
+</I>&gt;<i>@@ -70,10 +80,20 @@ void avrupdate_flash_bin(struct usb_dev_
+</I>&gt;<i>       cmd[0]=WRITEPAGE;
+</I>&gt;<i>       cmd[1]=(char)page; // page number
+</I>&gt;<i>       usb_bulk_write(usb_handle,2,cmd,64,100);
+</I>&gt;<i>+      if (ret &lt; 0) {
+</I>&gt;<i>+          printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
+</I>&gt;<i>+          return -1;
+</I>&gt;<i>+      }
+</I>&gt;<i>
+</I>&gt;<i>       // data message
+</I>&gt;<i>       usb_bulk_write(usb_handle,2,buf,64,100);
+</I>&gt;<i>+      if (ret &lt; 0) {
+</I>&gt;<i>+          printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
+</I>&gt;<i>+          return -1;
+</I>&gt;<i>+      }
+</I>&gt;<i>     }
+</I>&gt;<i>+
+</I>&gt;<i>+    return 0;
+</I>&gt;<i> }
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>@@ -217,6 +237,8 @@ struct usb_dev_handle* avrupdate_open(sh
+</I>&gt;<i>        }
+</I>&gt;<i>     }
+</I>&gt;<i>   }
+</I>&gt;<i>+
+</I>&gt;<i>+   return NULL;
+</I>&gt;<i> }
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>--- a/lib/avrupdate.h
+</I>&gt;<i>+++ b/lib/avrupdate.h
+</I>&gt;<i>@@ -22,7 +22,7 @@ struct usb_dev_handle* avrupdate_open(sh
+</I>&gt;<i> void avrupdate_close(struct usb_dev_handle* usb_handle);
+</I>&gt;<i>
+</I>&gt;<i> /* lowlevel funktions for avr */
+</I>&gt;<i>-void avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file);
+</I>&gt;<i>+int avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file);
+</I>&gt;<i> void avrupdate_startapp(struct usb_dev_handle* usb_handle);
+</I>&gt;<i>
+</I>&gt;<i> int avrupdate_find_usbdevice();
+</I>&gt;<i>--- a/usbprog-old/main.c
+</I>&gt;<i>+++ b/usbprog-old/main.c
+</I>&gt;<i>@@ -17,11 +17,13 @@
+</I>&gt;<i> */
+</I>&gt;<i>
+</I>&gt;<i> #include &lt;stdio.h&gt;
+</I>&gt;<i>+#include &lt;stdlib.h&gt;
+</I>&gt;<i> #include &lt;usb.h&gt;
+</I>&gt;<i> #include &quot;../lib/avrupdate.h&quot;
+</I>&gt;<i>
+</I>&gt;<i> int main(int argc, char **argv)
+</I>&gt;<i> {
+</I>&gt;<i>+   	int ret;
+</I>&gt;<i>
+</I>&gt;<i>  	// start with the destination of your bin file
+</I>&gt;<i>
+</I>&gt;<i>@@ -88,12 +90,12 @@ int main(int argc, char **argv)
+</I>&gt;<i> 		default:
+</I>&gt;<i> 			printf(&quot;Error: Can't find vaild usbprog adapter on usb bus.\n \
+</I>&gt;<i> Be sure that you are root or have enough permissions to access usb.\n&quot;);
+</I>&gt;<i>-			return -1;
+</I>&gt;<i>+			return EXIT_FAILURE;
+</I>&gt;<i> 	}
+</I>&gt;<i>
+</I>&gt;<i>  	if(argc!=2) {
+</I>&gt;<i> 		printf(&quot;Error: Firmware file missing! (usbprog avrispmk2.bin)\n&quot;);
+</I>&gt;<i>-		return -1;
+</I>&gt;<i>+		return EXIT_FAILURE;
+</I>&gt;<i> 	}
+</I>&gt;<i> 	else {
+</I>&gt;<i> 		printf(&quot;start update to %s \n&quot;,argv[1]);
+</I>&gt;<i>@@ -101,7 +103,14 @@ Be sure that you are root or have enough
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 	usb_handle = avrupdate_open(0x1781,0x0c62);
+</I>&gt;<i>- 	avrupdate_flash_bin(usb_handle,argv[1]);
+</I>&gt;<i>+	if (!usb_handle) {
+</I>&gt;<i>+	  printf(&quot;Not possible to open USB device.\n&quot;);
+</I>&gt;<i>+	  return EXIT_FAILURE;
+</I>&gt;<i>+	}
+</I>&gt;<i>+ 	ret = avrupdate_flash_bin(usb_handle,argv[1]);
+</I>&gt;<i>+	if (ret &lt; 0) {
+</I>&gt;<i>+	  return EXIT_FAILURE;
+</I>&gt;<i>+	}
+</I>&gt;<i>  	printf(&quot;start new firmware\n\n&quot;);
+</I>&gt;<i>  	avrupdate_startapp(usb_handle);
+</I>&gt;<i>  	avrupdate_close(usb_handle);
+</I>&gt;<i>@@ -109,7 +118,7 @@ Be sure that you are root or have enough
+</I>&gt;<i> 	printf(&quot;Have fun with your new adapter!\n&quot;);
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>-	return;
+</I>&gt;<i>+	return EXIT_SUCCESS;
+</I>&gt;<i> /*
+</I>&gt;<i> 	char *url = &quot;<A HREF="http://www.ixbat.de/versions.conf">http://www.ixbat.de/versions.conf</A>&quot;;
+</I>&gt;<i> 	printf(&quot;Found %i version(s)\n&quot;,avrupdate_net_versions(url));
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000346.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+	<LI>Next message: <A HREF="000348.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#347">[ date ]</a>
+              <a href="thread.html#347">[ thread ]</a>
+              <a href="subject.html#347">[ subject ]</a>
+              <a href="author.html#347">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] ubuntu problem gel&#246;st?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-1%3Fq%3Fubuntu_problem_gel%3DF6st%3D3F%3F%3D&In-Reply-To=%3C46D5AD2D.1010105%40rwth-aachen.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000306.html">
+   <LINK REL="Next"  HREF="000317.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] ubuntu problem gel&#246;st?</H1>
+    <B>Fabian Greif</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-1%3Fq%3Fubuntu_problem_gel%3DF6st%3D3F%3F%3D&In-Reply-To=%3C46D5AD2D.1010105%40rwth-aachen.de%3E"
+       TITLE="[Usbprog-pub] ubuntu problem gel&#246;st?">fabian.greif at rwth-aachen.de
+       </A><BR>
+    <I>Wed Aug 29 19:30:21 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000306.html">[Usbprog-pub] ubuntu problem gel&#246;st!
+</A></li>
+        <LI>Next message: <A HREF="000317.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#316">[ date ]</a>
+              <a href="thread.html#316">[ thread ]</a>
+              <a href="subject.html#316">[ subject ]</a>
+              <a href="author.html#316">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+Benedikt Sauter schrieb:
+&gt;<i> K&#246;nnen die die das Ubuntu Problem hatten nochmal testen ob das mit der
+</I>&gt;<i> Version besser ist:
+</I>
+Mittlerweile bin ich auch dazu gekommen das zu testen, aber so richtig 
+will es immer noch nicht funktionieren:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ dmesg
+(...)
+[ 1121.708000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 7
+[ 1121.800000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1121.800000] usb 4-4.1: configuration #1 chosen from 1 choice
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ cat /proc/bus/usb/devices
+(...)
+T:  Bus=04 Lev=02 Prnt=04 Port=00 Cnt=01 Dev#=  7 Spd=12  MxCh= 0
+D:  Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+P:  Vendor=03eb ProdID=2104 Rev= 2.00
+S:  Manufacturer=B.Sauter
+S:  Product=AVRISP mk2 Clone
+S:  SerialNumber=0000A00128255
+C:* #Ifs= 1 Cfg#= 1 Atr=a0 MxPwr= 50mA
+I:  If#= 0 Alt= 0 #EPs= 2 Cls=00(&gt;ifc ) Sub=00 Prot=00 Driver=(none)
+E:  Ad=82(I) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ avrdude -c avrispv2 -P usb -p m8
+avrdude: usbdev_open(): did not find any USB device &quot;usb&quot;
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ lsusb
+(...)
+Bus 004 Device 013: ID 03eb:2104 Atmel Corp.
+
+Erscheint nur jedes &quot;zweite&quot; mal, hei&#223;t sobald man nach einer Wartezeit 
+lsusb ausf&#252;hrt ist der
+Eintrag nicht da, wenn man aber dann kurz danach wieder lsusb auf&#252;hrt 
+(beliebig oft) wird er angezeigt.
+
+Gleichzeit erzeugt man damit folgendes:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ dmesg
+(...)
+[ 1598.020000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 14
+[ 1598.112000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1598.112000] usb 4-4.1: configuration #1 chosen from 1 choice
+[ 1600.800000] usb 4-4.1: USB disconnect, address 14
+[ 1600.872000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 15
+[ 1600.964000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1600.964000] usb 4-4.1: configuration #1 chosen from 1 choice
+[ 1608.128000] usb 4-4.1: USB disconnect, address 15
+[ 1608.200000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 16
+[ 1608.292000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1608.292000] usb 4-4.1: configuration #1 chosen from 1 choice
+[ 1648.248000] usb 4-4.1: USB disconnect, address 16
+[ 1648.320000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 17
+[ 1648.412000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1648.412000] usb 4-4.1: configuration #1 chosen from 1 choice
+[ 1656.336000] usb 4-4.1: USB disconnect, address 17
+[ 1656.448000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 18
+[ 1656.540000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1656.540000] usb 4-4.1: configuration #1 chosen from 1 choice
+[ 1781.044000] usb 4-4.1: USB disconnect, address 18
+[ 1781.116000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+address 19
+[ 1781.208000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+[ 1781.208000] usb 4-4.1: configuration #1 chosen from 1 choice
+
+Anscheint meldet sich der Adapter jedesmal neu an wenn er von lsusb 
+erkannt wird.
+Wenn man dann versucht kurz nach dem ausf&#252;hren von lsusb avrdude zu 
+starten bekommt man folgendes:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ avrdude -c avrispv2 -P usb -p m168 -U test.hex
+avrdude: usb_open(): cannot read serial number &quot;error sending control 
+message: Operation not permitted&quot;
+avrdude: usb_open(): cannot read product name &quot;error sending control 
+message: Operation not permitted&quot;
+avrdude: usbdev_open(): error setting configuration 1: could not set 
+config 1: Operation not permitted
+avrdude: usbdev_open(): did not find any USB device &quot;usb&quot;
+
+Mit Superuser-Rechten klappt es dann sogar:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ sudo avrdude -c avrispv2 -P usb -p m168 -U test.hex
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100%
+(...)
+
+Aber wie gesagt immer nur kurz nachdem ausf&#252;hren von lsusb. Wartet man 
+einen Hauch zu lange bekommt man die selben Meldungen wie von avrdude 
+ohne Superuser-Rechten.
+
+Gr&#252;&#223;e
+Fabian
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000306.html">[Usbprog-pub] ubuntu problem gel&#246;st!
+</A></li>
+	<LI>Next message: <A HREF="000317.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#316">[ date ]</a>
+              <a href="thread.html#316">[ thread ]</a>
+              <a href="subject.html#316">[ subject ]</a>
+              <a href="author.html#316">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

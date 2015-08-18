@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Cardreader on OHCI gives short beeps
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Cardreader%20on%20OHCI%20gives%20short%20beeps&In-Reply-To=%3Cifpjju%24mqi%241%40dough.gmane.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Cardreader on OHCI gives short beeps</H1>
+    <B>Lars Erdmann</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Cardreader%20on%20OHCI%20gives%20short%20beeps&In-Reply-To=%3Cifpjju%24mqi%241%40dough.gmane.org%3E"
+       TITLE="[Usbprog-pub] Cardreader on OHCI gives short beeps">lars.erdmann at arcor.de
+       </A><BR>
+    <I>Sun Jan  2 11:21:48 CET 2011</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#451">[ date ]</a>
+              <a href="thread.html#451">[ thread ]</a>
+              <a href="subject.html#451">[ subject ]</a>
+              <a href="author.html#451">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+I am working on updating/fixing the OS/2 USB driver.
+
+I now have this problem: I have a built-in card reader that is directly
+attached to onboard OHCI controller from SiS.
+For some reason, the card reader sometimes gives me some short beeps
+even with no card inserted into to it. But other than that it works perfectly well.
+
+Does anyone know what these beeps are supposed to mean ? Overcurrent ? Error conditions ? Do I need
+to reset some status bits (device insertion/removal or the like) ?
+If I know the root cause I am hopefully able to fix it. If you can point me to the place in the Linux
+source that maybe deals with exactly this problem, I'd also be grateful.
+
+By the way: does a card insertion/removal lead to any status change in the USB registers ? Or is the card
+reader a device as such (and therefore, in my case, never inserted or removed) ?
+
+Thanks for any help,
+Lars
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#451">[ date ]</a>
+              <a href="thread.html#451">[ thread ]</a>
+              <a href="subject.html#451">[ subject ]</a>
+              <a href="author.html#451">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

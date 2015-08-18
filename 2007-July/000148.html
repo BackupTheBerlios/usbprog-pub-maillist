@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog_3%3D2E%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F0%3F%3D&In-Reply-To=%3C20070717135051.51220%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000145.html">
+   <LINK REL="Next"  HREF="000146.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0</H1>
+    <B>Fred Sonnenrein</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog_3%3D2E%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F0%3F%3D&In-Reply-To=%3C20070717135051.51220%40gmx.net%3E"
+       TITLE="[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0">Fred.Sonnenrein at gmx.de
+       </A><BR>
+    <I>Tue Jul 17 15:50:51 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000145.html">[Usbprog-pub] Usbprog-pub Digest, Vol 4, Issue 10
+</A></li>
+        <LI>Next message: <A HREF="000146.html">[Usbprog-pub] Usbprog-pub Digest, Vol 4, Issue 10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#148">[ date ]</a>
+              <a href="thread.html#148">[ thread ]</a>
+              <a href="subject.html#148">[ subject ]</a>
+              <a href="author.html#148">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo zusammen, Hallo Joachim,
+
+Du schriebst:
+
+&gt;<i> Test, ich hab keine Ahnung wie das mit der Mailingliste und antworten
+</I>&gt;<i> geht....
+</I>
+Schon nicht schlecht, aber bitte &quot;vern&#252;nftigen&quot; Betreff eingeben.
+
+&gt;<i> also USB A Idee ist von mir und dabei bleib ich, will keine verlierbaren
+</I>&gt;<i> Adapter mitschleppen oder gar Kabel
+</I>&gt;<i> notfalls setze ich den LP USB A wieder per Kabel und Kleber rauf !
+</I>
+M&#246;chte ich zur Diskussion stellen, die Mehrheit z&#228;hlt. Beide (A- und B-)
+Stecker auf der Platine vorbereiten wird nicht gehen, da sich die Lochmuster teilweise &#252;berschneiden.
+
+&gt;<i> Leiterbahnen dicker wurde ja best&#228;tigt
+</I>
+Ich wei&#223; immer noch nicht warum. 0,2 mm Breite h&#228;lt mehr als 1A aus.
+Und breitere Leiterbahnen hei&#223;t (vielleicht) gr&#246;&#223;ere Platine.
+Wie dick sollen die Leiterbahnen denn werden?
+
+&gt;<i> GND auf ISP 10 auch !
+</I>
+ok, verstanden.
+
+&gt;<i> wenn das in das USB1 Acryl Geh&#228;use passt und danach sieht es ja bis jetzt
+</I>&gt;<i> aus, dann braucht man keine je 2 Dioden wie ich es f&#252;r beiderseitige
+</I>&gt;<i> Erkennung im schwarzen Geh&#228;use bauen musste
+</I>
+Wie ist das mit den Jumpern... Das wird im Geh&#228;use schwierig zug&#228;nglich.
+
+&gt;<i> der doofe Kupferrand st&#246;rt nur wenn man wie ich an der Platine rumfeilt
+</I>
+Ach so. Darauf m&#246;chte ich aber keine R&#252;cksicht nehmen, da wohl nicht 
+viele an der Platine &quot;rumfeilen&quot;.
+
+&gt;<i> aber einige Massefl&#228;chen einbauen ist wie beim USBprog v2 kein Fehler
+</I>
+Ist nie ein Fehler.
+
+&gt;<i> Bilder von meinem Umbau gibt es hier
+</I>&gt;<i> <A HREF="http://iapf.physik.tu-berlin.de/jbohs/dforum/atmel_timer/web_BC5G2281.jpg">http://iapf.physik.tu-berlin.de/jbohs/dforum/atmel_timer/web_BC5G2281.jpg</A>
+</I>
+Ach, da unten in der Ecke...
+
+&gt;<i> das gew&#252;nschte Geh&#228;use ist
+</I>&gt;<i> <A HREF="http://www.segor.de/bilder/0000b8f7.jpg">http://www.segor.de/bilder/0000b8f7.jpg</A>
+</I>&gt;<i> 
+</I>&gt;<i>       Geh&#228;use USB 1
+</I>&gt;<i> 
+</I>&gt;<i>       ABS-Geh&#228;use 56x20x12mm (rem Aussenbreite 19,5 mm gemessen !)
+</I>&gt;<i>       trp m.Ausschnitt 12,2x6mm
+</I>
+
+OK. Kannst Du bitte die Innen-Ma&#223;e abmessen? Pa&#223;t in den Ausschnitt der
+USB-A-Stecker rein?
+
+&gt;<i> www.segor.de
+</I>&gt;<i> 
+</I>&gt;<i> der Stecker USB A
+</I>&gt;<i>       USB-A ST-Print
+</I>&gt;<i> 
+</I>&gt;<i>       USB A-Printstecker
+</I>&gt;<i>       liegende Ausf&#252;hrung
+</I>&gt;<i> <A HREF="http://www.segor.de/bilder/0000b705.jpg">http://www.segor.de/bilder/0000b705.jpg</A>
+</I>&gt;<i> oder
+</I>&gt;<i>       USB-A ST-Print/SMD
+</I>&gt;<i> 
+</I>&gt;<i>       USB A-Printstecker SMD
+</I>&gt;<i>       liegende Ausf&#252;hrung
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://www.segor.de/bilder/0000bfbe.jpg">http://www.segor.de/bilder/0000bfbe.jpg</A>
+</I>
+Siehe f&#228;llige Entscheidung oben.
+
+W&#252;rdet ihr bitte beim Zitieren den unn&#246;tigen Rest rausl&#246;schen?
+
+Gr&#252;&#223;e,
+
+Fred Sonnenrein
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000145.html">[Usbprog-pub] Usbprog-pub Digest, Vol 4, Issue 10
+</A></li>
+	<LI>Next message: <A HREF="000146.html">[Usbprog-pub] Usbprog-pub Digest, Vol 4, Issue 10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#148">[ date ]</a>
+              <a href="thread.html#148">[ thread ]</a>
+              <a href="subject.html#148">[ subject ]</a>
+              <a href="author.html#148">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

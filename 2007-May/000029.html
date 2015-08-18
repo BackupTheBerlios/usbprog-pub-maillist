@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FNeue_Firmware%3D3A_USB_JTAG_f%3DFCr_Open%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_OCD%3F%3D&In-Reply-To=%3C67016955.20070502110532%40telebel.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000024.html">
+   <LINK REL="Next"  HREF="000025.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD</H1>
+    <B>Christian Taube</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FNeue_Firmware%3D3A_USB_JTAG_f%3DFCr_Open%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_OCD%3F%3D&In-Reply-To=%3C67016955.20070502110532%40telebel.de%3E"
+       TITLE="[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD">christian.taube at telebel.de
+       </A><BR>
+    <I>Wed May  2 11:05:32 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000024.html">[Usbprog-pub] Probleme mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000025.html">[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Benedikt,
+
+der neue USBN9604 ist eingetroffen und wurde soeben eingel&#246;tet. Nach
+leichten Startschwierigkeiten (beim Ausl&#246;ten des alten Chips habe ich
+anscheinend zwei Leiterbahnen besch&#228;digt) lieferte der USBN die
+gew&#252;nschte Taktfrequenz von 16 MHz und wurde auch nicht mehr warm.
+
+Also das ganze nochmal unter Linux an den USB angeschlossen:
+
+-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+hub 4-3:1.0: USB hub found
+hub 4-3:1.0: 4 ports detected
+usb 4-3.4: new full speed USB device using ehci_hcd and address 10
+usb 4-3.4: config 1 interface 0 altsetting 0 has 1 endpoint descriptor, different from the interface descriptor's value: 2
+usb 4-3.4: configuration #1 chosen from 1 choice
+-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+
+Das sieht schonmal ganz gut aus!
+
+Den oben aufgef&#252;hrten (passiven) USB-Hub verwende ich als
+&quot;Lebensversicherung&quot; f&#252;r die USB-Schnittstellen meines Notebooks. Er
+schaltet bei einer &#220;berschreitung der Stromaufnahme (&gt; 100mA)
+zuverl&#228;ssig ab.
+
+Wieder unter Windows XP habe ich das Programm usbview.exe verwendet um
+weitere Informationen zu den USB-Ger&#228;ten anzuzeigen. Das Programm
+usbview habe ich auf der Seite von FTDIChip gefunden (unter Resources,
+Utilities; direkter Download:
+<A HREF="http://www.ftdichip.com/Resources/Utilities/usbview.zip">http://www.ftdichip.com/Resources/Utilities/usbview.zip</A> ), es stammt
+aber eigentlich von Microsoft und fliegt bestimmt auch auf deren
+Webserver irgendwo rum.
+
+Ich hab drei Screenshots an diese Mail angehangen die jeweils folgende
+Zust&#228;nde anzeigen (der usbprog l&#228;uft dabei zun&#228;chst mit der
+usbprog_base firmware):
+
+usbprog1.png - direkt nach dem Einstecken des usbprog, noch bevor der
+usbprog Treiber unter Windows installiert wurde
+
+usbprog2.png - nach Installation des usbprog Treibers -&gt; &quot;usbprog
+(Update Modus)&quot;
+
+usbprog3.png - nach Aufruf von 'usbprog.exe avrispmk2.bin', also
+Installation der AVRISPmk2 firmware *und* des Windows-Treibers aus dem
+AVR Studio 4 Paket.
+
+Das sieht alles schonmal sehr gut aus. Ich hab eine Schaltung mit
+dem ATmega8535 hier in der ich den usbprog mal testen k&#246;nnte,
+allerdings mu&#223; ich daf&#252;r zun&#228;chst ein passendes ISP-Kabel l&#246;ten (meine
+Platinen benutzen den 6-poligen Anschlu&#223; aus dem AVR910 application
+note). Daf&#252;r werde ich aber erst heute Abend Zeit finden.
+
+&gt;<i> Brauchst du den dringend oder war die Frage erstmal allgemein? Hab gerade
+</I>&gt;<i> kaum Zeit muss leider grad etwas fuer Geld machen :-).
+</I>
+War nur allgemein weil ich da gerade was von JTAG las. Ich verwende
+momentan das Parallelport-Kabel welches bei Xilinx auch irgendwo als Schaltplan
+auf der Webseite liegt.
+
+Ich suche momentan eher einen Nachfolger f&#252;r meinen in die Jahre
+gekommenen c't-Flasher ( <A HREF="http://www.heise.de/ct/97/16/176/">http://www.heise.de/ct/97/16/176/</A> ). Du
+kennst nicht zuf&#228;lligerweise irgendein Selbstbau-Projekt um
+Flash-ROMs zu programmieren?
+
+-- 
+ Christian Taube  &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">christian.taube at telebel.de</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: usbprog3.png
+Type: image/png
+Size: 19755 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070502/1562450e/attachment.png">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070502/1562450e/attachment.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: usbprog1.png
+Type: image/png
+Size: 16963 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070502/1562450e/attachment-0001.png">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070502/1562450e/attachment-0001.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: usbprog2.png
+Type: image/png
+Size: 17020 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070502/1562450e/attachment-0002.png">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070502/1562450e/attachment-0002.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000024.html">[Usbprog-pub] Probleme mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000025.html">[Usbprog-pub] MOSI-Pin im Leerlauf auf 1?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

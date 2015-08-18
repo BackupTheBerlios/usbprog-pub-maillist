@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] AVR ISP MK2: AT90S2313
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20AVR%20ISP%20MK2%3A%20AT90S2313&In-Reply-To=%3C000001c77b4c%2473e92a60%2417b2a8c0%40mes%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000006.html">
+   <LINK REL="Next"  HREF="000008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] AVR ISP MK2: AT90S2313</H1>
+    <B>mes</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20AVR%20ISP%20MK2%3A%20AT90S2313&In-Reply-To=%3C000001c77b4c%2473e92a60%2417b2a8c0%40mes%3E"
+       TITLE="[Usbprog-pub] AVR ISP MK2: AT90S2313">usbprog at mestro.de
+       </A><BR>
+    <I>Tue Apr 10 10:44:25 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000006.html">[Usbprog-pub] AVR ISP MK2: AT90S2131
+</A></li>
+        <LI>Next message: <A HREF="000008.html">[Usbprog-pub] AVR ISP MK2: AT90S2313
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Hmm, ich habe gerade weiter gesucht, und festgestellt, das der AVRISP mk II
+den Typen von Haus aus nicht unterst&#252;tzt.
+<A HREF="http://www.atmel.com/dyn/resources/prod_documents/AVRISPmkII_UG.pdf">http://www.atmel.com/dyn/resources/prod_documents/AVRISPmkII_UG.pdf</A>
+Naja, schade.
+
+Das Problem mit der Firmware bleibt jedoch.
+Die hfuse und lfuse sch&#252;tzen allerdings den Bootloader nicht. M&#252;ssen evtl.
+Die LockBits gesetzt werden? Es gibt daf&#252;r spezielle &quot;Boot Loader Protection
+Mode&quot;. W&#228;hre interessant ob die bei dir gesetzt sind.
+
+Ich nutze WXP und nach der Installation des Bootloaders kann ich auch mit
+dem Test-Programm von LibUSB die Schaltung identifizieren. Nach dem Upload
+per usbprog.exe meldet sich das USB-Ger&#228;t jedoch unter neuem Namen an: In
+der Kategorie &quot;Jungo&quot; als &quot;AVRISP mkII&quot;, was ja auch richtig ist. Ab da
+meldet das Test Programm jedoch auch das Ger&#228;t unter neuem Namen. Starte ich
+nun usbprog.exe findet er das Device nicht mehr. Und somit kann ich neue
+Firmware lediglich per Hex &#252;bertragen (da m&#252;sste ich jedoch das Geh&#228;use
+&#246;ffnen, um den Jumper wieder auf 2-3 zu stecken, zu programmieren, und
+wieder zur&#252;ck)
+
+Nur so aus Interesse: Wie viele USBProg wurden denn mittlerweile aufgebaut?
+
+Gr&#252;&#223;e,
+mes
+
+
+-----Urspr&#252;ngliche Nachricht-----
+Von: Benedikt Sauter [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>] 
+Gesendet: Samstag, 7. April 2007 08:34
+An: mes; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+Betreff: Re: AW: [Usbprog-pub] AVR ISP MK2: AT90S2131
+
+Hallo Mes,
+
+&gt;<i>Das Plugin zum AVR-Studio hei&#223;t &quot;stk500&quot; und ist eine dll.
+</I>&gt;<i>Das ganze ist die &#252;bliche Methode AVRs zu programieren, quasi die
+</I>&gt;<i>Originalsoftware.
+</I>
+Ich glaub diese verwenden 99% die den Adapter haben. Also eigentlich geht
+das ohne Probleme. Hast du die USB Treiber mit installiert beim AVR
+Studio? Die kann mab beim installieren extra anhacken.
+
+&gt;<i>Die Programmiersoftware scheint abzufragen, welche Typen m&#246;glich sind, und
+</I>&gt;<i>&#252;bernimmt nur diese in die Combobox.
+</I>
+also bei mir tauchen da alle auf (Also die Liste sieht aus wie bei dir).
+Ist die bei dir sonst leer oder wie?
+
+Der Adapter wird nicht gefragt welche Typen er kannt. Ich denk das AVR
+Studio weiss welche Typen der AVRISP mk2 kann. Also im Protokoll ist da
+meines wissens nach nichts drin.
+
+&gt;<i>
+</I>&gt;<i>Noch ne andere Frage: warum muss ich den bootloader immer neu
+</I>&gt;<i>&quot;installieren&quot;, wenn ich die firmware wechseln will, nachdem ich per
+</I>&gt;<i>usbprog.exe eine firmware aufgespult habe?
+</I>&gt;<i>Muss man den bereich des bootloaders sch&#252;tzen?
+</I>
+
+Hm eigentlich muss man das nicht. Normal spielt man usbprog_base.hex auf
+und setzt hfuse auf 0xd9. Dann kann man mit usbprog.exe eine neue
+firmware einspielen (hier solltest du vielleicht nochmal das neuste
+nehmen).
+
+Mit welchem Betriebssystem machst du das?
+Unter windows 2000 gibt es anscheinend Probleme.
+
+Wenn dann eine FIrmware mit dem Tool aufgespielt worden ist und man
+wechseln will starten man nur usbprog.exe mit der neuene Firmware als
+Parameter und er sollte nur die Auswechseln. Also so ist es bei mir.
+
+
+P.S. Ich glaub die Woche k&#246;nnte das grafische Tool online gehen. Das
+macht ein Freund von mit. Bin auch schon sehr gespannt.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000006.html">[Usbprog-pub] AVR ISP MK2: AT90S2131
+</A></li>
+	<LI>Next message: <A HREF="000008.html">[Usbprog-pub] AVR ISP MK2: AT90S2313
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

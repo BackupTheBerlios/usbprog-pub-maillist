@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Inbetriebnahme usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Inbetriebnahme%20usbprog&In-Reply-To=%3C46A11044.3080901%40softsprings.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000163.html">
+   <LINK REL="Next"  HREF="000166.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Inbetriebnahme usbprog</H1>
+    <B>Alois Flammensboeck</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Inbetriebnahme%20usbprog&In-Reply-To=%3C46A11044.3080901%40softsprings.de%3E"
+       TITLE="[Usbprog-pub] Inbetriebnahme usbprog">flammensboeck at softsprings.de
+       </A><BR>
+    <I>Fri Jul 20 21:43:00 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000163.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+        <LI>Next message: <A HREF="000166.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#164">[ date ]</a>
+              <a href="thread.html#164">[ thread ]</a>
+              <a href="subject.html#164">[ subject ]</a>
+              <a href="author.html#164">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Fabian,
+
+ich bef&#252;rchte es liegt irgendwie an Ubuntu. Ich habe das selbe Problem 
+hier mit Ubuntu.
+
+Bei mir wirkt sich das zus&#228;tzlich so aus:
+lsusb findet beim ersten Aufruf das Device nicht. Ruft man kurz darauf 
+lsusb noch einmal auf, so wird der usbprog angezeigt. Wartet man 
+anschlie&#223;end 2-3 Sekunden zeigt lsusb den usbprog auch wieder nicht an.
+Ist das bei Dir auch so?
+
+Ich versuche auf alle F&#228;lle auch gerade etwas dar&#252;ber herauszufinden. 
+Unter Ubuntu 5.04 ging das Ganze problemlos. Unter 7.x mag es nicht. 
+Leider hab ich mittlerweile den Rechner der noch mit Hoary lief 
+geupdated, weil diese Version ja nicht mehr supported wird. Jetzt hab 
+ich keinen Rechner mehr wo es funktioniert.
+
+Kann das sein, dass es an uhci_hcd liegt? Ich hab mir mal die Logs vom 
+Bene angesehen, bei dem ist das ohci_hcd kernelmodul geladen. Nur ins 
+Blaue hinein geraten!
+
+Ich zieh mir gerade ein Knoppix um auszuprobieren, ob es damit funzt.
+
+Gru&#223;
+Alois
+
+Ich hab grad schonmal versucht das an die Liste zu schicken. Warum geht 
+das nicht?
+
+Fabian Greif schrieb:
+&gt;<i> Hallo,
+</I>&gt;<i>
+</I>&gt;<i> ich bin gerade dabei einen usbprog aufzubauen, scheitere aber am letzten
+</I>&gt;<i> Schritt: das aufspielen einer Firmware aus dem Pool.
+</I>&gt;<i>
+</I>&gt;<i> Fusebits sind korrekt eingestellt, usbprog_base.hex von der Webseite
+</I>&gt;<i> aufgespielt, der 24 MHz Quarz l&#228;uft und der AVR bekommt auch seine 16
+</I>&gt;<i> MHz vom Clkout Pin (beides nachgemessen), trotzdem will der USB Teil 
+</I>&gt;<i> nicht so richtig funktionieren.
+</I>&gt;<i> Testweise habe ich auch versucht eine selbst compilierte Firmware aus 
+</I>&gt;<i> dem SVN aufzuspielen (und dabei einige kleinere Warnings beseitigt), das 
+</I>&gt;<i> Ergebnis bleibt aber das selbe.
+</I>&gt;<i> Der Bootloadercode wird auf jeden Fall gestartet, das zeigen einige
+</I>&gt;<i> kleinere Debug-LED Ausgaben die ich eingebaut habe. Trotzdem will die
+</I>&gt;<i> Kommunikation nicht funktionieren.
+</I>&gt;<i>
+</I>&gt;<i> Ich arbeite unter Ubuntu, dmesg zeigt mir an das etwas gefunden wurde:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> [  919.644000] usb 2-1: new full speed USB device using uhci_hcd and address 17
+</I>&gt;&gt;<i> [  919.796000] usb 2-1: config 1 interface 0 altsetting 0 has 1 endpoint descriptor, different from the interface descriptor's value: 2
+</I>&gt;&gt;<i> [  919.796000] usb 2-1: configuration #1 chosen from 1 choice
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Sobald man aber irgendwie versucht sich genauere Informationen zu
+</I>&gt;<i> verschaffen (sei es per lsusb oder dem usbprog Program) scheitert
+</I>&gt;<i> irgendwas:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> [  955.376000] usb 2-1: USB disconnect, address 17
+</I>&gt;&gt;<i> [  955.492000] usb 2-1: new full speed USB device using uhci_hcd and address 18
+</I>&gt;&gt;<i> [  955.612000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  955.836000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  956.052000] usb 2-1: new full speed USB device using uhci_hcd and address 19
+</I>&gt;&gt;<i> [  956.172000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  956.396000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  956.612000] usb 2-1: new full speed USB device using uhci_hcd and address 20
+</I>&gt;&gt;<i> [  957.020000] usb 2-1: device not accepting address 20, error -71
+</I>&gt;&gt;<i> [  957.132000] usb 2-1: new full speed USB device using uhci_hcd and address 21
+</I>&gt;&gt;<i> [  957.540000] usb 2-1: device not accepting address 21, error -71
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Leider kenne ich mich mit USB bisher noch nicht gut genug aus, um daraus
+</I>&gt;<i> irgendetwas herauslesen zu k&#246;nnen.
+</I>&gt;<i>
+</I>&gt;<i> Hat jemand eine Idee was das Problem sein k&#246;nnte?
+</I>&gt;<i>
+</I>&gt;<i> Gr&#252;&#223;e
+</I>&gt;<i> Fabian Greif
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Usbprog-pub mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>   
+</I>
+
+-- 
+SOFTSPRINGS
+Softwareentwicklung - Systemadministration - Schulung
+
+Alois Flammensb&#246;ck
+Wolterstorffstr. 8
+82194 Gr&#246;benzell
+
+Tel: +49-8142-2911201
+Mobil: +49-176-21810544
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">flammensboeck at softsprings.de</A>
+<A HREF="http://www.softsprings.de">http://www.softsprings.de</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000163.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+	<LI>Next message: <A HREF="000166.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#164">[ date ]</a>
+              <a href="thread.html#164">[ thread ]</a>
+              <a href="subject.html#164">[ subject ]</a>
+              <a href="author.html#164">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

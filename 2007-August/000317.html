@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] ubuntu problem gel&#246;st?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-1%3Fq%3Fubuntu_problem_gel%3DF6st%3D3F%3F%3D&In-Reply-To=%3C20070830051807.EE3B41003DD%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000316.html">
+   <LINK REL="Next"  HREF="000318.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] ubuntu problem gel&#246;st?</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-1%3Fq%3Fubuntu_problem_gel%3DF6st%3D3F%3F%3D&In-Reply-To=%3C20070830051807.EE3B41003DD%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] ubuntu problem gel&#246;st?">sauter at sistecs.de
+       </A><BR>
+    <I>Thu Aug 30 07:17:42 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000316.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+        <LI>Next message: <A HREF="000318.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#317">[ date ]</a>
+              <a href="thread.html#317">[ thread ]</a>
+              <a href="subject.html#317">[ subject ]</a>
+              <a href="author.html#317">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Fabian,
+
+ja ich hab das Problem lokalisiert nur gings dann unter Windows gar nicht
+mehr. Bin heute leider den ganzen Tag unterwegs. Werd morgen nochmal
+schauen das ich ne Version hinkrieg die &#252;berall geht.
+
+
+Gruss Bene
+
+(Es liegt am Standby  verhalten, Ubuntu schickt das geraet dauern in
+Standby wenn nichts passiert. Da ist ein Fehler in meinem USB Stack
+drinnen.)
+
+Am 29.8.2007 schrieb &quot;Fabian Greif&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian.greif at rwth-aachen.de</A>&gt;:
+
+&gt;<i>Hallo,
+</I>&gt;<i>
+</I>&gt;<i>Benedikt Sauter schrieb:
+</I>&gt;&gt;<i> K&#246;nnen die die das Ubuntu Problem hatten nochmal testen ob das mit der
+</I>&gt;&gt;<i> Version besser ist:
+</I>&gt;<i>
+</I>&gt;<i>Mittlerweile bin ich auch dazu gekommen das zu testen, aber so richtig 
+</I>&gt;<i>will es immer noch nicht funktionieren:
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ dmesg
+</I>&gt;<i>(...)
+</I>&gt;<i>[ 1121.708000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 7
+</I>&gt;<i>[ 1121.800000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1121.800000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ cat /proc/bus/usb/devices
+</I>&gt;<i>(...)
+</I>&gt;<i>T:  Bus=04 Lev=02 Prnt=04 Port=00 Cnt=01 Dev#=  7 Spd=12  MxCh= 0
+</I>&gt;<i>D:  Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+</I>&gt;<i>P:  Vendor=03eb ProdID=2104 Rev= 2.00
+</I>&gt;<i>S:  Manufacturer=B.Sauter
+</I>&gt;<i>S:  Product=AVRISP mk2 Clone
+</I>&gt;<i>S:  SerialNumber=0000A00128255
+</I>&gt;<i>C:* #Ifs= 1 Cfg#= 1 Atr=a0 MxPwr= 50mA
+</I>&gt;<i>I:  If#= 0 Alt= 0 #EPs= 2 Cls=00(&gt;ifc ) Sub=00 Prot=00 Driver=(none)
+</I>&gt;<i>E:  Ad=82(I) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+</I>&gt;<i>E:  Ad=02(O) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ avrdude -c avrispv2 -P usb -p m8
+</I>&gt;<i>avrdude: usbdev_open(): did not find any USB device &quot;usb&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ lsusb
+</I>&gt;<i>(...)
+</I>&gt;<i>Bus 004 Device 013: ID 03eb:2104 Atmel Corp.
+</I>&gt;<i>
+</I>&gt;<i>Erscheint nur jedes &quot;zweite&quot; mal, hei&#223;t sobald man nach einer Wartezeit 
+</I>&gt;<i>lsusb ausf&#252;hrt ist der
+</I>&gt;<i>Eintrag nicht da, wenn man aber dann kurz danach wieder lsusb auf&#252;hrt 
+</I>&gt;<i>(beliebig oft) wird er angezeigt.
+</I>&gt;<i>
+</I>&gt;<i>Gleichzeit erzeugt man damit folgendes:
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ dmesg
+</I>&gt;<i>(...)
+</I>&gt;<i>[ 1598.020000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 14
+</I>&gt;<i>[ 1598.112000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1598.112000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>[ 1600.800000] usb 4-4.1: USB disconnect, address 14
+</I>&gt;<i>[ 1600.872000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 15
+</I>&gt;<i>[ 1600.964000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1600.964000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>[ 1608.128000] usb 4-4.1: USB disconnect, address 15
+</I>&gt;<i>[ 1608.200000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 16
+</I>&gt;<i>[ 1608.292000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1608.292000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>[ 1648.248000] usb 4-4.1: USB disconnect, address 16
+</I>&gt;<i>[ 1648.320000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 17
+</I>&gt;<i>[ 1648.412000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1648.412000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>[ 1656.336000] usb 4-4.1: USB disconnect, address 17
+</I>&gt;<i>[ 1656.448000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 18
+</I>&gt;<i>[ 1656.540000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1656.540000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>[ 1781.044000] usb 4-4.1: USB disconnect, address 18
+</I>&gt;<i>[ 1781.116000] usb 4-4.1: new full speed USB device using ehci_hcd and 
+</I>&gt;<i>address 19
+</I>&gt;<i>[ 1781.208000] usb 4-4.1: config 1 descriptor has 1 excess byte, ignoring
+</I>&gt;<i>[ 1781.208000] usb 4-4.1: configuration #1 chosen from 1 choice
+</I>&gt;<i>
+</I>&gt;<i>Anscheint meldet sich der Adapter jedesmal neu an wenn er von lsusb 
+</I>&gt;<i>erkannt wird.
+</I>&gt;<i>Wenn man dann versucht kurz nach dem ausf&#252;hren von lsusb avrdude zu 
+</I>&gt;<i>starten bekommt man folgendes:
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ avrdude -c avrispv2 -P usb -p m168 -U test.hex
+</I>&gt;<i>avrdude: usb_open(): cannot read serial number &quot;error sending control 
+</I>&gt;<i>message: Operation not permitted&quot;
+</I>&gt;<i>avrdude: usb_open(): cannot read product name &quot;error sending control 
+</I>&gt;<i>message: Operation not permitted&quot;
+</I>&gt;<i>avrdude: usbdev_open(): error setting configuration 1: could not set 
+</I>&gt;<i>config 1: Operation not permitted
+</I>&gt;<i>avrdude: usbdev_open(): did not find any USB device &quot;usb&quot;
+</I>&gt;<i>
+</I>&gt;<i>Mit Superuser-Rechten klappt es dann sogar:
+</I>&gt;<i>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian at wasserfall</A>:~$ sudo avrdude -c avrispv2 -P usb -p m168 -U test.hex
+</I>&gt;<i>
+</I>&gt;<i>avrdude: AVR device initialized and ready to accept instructions
+</I>&gt;<i>
+</I>&gt;<i>Reading | ################################################## | 100%
+</I>&gt;<i>(...)
+</I>&gt;<i>
+</I>&gt;<i>Aber wie gesagt immer nur kurz nachdem ausf&#252;hren von lsusb. Wartet man 
+</I>&gt;<i>einen Hauch zu lange bekommt man die selben Meldungen wie von avrdude 
+</I>&gt;<i>ohne Superuser-Rechten.
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e
+</I>&gt;<i>Fabian
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000316.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+	<LI>Next message: <A HREF="000318.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#317">[ date ]</a>
+              <a href="thread.html#317">[ thread ]</a>
+              <a href="subject.html#317">[ subject ]</a>
+              <a href="author.html#317">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

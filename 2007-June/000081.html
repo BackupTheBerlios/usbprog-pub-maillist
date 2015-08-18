@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Firmware aufspielen
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Firmware%20aufspielen&In-Reply-To=%3C20070620083628.8F09CF28DA%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000080.html">
+   <LINK REL="Next"  HREF="000082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Firmware aufspielen</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Firmware%20aufspielen&In-Reply-To=%3C20070620083628.8F09CF28DA%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Firmware aufspielen">sauter at sistecs.de
+       </A><BR>
+    <I>Wed Jun 20 10:34:07 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000080.html">[Usbprog-pub] Firmware aufspielen
+</A></li>
+        <LI>Next message: <A HREF="000082.html">[Usbprog-pub] Verbesserungsvorschlg f&#252;r JP1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#81">[ date ]</a>
+              <a href="thread.html#81">[ thread ]</a>
+              <a href="subject.html#81">[ subject ]</a>
+              <a href="author.html#81">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+&gt;<i>also es ist nun alles fertig aufgebaut und die gr&#252;ne LED leuchtet sobald
+</I>&gt;<i>ich das USB-Kabel anschlie&#223;e.
+</I>&gt;<i>Nun ist es aber nicht m&#246;glich eine Verbindung zum ISP Adapter
+</I>&gt;<i>herzustellen um die Firmware aufzuspielen bzw das USB-Ger&#228;t wird nicht
+</I>&gt;<i>vom PC erkannt, es tut sich einfach garnichts.
+</I>
+Hast du usbprog_base.hex mit einem externen Programmer eingespielt?
+Und die lfuse auf 0xe0 und hfuse auf 0xd9 gestellt?
+
+Man kann aber auch direkt die avrispmk2.hex einspielen. Dann muss man die
+lfuse auf 0xe0 und hfuse auf 0xd8 stellen.
+
+
+&gt;<i>Ist das Firmware aufspielen unter Windows XP &#252;berhaupt m&#246;glich?
+</I>
+Windows XP - Ja
+GNU/Linux - Ja
+Windows 2000 - Nein (irgendwas will da noch nicht so)
+
+&gt;<i>Habe bei der Bauanleitung gelesen das der USBN9604 gute L&#246;tverbindungen ben&#246;tigt um einwandfrei
+</I>&gt;<i>zu funktionieren.
+</I>&gt;<i>Alle Verbindungen der beiden ICs sind optisch ok, habe alle auch auf
+</I>&gt;<i>Durchgang gepr&#252;ft. Werde heute in der Uni mit dem Oszilloskop mal messen ob der Quarz schwingt und ob der USBN9604 die 4 MHz am CLKOUT hat.
+</I>
+Viele Gr&#252;sse
+Benedikt
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000080.html">[Usbprog-pub] Firmware aufspielen
+</A></li>
+	<LI>Next message: <A HREF="000082.html">[Usbprog-pub] Verbesserungsvorschlg f&#252;r JP1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#81">[ date ]</a>
+              <a href="thread.html#81">[ thread ]</a>
+              <a href="subject.html#81">[ subject ]</a>
+              <a href="author.html#81">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

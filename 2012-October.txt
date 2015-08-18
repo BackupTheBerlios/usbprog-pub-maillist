@@ -1,0 +1,81 @@
+From gvidasdj at yahoo.co.uk  Wed Oct 31 22:44:16 2012
+From: gvidasdj at yahoo.co.uk (Gvidas Sidlauskas)
+Date: Wed, 31 Oct 2012 21:44:16 +0000 (GMT)
+Subject: [Usbprog-pub] Regarding UsbProg and OpenOcd
+Message-ID: <1351719856.49033.YahooMailNeo@web132202.mail.ird.yahoo.com>
+
+Dear All,
+
+I have usbprog v3 hardware and want to use it with openocd. The problem is that when I conect device there is output. Can I ignore this errors?
+
+
+openocd -f usbprog.cfg
+Open On-Chip Debugger 0.5.0 (2011-08-26-10:27)
+Licensed under GNU GPL v2
+For bug reports, read
+??????? http://openocd.berlios.de/doc/doxygen/bugs.html
+Warn : Adapter driver 'usbprog' did not declare which transports it allows; assuming legacy JTAG-only
+Info : only one transport option; autoselect 'jtag'
+RCLK - adaptive
+trst_and_srst srst_pulls_trst srst_gates_jtag trst_push_pull srst_open_drain
+tms sequence is? long
+usb_set_debug: Setting debugging level to 10 (on)
+usb_os_init: Found USB VFS at /dev/bus/usb
+usb_os_find_busses: Found 002
+usb_os_find_busses: Found 001
+usb_os_find_devices: Found 007 on 002
+skipping descriptor 0x0
+skipped 1 class/vendor specific endpoint descriptors
+Descriptor data still left
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 005 on 002
+skipped 1 class/vendor specific interface descriptors
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 004 on 002
+skipping descriptor 0xB
+skipped 1 class/vendor specific endpoint descriptors
+skipped 6 class/vendor specific interface descriptors
+skipping descriptor 0x25
+skipped 1 class/vendor specific endpoint descriptors
+skipped 19 class/vendor specific interface descriptors
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 002 on 002
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 001 on 002
+
+error obtaining child information: Inappropriate ioctl for device
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 003 on 001
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 002 on 001
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 001 on 001
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+Info : USB JTAG Interface ready!
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from jtag_speed to khz not implemented
+Info : adapter-specific clock speed value -1075143288
+Warn : There are no enabled taps.? AUTO PROBING MIGHT NOT WORK!!
+Error: JTAG scan chain interrogation failed: all zeroes
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: IR capture error at bit 0, saw 0x00 not 0x...3
+Warn : Bypassing JTAG setup events due to errors
+Warn : gdb services need one or more targets defined
+
+
+Best regards,
+Gvidas
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/usbprog-pub/attachments/20121031/c0629c59/attachment.html>
+

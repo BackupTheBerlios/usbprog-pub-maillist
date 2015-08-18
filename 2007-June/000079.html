@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog - firmware wechseln unter Windows
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C000001c7b00c%24edd2cda0%241404a8c0%40heimnetz.xx%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000076.html">
+   <LINK REL="Next"  HREF="000080.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog - firmware wechseln unter Windows</H1>
+    <B>Frank Ulbrich</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C000001c7b00c%24edd2cda0%241404a8c0%40heimnetz.xx%3E"
+       TITLE="[Usbprog-pub] usbprog - firmware wechseln unter Windows">frank.ulbrich at gmx.net
+       </A><BR>
+    <I>Sat Jun 16 13:53:16 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000076.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+        <LI>Next message: <A HREF="000080.html">[Usbprog-pub] Firmware aufspielen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#79">[ date ]</a>
+              <a href="thread.html#79">[ thread ]</a>
+              <a href="subject.html#79">[ subject ]</a>
+              <a href="author.html#79">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ja, kann ich tun, doch k&#246;nnte es Montag werden.
+Viel Gl&#252;ck bei Deiner Diplomarbeit und Pr&#252;fung !!
+Was denkst Du, bekommst Du dann den automatischen Updater (Windowsversion) 
+&#252;bers Internet fertig ?
+
+-----Urspr&#252;ngliche Nachricht-----
+Von: Benedikt Sauter [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>] 
+Gesendet: Samstag, 16. Juni 2007 13:11
+An: Frank Ulbrich; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+Cc: 'Henning Han&#223;en'; 'Nico van Leeuwen'; 'mes'; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fred.sonnenrein at gmx.de</A>
+Betreff: Re: AW: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+
+
+Hallo mes,
+
+danke f&#252;r die ausf&#252;hrliche Beschreibung. Sag mal h&#228;ttest du noch kurz 15 min
+Zeit und k&#246;nntest das in einem downloadbaren Dokument zusammentippen? Dann
+k&#246;nnte ich es auf die Internetseite stellen.
+
+Gruss Bene
+
+Am 16.6.2007 schrieb &quot;Frank Ulbrich&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">frank.ulbrich at gmx.net</A>&gt;:
+
+&gt;<i>Hallo,
+</I>&gt;<i>ich habe es geschafft. Nun kann ich den usbprog  zu jeder Zeit auch 
+</I>&gt;<i>ohne Atmel AVR Studio in den update Modus schalten. Ich denke, dass ich 
+</I>&gt;<i>2 Fehler gemacht habe :
+</I>&gt;<i>a) Mein fuse bit war falsch gesetzt. falsch ist 0xd8 richtig ist 0xd9
+</I>&gt;<i>b) Zum Umschalten muss der AVRISPmkII Klon einen Windows Treiber 
+</I>&gt;<i>zugeordnet bekommen haben.
+</I>&gt;<i>   Das war mir nicht klar.
+</I>&gt;<i>
+</I>&gt;<i>Ich habe mal meine verwendeten Treiber als ZIP angehaengt.
+</I>&gt;<i>
+</I>&gt;<i>----&gt;schnipp&lt;---- liesmicht.txt
+</I>&gt;<i>----------------------------------------------------
+</I>&gt;<i>Bei mir funktioniert unter Windows XP die Umschaltung in den Update 
+</I>&gt;<i>Modus mittels usbprog.exe unter folgenden Bedingungen :
+</I>&gt;<i>
+</I>&gt;<i>1.usbprog programmiert mit : usbprog_base.hex
+</I>&gt;<i>2.Low Fuse auf den Wert 0xe0 und High Fuse auf 0xd9 
+</I>&gt;<i>3.libusb-win32-filter-bin installiert und Rechner gebooted
+</I>&gt;<i>4.Bei Aufforderung durch Windows XP : usbprog_win32_driver   installieren
+</I>&gt;<i>5.Bei Aufforderung durch Windows XP : AVRISPmkII_Treiber_w32
+</I>&gt;<i>
+</I>&gt;<i>Bei mir funktioniert die Umschaltung in den Update Modus mit : &quot;usbprog 
+</I>&gt;<i>avrispmk2.bin&quot;  nur, wenn auch ein AVRISPmkII Treiber unter Windows 
+</I>&gt;<i>installiert ist. Wenn das device AVRISmkII unter Windows XP angezeigt 
+</I>&gt;<i>wird, aber kein Treiber zugeordnet ist, klappt es bei mir nicht.
+</I>&gt;<i>
+</I>&gt;<i>Meine installierten LibUSB Treiberversionen :
+</I>&gt;<i>DLL version:	0.1.12.1
+</I>&gt;<i>Driver version:	0.1.10.1
+</I>&gt;<i>------&gt; schnapp -------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i>-----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i>Von: Henning Han&#223;en [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">stud at mestro.de</A>]
+</I>&gt;<i>Gesendet: Donnerstag, 14. Juni 2007 21:19
+</I>&gt;<i>An: 'Frank Ulbrich'; 'Benedikt Sauter'; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i>Betreff: AW: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Ich habs nun geschaft!
+</I>&gt;<i>
+</I>&gt;<i>Der Hinweis von Fred war entscheidend.
+</I>&gt;<i>
+</I>&gt;<i>-Es muss die usbprog_base.hex auf dem Ger&#228;t sein.
+</I>&gt;<i>-Zus&#228;tzlich m&#252;ssen die Fuses richtig sein, damit der Bootloader und der 
+</I>&gt;<i>Externe Takt aktiv ist.
+</I>&gt;<i>- Nach meinen Erkenntnissen m&#252;ssen auch die &quot;Memory Lock Bits&quot; zum 
+</I>&gt;<i>sichern des Bootloaderbereiches gesetzt sein, erst seit dem 
+</I>&gt;<i>funktioniert es bei mir einwandfrei. Ich habe nach dem Datenblatt 
+</I>&gt;<i>(seite 257 tabelle 103 die 3te Zeile genommen -&gt; beide Bits mit einer 
+</I>&gt;<i>NULL programmiert. Das Bedeutet, das der Bootloaderbereich nicht 
+</I>&gt;<i>gelesen und vor allem nicht geschrieben werden kann.
+</I>&gt;<i>
+</I>&gt;<i>Danach kann man wie Fred es beschrieben hat mit den Bootloader flaschen 
+</I>&gt;<i>(und zwar &#246;fters, als einmal (das war das Problem bei mir)).
+</I>&gt;<i>
+</I>&gt;&gt;<i>Nein es ist ganz einfach (wenn man es wei&#223;):
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>- uspprog Adapter anschlie&#223;en
+</I>&gt;&gt;<i>- avr-studio starten
+</I>&gt;&gt;<i>- men&#252; tools - program avr - connect
+</I>&gt;&gt;<i>- Register board
+</I>&gt;&gt;<i>- Button upgrade
+</I>&gt;&gt;<i>--&gt; das Avr-programmier-fenster ist weg und der Adapter ist
+</I>&gt;&gt;<i>wieder im Update-modus (aber nicht abst&#246;pseln und wieder dran, dann
+</I>&gt;&gt;<i>wieder
+</I>&gt;&gt;<i>avrispmkII-Modus)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>also gleich nach der Prozedur neue Software laden.
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Die einzelnen schritte kann man in der Hardwareverwaltung auch gut 
+</I>&gt;<i>sehen, nach dem klicken auf den Update-modus verschwindet der Jungo und 
+</I>&gt;<i>erscheint der Updatemodus. Dann hat man einige zeit, usbprog.exe 
+</I>&gt;<i>auszuf&#252;hren, weil der Status nun stabil ist. (ich hatte auch die ganze 
+</I>&gt;<i>zeit sorgen mit den 2 Sekunden Zeitbegrenzung, kein plan, wo ich die 
+</I>&gt;<i>Info her hab)
+</I>&gt;<i>
+</I>&gt;<i>Ich hoffe, Frank kommt nun auch weiter.
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e,
+</I>&gt;<i>mes
+</I>&gt;<i>
+</I>&gt;<i>-----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i>Von: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>
+</I>&gt;<i>[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>] Im Auftrag von Frank 
+</I>&gt;<i>Ulbrich
+</I>&gt;<i>Gesendet: Donnerstag, 14. Juni 2007 21:05
+</I>&gt;<i>An: 'Benedikt Sauter'; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i>Betreff: Re: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+</I>&gt;<i>
+</I>&gt;<i>Ich kann die gleichen Probleme berichten, wie mes sie unten genannt 
+</I>&gt;<i>hat. Kein Erfolg.
+</I>&gt;<i>
+</I>&gt;<i>Allerdings sind mir die Vorraussetzungen nicht klar, die fuer einen 
+</I>&gt;<i>firmware-Wechsel unter Windows notwendig sind. Folgendes kann ich 
+</I>&gt;<i>berichten
+</I>&gt;:<i>
+</I>&gt;<i>
+</I>&gt;<i>Es ist AVR Studio 4 unter Windows XP installiert
+</I>&gt;<i>
+</I>&gt;<i>a) Das Ger&#228;t usbprog wird als AVRISP mkII Klon erkannt und dem Treiber 
+</I>&gt;<i>AVRISP mkII von Jungo
+</I>&gt;<i>   zugewiesen. Jumper auf 1-2
+</I>&gt;<i>b) Unter Computermanagement / Device Manager / Jungo / AVRISP mkII wird 
+</I>&gt;<i>das Ger&#228;t
+</I>&gt;<i>   als funktionierend angezeigt. Dieser Eintrag verschwindet, wenn ich 
+</I>&gt;<i>den usbprog abziehe.
+</I>&gt;<i>c) In AVR Studio 4.0 kann ich den Programmer &quot;AVRISP mkII&quot; port USB 
+</I>&gt;<i>connecten und erhalte die
+</I>&gt;<i>   Meldung &quot;Detecting on USB ... AVRISP mkII with serial number 
+</I>&gt;<i>0000A0012825&quot;
+</I>&gt;<i>d) Das Testprogramm von LibUSB-WIN32 zeigt (DLL version 0.1.12.1 mit 
+</I>&gt;<i>Driver Version 0.1.12.1)
+</I>&gt;<i>   Zeigt nur meine Maus an, sonst nichts, auch den &quot;usbprog&quot;.
+</I>&gt;<i>e) Ich habe auf diesem Rechner den Treiber &quot;usbprog (Update Modus)&quot; 
+</I>&gt;<i>manuell installiert,
+</I>&gt;<i>   weswegen unter Computermanagement / Device Manager / LibUSB-Win32 
+</I>&gt;<i>Devices / usbprog (Update Modus)
+</I>&gt;<i>   angezeigt wird, unabh&#228;ngig davon, ob &quot;usbprog&quot; angesteckt ist oder 
+</I>&gt;<i>nicht.
+</I>&gt;<i>f) Wenn ich &quot;usbprog avrispmk2.bin&quot; ausfuehre und der usbprog angesteckt
+</I>&gt;<i>ist,
+</I>&gt;<i>   erhalte ich die Meldung &quot;Can't find valid usbprog adapter on usb bus&quot;
+</I>&gt;<i>
+</I>&gt;<i>Frage :
+</I>&gt;<i>Welche Vorraussetzungen muessen unter Windows XP erfuellt sein, um die
+</I>&gt;<i>firmware flashen zu koennen ? Sind die richtigen Treiber von mir
+</I>installiert
+&gt;<i>worden ? Wann darf ich &quot;usbprog avrispmk2.bin&quot; ausf&#252;hren ? Nur direkt nach
+</I>&gt;<i>dem Anstecken ? Was koennte Fehlen, bzw. mu&#223; noch beachtet werden ?
+</I>&gt;<i>
+</I>&gt;<i>Ich weiss keinen Rat mehr.
+</I>&gt;<i>
+</I>&gt;<i>Gruss Frank
+</I>&gt;<i>
+</I>&gt;<i>----------------
+</I>&gt;<i>
+</I>&gt;<i>Also ich bekomme das nicht hin.
+</I>&gt;<i>Ich kann nur extern &#252;ber ein zweites Programmierger&#228;t flashen. Nachdem 
+</I>&gt;<i>ich den Bootloader geladen habe kann ich auch usbprog.exe nutzen. 
+</I>&gt;<i>Danach aber nicht ein zweites mal.
+</I>&gt;<i>
+</I>&gt;<i>Klingt f&#252;r mich, als wenn der Bootloader &#252;berschrieben wird, oder nicht 
+</I>&gt;<i>aktiv ist.
+</I>&gt;<i>
+</I>&gt;<i>Aber leider hab ich im mom keine Zeit, das zu &#252;berpr&#252;fen.
+</I>&gt;<i>
+</I>&gt;<i>Im AVR Studio hab ich zwei m&#246;glichkieten gefunden: einmal direkt im 
+</I>&gt;<i>Men&#252; &quot;AVRISP MK2 aktuallisieren&quot;. Da kommt eine meldung, eine LED soll 
+</I>&gt;<i>flashen und dann kann man ok dr&#252;cken. Danach kommt nur die Meldung kein 
+</I>&gt;<i>Target gefunden, das sich im updatemodus befindet.
+</I>&gt;<i>
+</I>&gt;<i>Oder alternativ im STK500 Plugin. Dort ist auch firmware updaten. Wenn 
+</I>&gt;<i>ich da klicke ist der dialog sofort weg, und ich starte usbprog.exe. - 
+</I>&gt;<i>klappt aber auch nicht.
+</I>&gt;<i>
+</I>&gt;<i>Oder direkt nach dem einstecken (2sek hat man zeit?) aber da klappt 
+</I>&gt;<i>usbprog.exe auch nicht.
+</I>&gt;<i>
+</I>&gt;<i>Usbprog.exe f&#252;hre ich mit adminrechten aus und wie unten beschrieben 
+</I>&gt;<i>mit der bin-Datei als Parameter.
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e,
+</I>&gt;<i>mes
+</I>&gt;<i>
+</I>&gt;<i>-----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i>Von: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>
+</I>&gt;<i>[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>] Im Auftrag von Benedikt 
+</I>&gt;<i>Sauter
+</I>&gt;<i>Gesendet: Donnerstag, 14. Juni 2007 07:16
+</I>&gt;<i>An: Frank Ulbrich; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i>Betreff: Re: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+</I>&gt;<i>
+</I>&gt;&gt;<i>Frage : Was mu&#223; ich tun, um eine andere firmware auf den &quot;usbprog&quot; zu 
+</I>&gt;&gt;<i>brennen ? Das Programm usbprog erkennt das Ger&#228;t nicht mehr als 
+</I>&gt;&gt;<i>&quot;usbprog (Update Modus). Mu&#223; ich irgendwelche Br&#252;cken stecken ? Hat 
+</I>&gt;&gt;<i>jemand das gleiche Problem ?
+</I>&gt;<i>
+</I>&gt;<i>Nein, entweder mit usbprog neue Software aufspielen.
+</I>&gt;<i>
+</I>&gt;<i>usbprog neuesoftware.bin.
+</I>&gt;<i>
+</I>&gt;<i>Oder man kann auch vom AVR Studio aus dieses  Firmware auf Adapter 
+</I>&gt;<i>austauschen klicken, dann wird der Adapter ebenfalls in den Update 
+</I>&gt;<i>Modus geschalten.
+</I>&gt;<i>
+</I>&gt;<i>Gruss Bene
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A> 
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000076.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+	<LI>Next message: <A HREF="000080.html">[Usbprog-pub] Firmware aufspielen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#79">[ date ]</a>
+              <a href="thread.html#79">[ thread ]</a>
+              <a href="subject.html#79">[ subject ]</a>
+              <a href="author.html#79">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

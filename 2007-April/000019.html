@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Probleme mit usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Probleme%20mit%20usbprog&In-Reply-To=%3C15310490692.20070430153521%40telebel.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000017.html">
+   <LINK REL="Next"  HREF="000020.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Probleme mit usbprog</H1>
+    <B>Christian Taube</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Probleme%20mit%20usbprog&In-Reply-To=%3C15310490692.20070430153521%40telebel.de%3E"
+       TITLE="[Usbprog-pub] Probleme mit usbprog">christian.taube at telebel.de
+       </A><BR>
+    <I>Mon Apr 30 15:35:21 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000017.html">[Usbprog-pub] Probleme mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000020.html">[Usbprog-pub] Probleme mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Jan,
+
+ich kann Dir bei Deinem Problem zwar leider nicht direkt helfen, aber
+die folgende Beschreibung passt zu meinem aktuellen Problem:
+
+&gt;<i> wenn ich es unter Windows anschlie&#223;e, bekomme ich eine Warnung, dass das
+</I>&gt;<i> Gar&#228;t nicht erkannt wurde, unter Linux findet es lsusb gar nicht. Mit
+</I>&gt;<i> dem Oszilloskop stellte ich fest, dass das Clock-Signal in anwesend ist
+</I>&gt;<i> und dass nach dem Anschlie&#223;en irgendeine Kommunikation verl&#228;uft.
+</I>
+Ich hab den usbprog erst am Samstag erhalten und aufgebaut. Den
+ATmega32 konnte ich problemlos programmieren und die Fusebits setzen.
+Stecke ich das ganze in den USB-Port ein, meldet Windows das &quot;die
+Hardware nicht verwendet werden kann&quot;. Unter Linux (Debian 4.0) sieht
+das so aus (dmesg):
+
+-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+usb 4-1.4: new full speed USB device using ehci_hcd and address 3
+usb 4-1.4: device descriptor read/64, error -32
+usb 4-1.4: device descriptor read/64, error -32
+usb 4-1.4: new full speed USB device using ehci_hcd and address 4
+usb 4-1.4: device descriptor read/64, error -32
+usb 4-1.4: device descriptor read/64, error -32
+usb 4-1.4: new full speed USB device using ehci_hcd and address 5
+usb 4-1.4: device not accepting address 5, error -32
+usb 4-1.4: new full speed USB device using ehci_hcd and address 6
+usb 4-1.4: device not accepting address 6, error -32
+-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----8&lt;-----
+
+Ich vermute das der USBN9604 defekt ist, weil er sich auch etwas
+erw&#228;rmt. Kurzschl&#252;sse konnte ich allerdings trotz mehrfacher Suche
+(mit Lupe und zus&#228;tzlich &quot;durchklingeln&quot; der jeweils benachbarten
+Pins) nicht entdecken.
+
+Aufgefallen ist mir, dass der USBN9604 bei Jumper in &quot;prog&quot; Stellung
+nur 2 MHz Taktsignal (nicht 4 MHz wie im Datenblatt angegeben) und bei
+Jumper in Normalstellung 8 MHz liefert. Ich hab zwar den Quellcode von
+usbprog_base noch nicht durchforstet aber ich denke das sollten 16 MHz
+sein.
+
+Ich hab heute morgen einen Ersatz USBN9604 bestellt und der m&#252;sste
+morgen eintreffen. Mal schauen wie es damit aussieht.
+
+
+-- 
+ Christian Taube  &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">christian.taube at telebel.de</A>&gt;
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000017.html">[Usbprog-pub] Probleme mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000020.html">[Usbprog-pub] Probleme mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#19">[ date ]</a>
+              <a href="thread.html#19">[ thread ]</a>
+              <a href="subject.html#19">[ subject ]</a>
+              <a href="author.html#19">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

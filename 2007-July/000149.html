@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog_3%3D2E%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_0%3F%3D&In-Reply-To=%3C20070717140809.275650%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000147.html">
+   <LINK REL="Next"  HREF="000145.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0</H1>
+    <B>Fred Sonnenrein</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog_3%3D2E%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_0%3F%3D&In-Reply-To=%3C20070717140809.275650%40gmx.net%3E"
+       TITLE="[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0">Fred.Sonnenrein at gmx.de
+       </A><BR>
+    <I>Tue Jul 17 16:08:09 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000147.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0
+</A></li>
+        <LI>Next message: <A HREF="000145.html">[Usbprog-pub] Usbprog-pub Digest, Vol 4, Issue 10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Bene,
+
+Du schreibst:
+
+&gt;<i> &gt;Es w&#228;re sch&#246;n, wenn jetzt einer (meinetwegen ich) die Bearbeitung
+</I>&gt;<i> macht. 
+</I>&gt;<i> &gt;Au&#223;erdem mu&#223;t Du, Bene, mir mal sagen, wie ich neue Versionen ins SVN
+</I>&gt;<i> kriege.
+</I>&gt;<i> 
+</I>&gt;<i> schick dir mir am besten, dann kann ich sie einf&#252;gen. Da braucht man
+</I>&gt;<i> Schreibrechte usw....
+</I>
+Ok, mache ich immer dann, sobald sinnige Ergebnisse vorliegen.
+
+&gt;<i> &gt;Ist auf dieser Version bereits der USB-A-Stecker drauf? Du hast viele
+</I>&gt;<i> neue 
+</I>&gt;<i> &gt;Teile benutzt. 
+</I>&gt;<i> 
+</I>&gt;<i> Nein also kein USB-A-Stecker. Ich w&#252;rd glaub die USB B Buchse montieren
+</I>&gt;<i> und gut oder was meinst denn du?
+</I>
+Ich bin inzwischen zwiegespalten. In vielen Bereichen (USB-Player...)
+hat sich der fest montierte A-Stecker ja schon etabliert. Au&#223;erdem
+pa&#223;t das transparente Geh&#228;use vom Ausschnitt her besser zum A-Stecker.
+
+&gt;<i> &gt;&gt;&gt;Und welche Pin-Belegung? Macht die Software dann die Kompatibilit&#228;t
+</I>&gt;<i> &gt;&gt;&gt;zu bisherigen Schaltungen?
+</I>&gt;<i> &gt;&gt; Also das wird dann &#252;ber das Adapterkabel und die Firmware geregelt.
+</I>&gt;<i> &gt;&gt; Man wird dann wohl ein Adapterkabel f&#252;r JTAG, ISP usw.. haben. Wobei
+</I>&gt;<i> &gt;&gt; das
+</I>&gt;<i> &gt;&gt; klassische ISP Kabel kann das 10 polige Flachbandkabel bleiben.
+</I>&gt;<i> &gt;&gt; Wenn wie jetzt VCC und GND an den richtigen Stellen sind.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;OK. Wie aber schon gesagt wurde, sollten die anderen Leitungen auf Masse
+</I>&gt;<i> gezogen werden (zwecks Abschirmung). Oder kann es Probleme geben, wenn
+</I>&gt;<i> &gt;der Mega32 die Leitungen auf Low zieht und zus&#228;tzlich (durch Br&#252;cken
+</I>&gt;<i> &gt;in der Zielschaltung) die entsprechenden Leitungen geerdet sind?
+</I>&gt;<i> 
+</I>&gt;<i> Hm eigentlich will ich die 8 Leitungen vom Port B &#252;ber den 10 poligen
+</I>&gt;<i> Stecker erreichbar machen. Ich hoffe das geht so wie du sagst, das man
+</I>&gt;<i> die Leitungen auf Low zieht und gut. Sonst muss man doch nen kleinen
+</I>&gt;<i> Adapter auch fuer den AVRISP mk2 Klon bauen...
+</I>
+Kann man immer noch sp&#228;ter entscheiden. Ich denke, es wird in den meisten
+F&#228;llen deswegen gehen, weil in der Zielschaltung die Pins 4, 6, 8, 10
+gebr&#252;ckt sind.
+
+&gt;<i> &gt;&gt;&gt;Bitte genauere Platinen-Abmessungen angeben.
+</I>&gt;<i> &gt;&gt; Hm versuch ich mal herauszufinden. So klein wie m&#246;glich aber
+</I>&gt;<i> &gt;&gt; w&#252;rd ich mal sagen oder?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Sch&#246;n. Wenn Du aber ein konkretes Geh&#228;use im Auge hast, ist die L&#228;nge 
+</I>&gt;<i> &gt;des Adapters fix (weil er an beiden Enden Steckverbinder herausschauen
+</I>&gt;<i> &gt;sollen).
+</I>&gt;<i> 
+</I>&gt;<i> Das aus der E-Mail vom Joachim. Hast du die gelesen?
+</I>
+Ja. Ich habe ihn gebeten, die Innenma&#223;e mir mitzuteilen.
+
+&gt;<i> &gt;&gt;&gt;Welcher Stecker soll es denn sein? Woher beziehst Du die Bauteile?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Ich glaub wir sollten da aber die USB Buchse nehmen die jetzt drauf
+</I>&gt;<i> &gt;&gt; ist oder?
+</I>&gt;<i> &gt;&gt; Meistens bei csd-electronic, schukat.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Ist auch meine Meinung. Ggf. kann man einen nur Cent kostenden Adapter
+</I>&gt;<i> &gt;A-Stecker - B-Stecker benutzen.
+</I>&gt;<i> 
+</I>&gt;<i> Ah ok gut dann machen wir das so.
+</I>
+Siehe oben. Meine Meinung pendelt schon leicht in Richtung A-Stecker.
+
+&gt;<i> &gt;&gt;&gt;&gt; - Der Kupferrand sollte weg. Das gibt meist Probleme. (Wurde 
+</I>&gt;<i> &gt;&gt;&gt;&gt; mir gesagt)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt;&gt; Wer sagt das denn?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Ein Autor einer E-Mail an mich, ich bin doch nur Informatiker :-)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Hm. K&#246;nnten nur Kurzschl&#252;sse sein, wenn der Kupferrand wirklich
+</I>&gt;<i> &gt;bis zum Rand des Tr&#228;germaterials geht. Kann man aber anders machen.
+</I>&gt;<i> 
+</I>&gt;<i> Ich glaub das kann man so lassen.
+</I>
+Da das Problem durch herumfeilen zustande kam, ist die Entscheidung klar.
+
+&gt;<i> &gt;&gt;&gt; Weiterhin w&#252;rde ich nach den Anregungen der anderen den Jumper JP1
+</I>&gt;<i> &gt;&gt;&gt; nicht an Masse h&#228;ngen (f&#252;r den Programmier-Modus), sondern an Pin 5
+</I>&gt;<i> &gt;&gt;&gt; von SV2.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Wieso? Welcher Grund steckt dahinter?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Weil dann beim Programmieren der Firmware (usbprog_base) der 
+</I>&gt;<i> &gt;Reset des Atmel &quot;regelkonform&quot; vom &quot;Ur-Programmier-Adapter&quot; kommt. 
+</I>&gt;<i> &gt;Den R5 (Pull-Up des RESET) lege ich fest an RESET des Atmel, damit
+</I>&gt;<i> &gt;ein fehlender Jumper keine Probleme macht.
+</I>&gt;<i> 
+</I>&gt;<i> Ah ok verstehe. Klingt super!
+</I>
+Dann mache ich das so. Letztendlich k&#246;nnte der dritte Pin des JP4 
+entfallen, da der Jumper im Regelbetrieb keine elektrische Funktion
+mehr hat.
+
+Gr&#252;&#223;e,
+
+Fred Sonnenrein
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000147.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0
+</A></li>
+	<LI>Next message: <A HREF="000145.html">[Usbprog-pub] Usbprog-pub Digest, Vol 4, Issue 10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

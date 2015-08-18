@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Bascom
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Bascom&In-Reply-To=%3C20070626015415.21D57F60DF%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000103.html">
+   <LINK REL="Next"  HREF="000105.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Bascom</H1>
+    <B>shop at embedded-projects.net</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Bascom&In-Reply-To=%3C20070626015415.21D57F60DF%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Bascom">shop at embedded-projects.net
+       </A><BR>
+    <I>Sun Jun 24 19:48:16 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000103.html">[Usbprog-pub] Nochmal usbproc_Base
+</A></li>
+        <LI>Next message: <A HREF="000105.html">[Usbprog-pub] usbprog bespielen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#104">[ date ]</a>
+              <a href="thread.html#104">[ thread ]</a>
+              <a href="subject.html#104">[ subject ]</a>
+              <a href="author.html#104">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Marcel,
+
+so kann man den usbprog Adapter mit der Firmware AVRISPmk2 unter BASCOM
+nutzen.
+
+Ich hab gerade das neuste WinAVR Paket heruntergeladen.
+
+Von der Seite:
+<A HREF="http://sourceforge.net/project/showfiles.php?group_id=68108,">http://sourceforge.net/project/showfiles.php?group_id=68108,</A> die Datei
+WinAVR-20070525-install.exe .
+
+Das installieren, danach sollte man mit dem Konsolenbefehl:
+
+c:\WinAVR-20070525\bin\avrdude.exe -p m32 -c avrispv2 -P usb
+die Signatur vom Zielprozessor auslesen k&#246;nnen.
+
+Eine .hex Datei kann man dann mit
+c:\WinAVR-20070525\bin\avrdude.exe -p m32 -c avrispv2 -P usb -U
+flash:w:meinedatei.hex:i in den ATMega32 laden.
+
+Wenn das alles geklappt hat dann ab ins BASCOM, dort bei Programmer den
+externen Programmer angeben. Als Programm
+c:\WinAVR-20070525\bin\avrdude.exe
+
+und als Parameter:
+c:\WinAVR-20070525\bin\avrdude.exe -p m32 -c avrispv2 -P usb -U
+flash:w:&quot;{file}&quot;:i
+
+Und den Haken .hex nicht vergessen!
+
+So klappt das hier.
+
+Gruss Bene
+
+
+
+
+
+
+Am 21.6.2007 schrieb &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">EGS at directbox.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">EGS at directbox.com</A>&gt;:
+
+&gt;<i>Hallo Bene, wollt mal fragen wie es mit der Firmware aussieht. Hab gesehen du hast jetzt ein USB Wiki auf deine Seite gestellt. gef&#228;llt mir gut. Hast du mit Bascom und dem Programmierer fortschritte gemacht?
+</I>&gt;<i>
+</I>&gt;<i>MfG Marcel
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000103.html">[Usbprog-pub] Nochmal usbproc_Base
+</A></li>
+	<LI>Next message: <A HREF="000105.html">[Usbprog-pub] usbprog bespielen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#104">[ date ]</a>
+              <a href="thread.html#104">[ thread ]</a>
+              <a href="subject.html#104">[ subject ]</a>
+              <a href="author.html#104">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

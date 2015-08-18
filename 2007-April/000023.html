@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FNeue_Firmware%3D3A_USB_JTAG_f%3DFCr_Open%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_OCD%3F%3D&In-Reply-To=%3C20070430180356.BD2D92D0F0%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000022.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FNeue_Firmware%3D3A_USB_JTAG_f%3DFCr_Open%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_OCD%3F%3D&In-Reply-To=%3C20070430180356.BD2D92D0F0%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD">sauter at sistecs.de
+       </A><BR>
+    <I>Mon Apr 30 20:01:54 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000022.html">[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r OpenOCD
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Christian,
+
+&gt;&gt;<i> USB JTAG Adapter f&#252;r OpenOCD um ARM7 und ARM9 Kerne
+</I>&gt;&gt;<i> zu debuggen.
+</I>&gt;<i>
+</I>&gt;<i>Besteht eigentlich auch die Chance usbprog als USB JTAG Adapter f&#252;r
+</I>&gt;<i>Xilinx CPLDs mit der iMPACT-Software zu verwenden?
+</I>
+Gute Frage hab hier auch ein Spartan Starter Kit liegen.
+Ich hab hier mal begonnen Informationen zusammenzutragen:
+
+<A HREF="http://www.embedded-projects.net/index.php?page_id=157">http://www.embedded-projects.net/index.php?page_id=157</A>
+
+Wenn es noch irgendwo etwas &#252;ber das Protokoll im Internet ist, koennte
+das eigentlich relativ unproblematisch sein. Den JTAG und ISP Routinen
+habe ich ja bereits.
+
+Wenn du was findest sag bescheid. Also wir brauchen das Protokoll,
+das &#252;ber USB &#252;bertragen wird. Oder es hat jemand einen da und hilft uns
+dabei
+die wichtigsten Kommandos mal mit einem USB Sniffer aufzuzeichnen.
+
+Brauchst du den dringend oder war die Frage erstmal allgemein? Hab gerade
+kaum Zeit muss leider grad etwas fuer Geld machen :-).
+
+&gt;<i>
+</I>&gt;<i>Datenblatt der Orginal-Adapters:
+</I>&gt;<i><A HREF="http://www.xilinx.com/bvdocs/publications/ds300.pdf">http://www.xilinx.com/bvdocs/publications/ds300.pdf</A>
+</I>&gt;<i>
+</I>&gt;&gt;<i> VREF unbedingt mit 5 V vom usbprog Adapter verbinden.
+</I>&gt;<i>
+</I>&gt;<i>Laut Schaltplan sollte Pin 2 am Stecker der usbprog Platine 5V
+</I>&gt;<i>liefern, der Pin ist aber auf meiner usbprog Platine garnicht
+</I>&gt;<i>angeschlossen. Ist das ein Bug?
+</I>
+Nein hier gehen die Meinungen auseinander. Eigentlich ist der VREF Pin
+fuer die Stromversorgung fuer den Programmieradapter. Und da USB ja bei
+usbprog die Spannung liefert wurde mir gesagt das geht nicht gut.
+
+Naja ich werde den Plan mal aendern und einfach ein Jumper daziwschen
+bauen,
+das man sich den selber an und ausschalten kann.
+
+Gruss Bene
+
+
+
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>-- 
+</I>&gt;<i> Christian Taube  &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">christian.taube at telebel.de</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000022.html">[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r OpenOCD
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Hurra, jetzt l&#228;ufts (fast)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-15%3Fq%3FHurra%3D2C_jetzt_l%3DE4ufts_%3D28fast%3D29%3F%3D&In-Reply-To=%3C1361350095%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000236.html">
+   <LINK REL="Next"  HREF="000238.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Hurra, jetzt l&#228;ufts (fast)</H1>
+    <B>Detlef Zagar</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-15%3Fq%3FHurra%3D2C_jetzt_l%3DE4ufts_%3D28fast%3D29%3F%3D&In-Reply-To=%3C1361350095%40web.de%3E"
+       TITLE="[Usbprog-pub] Hurra, jetzt l&#228;ufts (fast)">dezagar at web.de
+       </A><BR>
+    <I>Fri Aug 17 07:39:03 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000236.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000238.html">[Usbprog-pub] Hurra, jetzt l&#228;ufts (fast)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#237">[ date ]</a>
+              <a href="thread.html#237">[ thread ]</a>
+              <a href="subject.html#237">[ subject ]</a>
+              <a href="author.html#237">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Benedikt,
+
+ich habe es gestern abend doch noch schnell probiert. Die beiden Signale m&#252;ssen getauscht werden.
+Ich hatte richtig gemessen !
+Die Signale sehen jetzt &quot;sauber&quot; aus und es gibt keine Fehlermeldung mehr.
+Ich habe das Openocd jetzt in Eclipse von Yagarto eingearbeitet. Dann liess sich auch der Debugger starten.
+Ich bekomme aber keinen Breakpoint gesetzt - wahrscheinlich weil das Programm im Flash und nicht im RAM ist.
+Das muss ich noch kl&#228;ren.  Ausserdem muss ich in mein Zielsystem wieder den 12MHz Quarz einbauen und sehen
+ob das auch l&#228;uft. Jetzt sind 8MHz drin. Dann will ich noch probieren, ob ich Openocd von Eclipse aus auch ohne
+cygwin starten kann (laut Yagarto braucht man cygwin ja nicht).
+Bitte &#228;ndere unbedingt Deine Vedrahtungsliste. Wenn das noch jemand nachbaut, der sich mit Hardware nicht so gut
+auskennt, hat der keine Chance das zum Laufen zu kriegen - mal abgesehen davon, dass auch was kaputtgehen kann,
+wenn sich 2 Ausg&#228;nge &quot;angucken&quot; !
+
+Jetzt sitze ich erstmal in meinem B&#252;ro und muss Arbeiten (Schluck!). Heute Abend gehts weiter.
+Werde mich dann wieder melden.
+
+Gruss
+  Detlef
+
+
+
+
+&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> Von: &quot;Benedikt Sauter&quot;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i> Gesendet: 16.08.07 14:47:11
+</I>&gt;<i> An:  &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+</I>&gt;<i> Betreff: Re: [Usbprog-pub] Problem mit usbprog
+</I>
+
+&gt;<i> 
+</I>&gt;<i> ok bin gespannt.
+</I>&gt;<i> 
+</I>&gt;<i> Hat das openocd jetzt schon mal jemand zum laufen bekommen auser ich?
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Gruss Bene
+</I>&gt;<i> 
+</I>&gt;<i> Am 16.8.2007 schrieb &quot;Detlef Zagar&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">dezagar at web.de</A>&gt;:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Hallo Benedikt,
+</I>&gt;<i> &gt;Das sieht ja so aus, als wenn ich richtig gemessen h&#228;tte (Messen kommt ja bekanntlich von Mist).
+</I>&gt;<i> &gt;Ich werde die Signale dann mal tauschen. Leider komme ich erst morgen abend bzw. am 
+</I>&gt;<i> &gt;Wochenende dazu. Ich sage dann Bescheid.
+</I>&gt;<i> &gt;Danke und Gruss
+</I>&gt;<i> &gt;  Detlef
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> &gt;&gt; Von: &quot;Benedikt Sauter&quot;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i> &gt;&gt; Gesendet: 16.08.07 07:59:18
+</I>&gt;<i> &gt;&gt; An:  &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+</I>&gt;<i> &gt;&gt; Betreff: Re: [Usbprog-pub] Problem mit usbprog
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Hallo Detlef,
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; bei mir ist MOSI TDO.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Kannst du das mal testen so, dann bessere ich es gleich aus.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Gruss Bene
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Am 14.8.2007 schrieb &quot;Detlef Zagar&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">dezagar at web.de</A>&gt;:
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; &gt;Hallo Benedikt,
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;ich habe jetzt den Kabel-Adapter mehrfach &#252;berpr&#252;ft und auch mal die Taktfrequenz meines
+</I>&gt;<i> &gt;&gt; &gt;Zielsystems herabgesetzt (von 12 auf 8MHz) - alles bisher ohne Erfolg.
+</I>&gt;<i> &gt;&gt; &gt;Der LPC2148 ist auch 5V tolerant, sodass es hier kein Problem mit den Pegeln geben sollte.
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;Ich bekomme immer folgende Meldung:
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;D:\&gt;openocd.exe  -f usbprog.cfg
+</I>&gt;<i> &gt;&gt; &gt;Info:    openocd.c:92 main(): Open On-Chip Debugger (2007-07-31 19:00 CEST)
+</I>&gt;<i> &gt;&gt; &gt;Info:    usbprog.c:222 usbprog_init(): USB JTAG Interface ready!
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> &gt;&gt; &gt; mismatch, scan returned 0x3f
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> &gt;&gt; &gt; mismatch, scan returned 0x3f
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> &gt;&gt; &gt; mismatch, scan returned 0x3f
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> &gt;&gt; &gt; mismatch, scan returned 0x3f
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> &gt;&gt; &gt; mismatch, scan returned 0x3f
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> &gt;&gt; &gt; mismatch, scan returned 0x3f
+</I>&gt;<i> &gt;&gt; &gt;Error:   jtag.c:1442 jtag_init(): Could not validate JTAG chain, exit
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;D:\&gt;
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;Nachdem sich mein Frust etwas gelegt hat,
+</I>&gt;<i> &gt;&gt; &gt;habe ich mein Oszilloskop scharf gemacht und die Signale direkt am usbprog-Stecker,
+</I>&gt;<i> &gt;&gt; &gt;beim Schicken von &quot;openocd.exe -f usbprog.cfg&quot;, angeschaut (alles ohne Zielsystem).
+</I>&gt;<i> &gt;&gt; &gt;Hierbei ist mir aufgefallen, dass an pin9 (MISO) einige Pulse ausgegeben werden.
+</I>&gt;<i> &gt;&gt; &gt;Pin9 (MISO) soll laut Deiner Verdrahtungstabelle mit TDO am JTAG verbunden werden.
+</I>&gt;<i> &gt;&gt; &gt;TDO (Test Data Output) ist aber ebenfalls ein Ausgang, falls ich nicht irgendwas falsch
+</I>&gt;<i> &gt;&gt; &gt;verstanden habe. Somit w&#252;rden sich da mit angeschlossenem Zielsystem 2 Ausg&#228;nge angucken,
+</I>&gt;<i> &gt;&gt; &gt;was nat&#252;rlich nicht sein darf. Am Signal MOSI (pin1) kann man nichts messen - das scheint mir 
+</I>&gt;<i> &gt;&gt; &gt;der Eingang zu sein. Kann es sein, dass diese beiden Signale in Deinem Verdrahtungsplan
+</I>&gt;<i> &gt;&gt; &gt;vertauscht sind und eigentlich MOSI an TDO und MISO an TDI angeschlossen werden muss ?
+</I>&gt;<i> &gt;&gt; &gt;(oder sind die Signale in der Quelle von openocd.bin vertauscht ?)
+</I>&gt;<i> &gt;&gt; &gt;Bevor ich jetzt hier wild rumtausche und was verheize, w&#252;rde ich Dich bitten, dass zu 
+</I>&gt;<i> &gt;&gt; &gt;&#252;berpr&#252;fen. Vielleicht habe ich ja auch einen Fehler gemacht. Hat schon irgend jemand
+</I>&gt;<i> &gt;&gt; &gt;nach diesem Plan einen Adapter gebaut und das JTAG-Interface mit dieser openocd.exe-version
+</I>&gt;<i> &gt;&gt; &gt;zum Laufen gebracht ?
+</I>&gt;<i> &gt;&gt; &gt;  
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;Gruss
+</I>&gt;<i> &gt;&gt; &gt;  Detlef
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;_____________________________________________________________________
+</I>&gt;<i> &gt;&gt; &gt;Der WEB.DE SmartSurfer hilft bis zu 70% Ihrer Onlinekosten zu sparen!
+</I>&gt;<i> &gt;&gt; &gt;<A HREF="http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066">http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066</A>
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;_______________________________________________
+</I>&gt;<i> &gt;&gt; &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;&gt; &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt; &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;_______________________________________________________________________
+</I>&gt;<i> &gt;Jetzt neu! Sch&#252;tzen Sie Ihren PC mit McAfee und WEB.DE. 3 Monate
+</I>&gt;<i> &gt;kostenlos testen. <A HREF="http://www.pc-sicherheit.web.de/startseite/?mc=022220">http://www.pc-sicherheit.web.de/startseite/?mc=022220</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;_______________________________________________
+</I>&gt;<i> &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i> 
+</I>&gt;<i> ---
+</I>&gt;<i> Sistecs Online Technologies
+</I>&gt;<i> Dipl. Inf. (FH) Benedikt Sauter
+</I>&gt;<i> Zugspitzstr. 80
+</I>&gt;<i> 85435 Erding
+</I>&gt;<i> Mobil: 01 71 94 91 77 6
+</I>&gt;<i> Fax: 08 12 29 64 98 59
+</I>&gt;<i> E-Mail: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>
+</I>&gt;<i> URL: <A HREF="http://www.sistecs.de">http://www.sistecs.de</A>
+</I>&gt;<i> Technische Hotline: 	01 80 57 37 37 65 15
+</I>&gt;<i> Vertrieb: 08 12 29 64 98 40
+</I>&gt;<i> 
+</I>
+
+_____________________________________________________________________
+Der WEB.DE SmartSurfer hilft bis zu 70% Ihrer Onlinekosten zu sparen!
+<A HREF="http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066">http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000236.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000238.html">[Usbprog-pub] Hurra, jetzt l&#228;ufts (fast)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#237">[ date ]</a>
+              <a href="thread.html#237">[ thread ]</a>
+              <a href="subject.html#237">[ subject ]</a>
+              <a href="author.html#237">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Atmega32 funktioniert nicht
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Atmega32%20funktioniert%20nicht&In-Reply-To=%3C20070712140023.4B12B1ACA8%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000121.html">
+   <LINK REL="Next"  HREF="000124.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Atmega32 funktioniert nicht</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Atmega32%20funktioniert%20nicht&In-Reply-To=%3C20070712140023.4B12B1ACA8%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Atmega32 funktioniert nicht">sauter at sistecs.de
+       </A><BR>
+    <I>Thu Jul 12 15:59:49 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000121.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+        <LI>Next message: <A HREF="000124.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#122">[ date ]</a>
+              <a href="thread.html#122">[ thread ]</a>
+              <a href="subject.html#122">[ subject ]</a>
+              <a href="author.html#122">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Christian
+&gt;<i>
+</I>&gt;<i>habe usbprog zusammengebaut und geflasht (AVRISP mkII Klon)
+</I>&gt;<i>Kann damit allerdings einen Atmega32 nicht auslesen (Fuses):
+</I>
+hm seltsam also ich hab hier fast nur atmega32 in verwendung.
+
+Ist das mit Windows oder Linux?
+
+(Du k&#246;nntest mal das AVR Studio installieren und schauen was da so
+passiert?)
+
+
+
+
+&gt;<i>./avrdude -C ./avrdude.conf -c avrispv2 -P usb -p m32
+</I>&gt;<i>avrdude: stk500v2_recv_mk2: error in USB receive
+</I>&gt;<i>
+</I>&gt;<i>avrdude: stk500v2_command(): command failed
+</I>&gt;<i>avrdude: initialization failed, rc=-1
+</I>&gt;<i>         Double check connections and try again, or use -F to override
+</I>&gt;<i>         this check.
+</I>&gt;<i>
+</I>&gt;<i>Wenn ich meinen alten seriellen Programmer anschlie&#195;&#159;e geht es, es liegt
+</I>&gt;<i>also nicht an der Schaltung, Kabel oder am Atmega32.
+</I>&gt;<i>
+</I>&gt;<i>Habe avrdude 5.2 und 5.4 unter Linux (Ubuntu) probiert.
+</I>&gt;<i>
+</I>&gt;<i>Bei einem Atmega8 funktioniert das ganze, auch wenn zum Schluss, nachdem
+</I>&gt;<i>alles fertig ist trotzdem eine Fehlermeldung kommt:
+</I>&gt;<i>
+</I>&gt;<i>/usr/bin/avrdude -q -u -C /etc/avrdude.conf -p m8 -P usb -c avrispv2 -E
+</I>&gt;<i>noreset,novcc  -U
+</I>&gt;<i>flash:w:/test.hex:a 
+</I>&gt;<i>avrdude: WARNING: -E option not supported by this programmer type
+</I>&gt;<i>
+</I>&gt;<i>avrdude: AVR device initialized and ready to accept instructions
+</I>&gt;<i>avrdude: Device signature = 0x1e9307
+</I>&gt;<i>avrdude: NOTE: FLASH memory has been specified, an erase cycle will be
+</I>&gt;<i>performed
+</I>&gt;<i>         To disable this feature, specify the -D option.
+</I>&gt;<i>avrdude: erasing chip
+</I>&gt;<i>avrdude: reading input file
+</I>&gt;<i>&quot;test.hex&quot;
+</I>&gt;<i>avrdude: input file test.hex
+</I>&gt;<i>auto detected as Intel Hex
+</I>&gt;<i>avrdude: writing flash (5664 bytes):
+</I>&gt;<i>avrdude: 5664 bytes of flash written
+</I>&gt;<i>avrdude: verifying flash memory
+</I>&gt;<i>against test.hex:
+</I>&gt;<i>avrdude: load data flash data from input
+</I>&gt;<i>file test.hex:
+</I>&gt;<i>avrdude: test.hex
+</I>&gt;<i>auto detected as Intel Hex
+</I>&gt;<i>avrdude: test.hex
+</I>&gt;<i>contains 5664 bytes
+</I>&gt;<i>avrdude: reading on-chip flash data:
+</I>&gt;<i>avrdude: verifying ...
+</I>&gt;<i>avrdude: 5664 bytes of flash verified
+</I>&gt;<i>avrdude: stk500v2_recv_mk2: error in USB receive
+</I>
+
+Also das -E wird vom usbprog nicht unterst&#252;tzt.
+
+
+Gruss Bene
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000121.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+	<LI>Next message: <A HREF="000124.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#122">[ date ]</a>
+              <a href="thread.html#122">[ thread ]</a>
+              <a href="subject.html#122">[ subject ]</a>
+              <a href="author.html#122">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

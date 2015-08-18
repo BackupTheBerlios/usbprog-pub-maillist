@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] JTAGICE2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAGICE2&In-Reply-To=%3C48C78A4A.9050301%40dokucode.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000418.html">
+   <LINK REL="Next"  HREF="000420.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] JTAGICE2</H1>
+    <B>Christian Dietrich</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAGICE2&In-Reply-To=%3C48C78A4A.9050301%40dokucode.de%3E"
+       TITLE="[Usbprog-pub] JTAGICE2">stettberger at dokucode.de
+       </A><BR>
+    <I>Wed Sep 10 10:50:18 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000418.html">[Usbprog-pub] JTAGICE2
+</A></li>
+        <LI>Next message: <A HREF="000420.html">[Usbprog-pub] Confused about USBProg project
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#419">[ date ]</a>
+              <a href="thread.html#419">[ thread ]</a>
+              <a href="subject.html#419">[ subject ]</a>
+              <a href="author.html#419">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Daniel Flinkmann wrote:
+&gt;<i> Hmm,
+</I>&gt;<i> 
+</I>&gt;<i> Looks fine. I am using the same one (flashed 4 weeks ago).
+</I>
+Ok, i took the bootloader from the svn (usbprog_base) and uploaded
+
+~/trunk/jtagicemk2klon $ make loader
+
+The loading worked fine, but there is no message in `dmesg'. But when i
+flash with:
+
+~/trunk/jtagicemk2klon $ make download
+
+The dongle appears in `dmesg' and `lsusb' and i can debug with avarice.
+
+Is it normal that my avr-gdb does a segfault, when i try `next' ?
+
+&lt;&lt;&lt;
+% avr-gdb --version
+GNU gdb 6.4
+Copyright 2005 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain
+conditions.
+Type &quot;show copying&quot; to see the conditions.
+There is absolutely no warranty for GDB.  Type &quot;show warranty&quot; for details.
+This GDB was configured as &quot;--host=i486-linux-gnu --target=avr&quot;.
+&lt;&lt;&lt;&lt;
+
+greetz didi
+-- 
+No documentation is better than bad documentation!
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000418.html">[Usbprog-pub] JTAGICE2
+</A></li>
+	<LI>Next message: <A HREF="000420.html">[Usbprog-pub] Confused about USBProg project
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#419">[ date ]</a>
+              <a href="thread.html#419">[ thread ]</a>
+              <a href="subject.html#419">[ subject ]</a>
+              <a href="author.html#419">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

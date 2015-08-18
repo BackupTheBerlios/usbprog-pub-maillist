@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog - firmware wechseln unter Windows
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C20070614184449.236560%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000067.html">
+   <LINK REL="Next"  HREF="000069.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog - firmware wechseln unter Windows</H1>
+    <B>Fred Sonnenrein</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C20070614184449.236560%40gmx.net%3E"
+       TITLE="[Usbprog-pub] usbprog - firmware wechseln unter Windows">Fred.Sonnenrein at gmx.de
+       </A><BR>
+    <I>Thu Jun 14 20:44:49 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000067.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+        <LI>Next message: <A HREF="000069.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#68">[ date ]</a>
+              <a href="thread.html#68">[ thread ]</a>
+              <a href="subject.html#68">[ subject ]</a>
+              <a href="author.html#68">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Nein es ist ganz einfach (wenn man es wei&#223;):
+
+- uspprog Adapter anschlie&#223;en
+- avr-studio starten
+- men&#252; tools - program avr - connect
+- Register board
+- Button upgrade
+--&gt; das Avr-programmier-fenster ist weg und der Adapter ist 
+wieder im Update-modus (aber nicht abst&#246;pseln und wieder dran,
+dann wieder avrispmkII-Modus)
+
+also gleich nach der Prozedur neue Software laden.
+
+Frage: wann kommt unter Windows auch die Update-Version mit
+M&#246;glichkeit zum Umschalten zwischen verschiedenen 
+Programmen auf dem Adapter?
+
+Fred
+Braunschweig
+
+
+-------- Original-Nachricht --------
+Datum: Thu, 14 Jun 2007 08:29:13 +0200
+Von: &quot;mes&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog at mestro.de</A>&gt;
+An: &quot;\'Benedikt Sauter\'&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;, &quot;\'Frank Ulbrich\'&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">frank.ulbrich at gmx.net</A>&gt;, <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+Betreff: Re: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+
+&gt;<i> Also ich bekomme das nicht hin.
+</I>&gt;<i> Ich kann nur extern &#252;ber ein zweites Programmierger&#228;t flashen. Nachdem
+</I>&gt;<i> ich
+</I>&gt;<i> den Bootloader geladen habe kann ich auch usbprog.exe nutzen. Danach aber
+</I>&gt;<i> nicht ein zweites mal.
+</I>&gt;<i> 
+</I>&gt;<i> Klingt f&#252;r mich, als wenn der Bootloader &#252;berschrieben wird, oder nicht
+</I>&gt;<i> aktiv ist.
+</I>&gt;<i> 
+</I>&gt;<i> Aber leider hab ich im mom keine Zeit, das zu &#252;berpr&#252;fen.
+</I>&gt;<i> 
+</I>&gt;<i> Im AVR Studio hab ich zwei m&#246;glichkieten gefunden: einmal direkt im Men&#252;
+</I>&gt;<i> &quot;AVRISP MK2 aktuallisieren&quot;. Da kommt eine meldung, eine LED soll flashen
+</I>&gt;<i> und dann kann man ok dr&#252;cken.
+</I>&gt;<i> Danach kommt nur die Meldung kein Target gefunden, das sich im updatemodus
+</I>&gt;<i> befindet.
+</I>&gt;<i> 
+</I>&gt;<i> Oder alternativ im STK500 Plugin. Dort ist auch firmware updaten. Wenn ich
+</I>&gt;<i> da klicke ist der dialog sofort weg, und ich starte usbprog.exe. - klappt
+</I>&gt;<i> aber auch nicht.
+</I>&gt;<i> 
+</I>&gt;<i> Oder direkt nach dem einstecken (2sek hat man zeit?) aber da klappt
+</I>&gt;<i> usbprog.exe auch nicht.
+</I>&gt;<i> 
+</I>&gt;<i> Usbprog.exe f&#252;hre ich mit adminrechten aus und wie unten beschrieben mit
+</I>&gt;<i> der
+</I>&gt;<i> bin-Datei als Parameter.
+</I>&gt;<i> 
+</I>&gt;<i> Gr&#252;&#223;e,
+</I>&gt;<i> mes
+</I>&gt;<i> 
+</I>&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> Von: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>
+</I>&gt;<i> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>] Im Auftrag von Benedikt
+</I>&gt;<i> Sauter
+</I>&gt;<i> Gesendet: Donnerstag, 14. Juni 2007 07:16
+</I>&gt;<i> An: Frank Ulbrich; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> Betreff: Re: [Usbprog-pub] usbprog - firmware wechseln unter Windows
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Frage : Was mu&#223; ich tun, um eine andere firmware auf den &quot;usbprog&quot; zu
+</I>&gt;<i> &gt;brennen ? Das Programm usbprog erkennt das Ger&#228;t nicht mehr als &quot;usbprog
+</I>&gt;<i> &gt;(Update Modus). Mu&#223; ich irgendwelche Br&#252;cken stecken ? Hat jemand das
+</I>&gt;<i> &gt;gleiche Problem ?
+</I>&gt;<i> 
+</I>&gt;<i> Nein, entweder mit usbprog neue Software aufspielen.
+</I>&gt;<i> 
+</I>&gt;<i> usbprog neuesoftware.bin.
+</I>&gt;<i> 
+</I>&gt;<i> Oder man kann auch vom AVR Studio aus dieses  Firmware auf Adapter
+</I>&gt;<i> austauschen klicken, dann wird der Adapter ebenfalls in den Update Modus
+</I>&gt;<i> geschalten.
+</I>&gt;<i> 
+</I>&gt;<i> Gruss Bene
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Usbprog-pub mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+-- 
+Psssst! Schon vom neuen GMX MultiMessenger geh&#246;rt?
+Der kanns mit allen: <A HREF="http://www.gmx.net/de/go/multimessenger">http://www.gmx.net/de/go/multimessenger</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000067.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+	<LI>Next message: <A HREF="000069.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#68">[ date ]</a>
+              <a href="thread.html#68">[ thread ]</a>
+              <a href="subject.html#68">[ subject ]</a>
+              <a href="author.html#68">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] USBPROG LINUX UBUNTU 904
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20USBPROG%20LINUX%20UBUNTU%20904&In-Reply-To=%3C28e29e360906010218lcc0b9d5n8d8e6510d9c251b0%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000443.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] USBPROG LINUX UBUNTU 904</H1>
+    <B>the Adib</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20USBPROG%20LINUX%20UBUNTU%20904&In-Reply-To=%3C28e29e360906010218lcc0b9d5n8d8e6510d9c251b0%40mail.gmail.com%3E"
+       TITLE="[Usbprog-pub] USBPROG LINUX UBUNTU 904">theadib at googlemail.com
+       </A><BR>
+    <I>Mon Jun  1 11:18:36 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000443.html">[Usbprog-pub] USBPROG LINUX UBUNTU 904
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#444">[ date ]</a>
+              <a href="thread.html#444">[ thread ]</a>
+              <a href="subject.html#444">[ subject ]</a>
+              <a href="author.html#444">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Gerd,
+
+zumindest ich bekomme deine emails ... :-)
+
+Du hast so viel Text geschrieben, dass ich deine Frage gar nicht
+verstanden habe ... ?
+Auch ich hatte Probleme mit dem sudo ... bis  ich die user zur gruppe
+&quot;plugdev&quot; hinzugef&#252;gt habe.
+
+HTH, Adib.
+---
+
+
+On Mon, Jun 1, 2009 at 11:05 AM, Gerd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">gerd.ag at gmx.de</A>&gt; wrote:
+&gt;<i> IST der USBPROG THEARD TOT
+</I>&gt;<i>
+</I>&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> Von: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>
+</I>&gt;<i> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>] Im Auftrag von Gerd Angerer
+</I>&gt;<i> Gesendet: Montag, 4. Mai 2009 12:56
+</I>&gt;<i> An: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> Betreff: [Usbprog-pub] USBPROG LINUX UBUNTU 904
+</I>&gt;<i>
+</I>&gt;<i> Hallo
+</I>&gt;<i>
+</I>&gt;<i> Also ich br&#228;uchte mal eure HILFE.
+</I>&gt;<i> Ubuntu 9.04 64bit
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Ich habe hier eine STK500v2 &#252;ber com1 und eine USBProgV3 &#252;ber usb
+</I>&gt;<i> 1. Problem usbProg und avrdude geht nur mit sudo
+</I>&gt;<i> 2. kann nichts auslesen mit dem usbprog
+</I>&gt;<i> unten steht das Ergebnis von lsusb
+</I>&gt;<i> und das log vom aufruf mit usb
+</I>&gt;<i>
+</I>&gt;<i> --------------------------------
+</I>&gt;<i> flash lesen &#160;mit STK500V2
+</I>&gt;<i> avrdude -p m644 -F -c stk500v2 -P /dev/ttyS0 -v -U
+</I>&gt;<i> flash:r:/home/gerd/Desktop/info.hex:i
+</I>&gt;<i> IO aber mit USB Prog nicht
+</I>&gt;<i>
+</I>&gt;<i> --------------------------------
+</I>&gt;<i> mit USBprog
+</I>&gt;<i> avrdude -p m644 -F -c avrisp2 -P usb -v -U
+</I>&gt;<i> flash:r:/home/gerd/Desktop/info.hex:i
+</I>&gt;<i>
+</I>&gt;<i> --------------------------------
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">gerd at q6600</A>:~$ lsusb
+</I>&gt;<i> Bus 002 Device 004: ID 0204:6025 Chipsbank Microelectronics Co., Ltd
+</I>&gt;<i> CBM2080 Flash drive controller
+</I>&gt;<i> Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</I>&gt;<i> Bus 008 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i> Bus 007 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i> Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i> Bus 001 Device 013: ID 03eb:2104 Atmel Corp. AVR ISP mkII
+</I>&gt;<i> Bus 001 Device 003: ID 05e3:0607 Genesys Logic, Inc.
+</I>&gt;<i> Bus 001 Device 007: ID 05e3:0606 Genesys Logic, Inc. USB 2.0 Hub /
+</I>&gt;<i> D-Link DUB-H4 USB 2.0 Hub
+</I>&gt;<i> Bus 001 Device 006: ID 05e3:0606 Genesys Logic, Inc. USB 2.0 Hub /
+</I>&gt;<i> D-Link DUB-H4 USB 2.0 Hub
+</I>&gt;<i> Bus 001 Device 002: ID 05e3:0606 Genesys Logic, Inc. USB 2.0 Hub /
+</I>&gt;<i> D-Link DUB-H4 USB 2.0 Hub
+</I>&gt;<i> Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</I>&gt;<i> Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i> Bus 004 Device 003: ID 085c:0300 ColorVision, Inc.
+</I>&gt;<i> Bus 004 Device 002: ID 045e:0039 Microsoft Corp. IntelliMouse Optical
+</I>&gt;<i> Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i> Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+</I>&gt;<i>
+</I>&gt;<i> ---------------------------------------------------------------
+</I>&gt;<i> avrdude: Version 5.5, compiled on Jan 28 2009 at 12:31:29
+</I>&gt;<i> &#160; &#160; &#160; &#160; Copyright (c) 2000-2005 Brian Dean, <A HREF="http://www.bdmicro.com/">http://www.bdmicro.com/</A>
+</I>&gt;<i>
+</I>&gt;<i> &#160; &#160; &#160; &#160; System wide configuration file is &quot;/etc/avrdude.conf&quot;
+</I>&gt;<i> &#160; &#160; &#160; &#160; User configuration file is &quot;/home/gerd/.avrduderc&quot;
+</I>&gt;<i> &#160; &#160; &#160; &#160; User configuration file does not exist or is not a regular
+</I>&gt;<i> file, skipping
+</I>&gt;<i>
+</I>&gt;<i> &#160; &#160; &#160; &#160; Using Port &#160; &#160; &#160; &#160; &#160; &#160;: usb
+</I>&gt;<i> &#160; &#160; &#160; &#160; Using Programmer &#160; &#160; &#160;: avrisp2
+</I>&gt;<i> avrdude: usbdev_open(): Found AVRISP mk2 Clone, serno: 0000A00128255
+</I>&gt;<i> &#160; &#160; &#160; &#160; AVR Part &#160; &#160; &#160; &#160; &#160; &#160; &#160;: ATMEGA644
+</I>&gt;<i> &#160; &#160; &#160; &#160; Chip Erase delay &#160; &#160; &#160;: 9000 us
+</I>&gt;<i> &#160; &#160; &#160; &#160; PAGEL &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; : PD7
+</I>&gt;<i> &#160; &#160; &#160; &#160; BS2 &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; : PA0
+</I>&gt;<i> &#160; &#160; &#160; &#160; RESET disposition &#160; &#160; : dedicated
+</I>&gt;<i> &#160; &#160; &#160; &#160; RETRY pulse &#160; &#160; &#160; &#160; &#160; : SCK
+</I>&gt;<i> &#160; &#160; &#160; &#160; serial program mode &#160; : yes
+</I>&gt;<i> &#160; &#160; &#160; &#160; parallel program mode : yes
+</I>&gt;<i> &#160; &#160; &#160; &#160; Timeout &#160; &#160; &#160; &#160; &#160; &#160; &#160; : 200
+</I>&gt;<i> &#160; &#160; &#160; &#160; StabDelay &#160; &#160; &#160; &#160; &#160; &#160; : 100
+</I>&gt;<i> &#160; &#160; &#160; &#160; CmdexeDelay &#160; &#160; &#160; &#160; &#160; : 25
+</I>&gt;<i> &#160; &#160; &#160; &#160; SyncLoops &#160; &#160; &#160; &#160; &#160; &#160; : 32
+</I>&gt;<i> &#160; &#160; &#160; &#160; ByteDelay &#160; &#160; &#160; &#160; &#160; &#160; : 0
+</I>&gt;<i> &#160; &#160; &#160; &#160; PollIndex &#160; &#160; &#160; &#160; &#160; &#160; : 3
+</I>&gt;<i> &#160; &#160; &#160; &#160; PollValue &#160; &#160; &#160; &#160; &#160; &#160; : 0x53
+</I>&gt;<i> &#160; &#160; &#160; &#160; Memory Detail &#160; &#160; &#160; &#160; :
+</I>&gt;<i>
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;Block Poll &#160; &#160; &#160; &#160; &#160; &#160; &#160; Page
+</I>&gt;<i> Polled
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; Memory Type Mode Delay Size &#160;Indx Paged &#160;Size &#160; Size #Pages
+</I>&gt;<i> MinW &#160;MaxW &#160; ReadBack
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; ----------- ---- ----- ----- ---- ------ ------ ---- ------
+</I>&gt;<i> ----- ----- ---------
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; eeprom &#160; &#160; &#160; &#160;65 &#160; &#160;10 &#160; 128 &#160; &#160;0 no &#160; &#160; &#160; 2048 &#160; &#160;8 &#160; &#160; &#160;0
+</I>&gt;<i> 9000 &#160;9000 0xff 0xff
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; flash &#160; &#160; &#160; &#160; 33 &#160; &#160; 6 &#160; 256 &#160; &#160;0 yes &#160; &#160; 65536 &#160;256 &#160; &#160;256
+</I>&gt;<i> 4500 &#160;4500 0xff 0xff
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; lock &#160; &#160; &#160; &#160; &#160; 0 &#160; &#160; 0 &#160; &#160; 0 &#160; &#160;0 no &#160; &#160; &#160; &#160; &#160;1 &#160; &#160;0 &#160; &#160; &#160;0
+</I>&gt;<i> 9000 &#160;9000 0x00 0x00
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; lfuse &#160; &#160; &#160; &#160; &#160;0 &#160; &#160; 0 &#160; &#160; 0 &#160; &#160;0 no &#160; &#160; &#160; &#160; &#160;1 &#160; &#160;0 &#160; &#160; &#160;0
+</I>&gt;<i> 9000 &#160;9000 0x00 0x00
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; hfuse &#160; &#160; &#160; &#160; &#160;0 &#160; &#160; 0 &#160; &#160; 0 &#160; &#160;0 no &#160; &#160; &#160; &#160; &#160;1 &#160; &#160;0 &#160; &#160; &#160;0
+</I>&gt;<i> 9000 &#160;9000 0x00 0x00
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; efuse &#160; &#160; &#160; &#160; &#160;0 &#160; &#160; 0 &#160; &#160; 0 &#160; &#160;0 no &#160; &#160; &#160; &#160; &#160;1 &#160; &#160;0 &#160; &#160; &#160;0
+</I>&gt;<i> 9000 &#160;9000 0x00 0x00
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; signature &#160; &#160; &#160;0 &#160; &#160; 0 &#160; &#160; 0 &#160; &#160;0 no &#160; &#160; &#160; &#160; &#160;3 &#160; &#160;0 &#160; &#160; &#160;0
+</I>&gt;<i> 0 &#160; &#160; 0 0x00 0x00
+</I>&gt;<i> &#160; &#160; &#160; &#160; &#160; calibration &#160; &#160;0 &#160; &#160; 0 &#160; &#160; 0 &#160; &#160;0 no &#160; &#160; &#160; &#160; &#160;1 &#160; &#160;0 &#160; &#160; &#160;0
+</I>&gt;<i> 0 &#160; &#160; 0 0x00 0x00
+</I>&gt;<i>
+</I>&gt;<i> &#160; &#160; &#160; &#160; Programmer Type : STK500V2
+</I>&gt;<i> &#160; &#160; &#160; &#160; Description &#160; &#160; : Atmel AVR ISP mkII
+</I>&gt;<i> &#160; &#160; &#160; &#160; Programmer Model: AVRISP mkII
+</I>&gt;<i> &#160; &#160; &#160; &#160; Hardware Version: 0
+</I>&gt;<i> &#160; &#160; &#160; &#160; Firmware Version: 9.09
+</I>&gt;<i> &#160; &#160; &#160; &#160; Vtarget &#160; &#160; &#160; &#160; : 5.0 V
+</I>&gt;<i> &#160; &#160; &#160; &#160; SCK period &#160; &#160; &#160;: 0.12 us
+</I>&gt;<i>
+</I>&gt;<i> avrdude: stk500v2_command(): command failed
+</I>&gt;<i> avrdude: initialization failed, rc=-1
+</I>&gt;<i> avrdude: AVR device initialized and ready to accept instructions
+</I>&gt;<i>
+</I>&gt;<i> Reading | ################################################## | 100%
+</I>&gt;<i> 0.00s
+</I>&gt;<i>
+</I>&gt;<i> avrdude: Device signature = 0x000000
+</I>&gt;<i> avrdude: Yikes! &#160;Invalid device signature.
+</I>&gt;<i> avrdude: Expected signature for ATMEGA644 is 1E 96 09
+</I>&gt;<i> avrdude: safemode: lfuse reads as 0
+</I>&gt;<i> avrdude: safemode: hfuse reads as 0
+</I>&gt;<i> avrdude: safemode: efuse reads as 0
+</I>&gt;<i> avrdude: reading flash memory:
+</I>&gt;<i>
+</I>&gt;<i> Reading | ################################################## | 100%
+</I>&gt;<i> 1.45s
+</I>&gt;<i>
+</I>&gt;<i> avrdude: writing output file &quot;/home/gerd/Desktop/info-usb.hex&quot;
+</I>&gt;<i>
+</I>&gt;<i> avrdude: safemode: lfuse reads as 0
+</I>&gt;<i> avrdude: safemode: hfuse reads as 0
+</I>&gt;<i> avrdude: safemode: efuse reads as 0
+</I>&gt;<i> avrdude: safemode: Fuses OK
+</I>&gt;<i>
+</I>&gt;<i> avrdude done. &#160;Thank you.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> <A HREF="http://www.inputsammler.purespace.de">http://www.inputsammler.purespace.de</A>
+</I>&gt;<i>
+</I>&gt;<i> Psssst! Schon vom neuen GMX MultiMessenger geh&#246;rt? Der kann`s mit allen:
+</I>&gt;<i> <A HREF="http://www.gmx.net/de/go/multimessenger01">http://www.gmx.net/de/go/multimessenger01</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Usbprog-pub mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Usbprog-pub mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000443.html">[Usbprog-pub] USBPROG LINUX UBUNTU 904
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#444">[ date ]</a>
+              <a href="thread.html#444">[ thread ]</a>
+              <a href="subject.html#444">[ subject ]</a>
+              <a href="author.html#444">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

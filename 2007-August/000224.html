@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog&In-Reply-To=%3C20070813032733.D13B1101FBC%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000222.html">
+   <LINK REL="Next"  HREF="000225.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog&In-Reply-To=%3C20070813032733.D13B1101FBC%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] usbprog">sauter at sistecs.de
+       </A><BR>
+    <I>Mon Aug 13 05:27:08 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000222.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000225.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#224">[ date ]</a>
+              <a href="thread.html#224">[ thread ]</a>
+              <a href="subject.html#224">[ subject ]</a>
+              <a href="author.html#224">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Timo,
+
+bist du weitergekommen? Hab vorgestern mal den Mac Fehler gesucht warum,
+der dort nicht erkannt worden ist. Vielleicht h&#228;ngt es damit auch mit
+dem Ubuntu zusammen.
+
+Probier doch mal den avrisp mk2 klon aus dem Anhang. Wenn der erkannt
+wird dann waere ich ein St&#252;ck schlauer.
+
+
+Gruss Bene
+
+Am 10.8.2007 schrieb &quot;Timo&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timowirtz at arcor.de</A>&gt;:
+
+&gt;<i>Hi,
+</I>&gt;<i>
+</I>&gt;<i>die aktuelle usbprog.c hab ich schon in openocd eingebaut.
+</I>&gt;<i>Ich komme aber nicht weiter, da ich unter Linux leider nicht auf den 
+</I>&gt;<i>Dongle zugreifen kann.
+</I>&gt;<i>Nutze Ubuntu Feisty mit udev.
+</I>&gt;<i>Hab ihn bei der Arbeit mal an ne Windows Maschine geh&#228;ngt und er wird 
+</I>&gt;<i>sofort als ocddebugger erkannt, da ist es kein Prob,
+</I>&gt;<i>nur hier an der Linux-M&#246;hre krieg ichs noch nicht gebacken.
+</I>&gt;<i>Ich bin mir da recht sicher, dass es nicht an dem Dongle liegt, sondern 
+</I>&gt;<i>eher am System.
+</I>&gt;<i>Komme aber noch nicht weiter, hab schon ein paar Tutorials zu udev durch....
+</I>&gt;<i>Usbprog findet ihn auch nicht, nicht mal als root.
+</I>&gt;<i>
+</I>&gt;<i>Muss mal forschen...
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e, Timo
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Benedikt Sauter schrieb:
+</I>&gt;&gt;<i> Ne die neuste openocd Version ziehen, dann noch die usbprog.c austauschen
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://svn.berlios.de/svnroot/repos/usbprog/trunk/openocd/patch/usbprog.c">http://svn.berlios.de/svnroot/repos/usbprog/trunk/openocd/patch/usbprog.c</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1. sh bootstrap
+</I>&gt;&gt;<i> 2. ./configure --enable-usbprog
+</I>&gt;&gt;<i> 3. make
+</I>&gt;&gt;<i> 4. make install (als root)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> und starten auch als root oder das s bit setzen.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Bin gespannt &#252;ber eine ersten Ergebnisse.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Gruss Bene
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Am 9.8.2007 schrieb &quot;Timo&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timowirtz at arcor.de</A>&gt;:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;&gt;<i> Na sieh mal einer kuck:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$ cat /proc/bus/usb/devices
+</I>&gt;&gt;&gt;<i> ........
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> T:  Bus=01 Lev=01 Prnt=01 Port=04 Cnt=02 Dev#=  6 Spd=12  MxCh= 0
+</I>&gt;&gt;&gt;<i> D:  Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+</I>&gt;&gt;&gt;<i> P:  Vendor=1781 ProdID=0c63 Rev= 2.00
+</I>&gt;&gt;&gt;<i> S:  Manufacturer=B.Sauter
+</I>&gt;&gt;&gt;<i> S:  Product=OpenOCD Debugger
+</I>&gt;&gt;&gt;<i> S:  SerialNumber=GNU/GPL2
+</I>&gt;&gt;&gt;<i> C:* #Ifs= 1 Cfg#= 1 Atr=a0 MxPwr= 50mA
+</I>&gt;&gt;&gt;<i> I:  If#= 0 Alt= 0 #EPs= 2 Cls=00(&gt;ifc ) Sub=00 Prot=00 Driver=(none)
+</I>&gt;&gt;&gt;<i> E:  Ad=82(I) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+</I>&gt;&gt;&gt;<i> E:  Ad=03(O) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$
+</I>&gt;&gt;&gt;<i> Wer h&#228;tte es gedacht, habe die Firmware mit AVRDude aufgespielt und dann 
+</I>&gt;&gt;&gt;<i> wird er auch erkannt, ansonsten ist alles wie vorher.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Muss ich den Dongle jetzt noch irgendwie mounten?
+</I>&gt;&gt;&gt;<i> Kann n&#228;mlich noch immer nicht drauf zugreifen.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thx, Timo
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>     
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   
+</I>&gt;<i>
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: main.bin
+Type: application/octet-stream
+Size: 9318 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070813/48b9618e/attachment.bin">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070813/48b9618e/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: main.hex
+Type: application/octet-stream
+Size: 26241 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070813/48b9618e/attachment.obj">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070813/48b9618e/attachment.obj</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000222.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000225.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#224">[ date ]</a>
+              <a href="thread.html#224">[ thread ]</a>
+              <a href="subject.html#224">[ subject ]</a>
+              <a href="author.html#224">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

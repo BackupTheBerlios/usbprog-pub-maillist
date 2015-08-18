@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3Fusbprog%3D2C_initialflashen_%3DFCber_LPT%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F1%3D2C_AVR_device_antwortet_nicht%3F%3D&In-Reply-To=%3C000c01c7ac63%247e6e0df0%241404a8c0%40heimnetz.xx%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000045.html">
+   <LINK REL="Next"  HREF="000047.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht</H1>
+    <B>Frank Ulbrich</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3Fusbprog%3D2C_initialflashen_%3DFCber_LPT%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F1%3D2C_AVR_device_antwortet_nicht%3F%3D&In-Reply-To=%3C000c01c7ac63%247e6e0df0%241404a8c0%40heimnetz.xx%3E"
+       TITLE="[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht">frank.ulbrich at gmx.net
+       </A><BR>
+    <I>Mon Jun 11 22:02:51 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000045.html">[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+</A></li>
+        <LI>Next message: <A HREF="000047.html">[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Achja,
+ich habe die jeweiligen Nachbarpins des ATMEL durchgemessen, da ist kein
+Kurzschlu&#223;.
+:<i>-(
+</I>
+-----Urspr&#252;ngliche Nachricht-----
+Von: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub-bounces at lists.berlios.de</A>] Im Auftrag von Frank Ulbrich
+Gesendet: Montag, 11. Juni 2007 21:43
+An: <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+Betreff: [Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device
+antwortet nicht
+
+
+Hallo,
+ich habe gestern voller Stolz den Programmer zusammengebaut. Die
+Platinenversion  : gruene Platine, Kontakte unverzinnt Nun moechte ich den
+den ATMega32 mit dem hex file programmieren und habe Probleme
+ 
+a) Windows XP
+b) LPT Port Bidirektional
+c) AVRDUDE mit GUI 0.2.0
+d) Verkabelung zum LPT Port nach bsc Standard wie auf der Webseite
+beschrieben,
+e) Jumper 3-2 geschlossen.
+ 
+Problem:
+a) Wenn ich den Programmer &#252;ber das Parrallelport Kabel anstecke leuchtet
+die rote LED2
+b) Ich waehle in der UI die Parameter -p ATMEga32, -c bsd, -P lpt1,  Low
+Fuse write e0, Hight Fuse write d8
+   und unter Flash write das hex-file aus.
+c) Sobald ich execute druecke bekomme ich die Fehlermeldung : AVR device not
+responding, initialization failed.
+ 
+Frage :
+a) Muss das USB Kabel angesteckt sein ?
+b) Ist das Dauerleuchten von LED 2 OK ?
+c) Mu&#223; LED 1 flackern ?
+d) Ich wollte die Pins des ATMELS durchmessen, doch komme ich mit dem
+Schaltplan
+    nicht zurecht. Sind die PINS 44/43/42 usw. tatsaechlich miteinander
+verbunden ?
+    An welche PINs sollen MISO ankommen ? Auf dem Schaltplan geht alles auf
+einen Strich.
+e) Braucht der ATMEL die Clock vom USBN9604 ? Ich denke nicht ?
+ 
+Kann mir jemand einen Tip geben ? Ich habe es auch schon mit der SP12
+Verdrahtung zum Programmieren versucht ... ohne Erfolg.
+ 
+Gruss
+Frank
+ 
+
+_______________________________________________
+Usbprog-pub mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000045.html">[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+</A></li>
+	<LI>Next message: <A HREF="000047.html">[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

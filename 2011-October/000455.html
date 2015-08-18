@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog not detected by openocd
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2011-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20not%20detected%20by%20openocd&In-Reply-To=%3C4E8CABA5.1050907%40gmx.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000456.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog not detected by openocd</H1>
+    <B>Johannes Bauer</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20not%20detected%20by%20openocd&In-Reply-To=%3C4E8CABA5.1050907%40gmx.de%3E"
+       TITLE="[Usbprog-pub] usbprog not detected by openocd">dfnsonfsduifb at gmx.de
+       </A><BR>
+    <I>Wed Oct  5 21:10:29 CEST 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000456.html">[Usbprog-pub] usbprog not detected by openocd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#455">[ date ]</a>
+              <a href="thread.html#455">[ thread ]</a>
+              <a href="subject.html#455">[ subject ]</a>
+              <a href="author.html#455">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi there,
+
+I'm having trouble with my usbprog-v3. Never got it running and just
+left it there. Today I tried again.
+
+First, I erased the m32. Then reflashed the bootloader, set the fuses.
+Worked all nicely.
+
+Then, uploaded the openocd firmware (openocd.bin, MD5
+e9b85ef572b073f44f50585fcffe38b3). Also worked nicely. Upon
+disconnecting and reconnecting the USB (with jumpers removed again), I
+see similar errors to the last time I tried:
+
+2011-10-05 21:03:55 usb 1-3.7: new full speed USB device using ehci_hcd
+and address 42
+2011-10-05 21:03:55 usb 1-3.7: config 1 descriptor has 1 excess byte,
+ignoring
+
+$ lsusb | grep 42
+Bus 001 Device 042: ID 1781:0c63 Multiple Vendors
+
+$ lsusb -vv
+Bus 001 Device 042: ID 1781:0c63 Multiple Vendors
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               1.10
+  bDeviceClass            0 (Defined at Interface level)
+  bDeviceSubClass         0
+  bDeviceProtocol         0
+  bMaxPacketSize0         8
+  idVendor           0x1781 Multiple Vendors
+  idProduct          0x0c63
+  bcdDevice            2.00
+  iManufacturer           1 B.Sauter
+  iProduct                2 OpenOCD Debugger
+  iSerial                 3 GNU/GPL2
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength           41
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0
+    bmAttributes         0xa0
+      (Bus Powered)
+      Remote Wakeup
+    MaxPower               50mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           2
+      bInterfaceClass         0 (Defined at Interface level)
+      bInterfaceSubClass      0
+      bInterfaceProtocol      0
+      iInterface              0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x03  EP 3 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0040  1x 64 bytes
+        bInterval               0
+        ** UNRECOGNIZED:  08 00 8e 02 a6 02 ba 02
+Device Status:     0x0000
+  (Bus Powered)
+
+(Actually, lsusb hangs a really long time - about 10 seconds - at the
+&quot;UNRECOGNIZED&quot; line).
+
+The weird USB config descriptor and the lsusb output indicate there's
+already something wrong. But let's proceed to openocd (v0.5.0 compiled
+with usbprog support):
+
+First the configuration:
+$ cat x
+interface usbprog
+jtag_rclk 100
+
+source [find target/lm3s9b9x.cfg]
+
+jtag_nsrst_delay 100
+
+# LM3S9B9x Evaluation Board has only srst
+reset_config srst_only
+
+Then running openocd:
+
+$ src/openocd -s tcl -f x
+Open On-Chip Debugger 0.5.0 (2011-10-05-19:56)
+Licensed under GNU GPL v2
+For bug reports, read
+	<A HREF="http://openocd.berlios.de/doc/doxygen/bugs.html">http://openocd.berlios.de/doc/doxygen/bugs.html</A>
+Warn : Adapter driver 'usbprog' did not declare which transports it
+allows; assuming legacy JTAG-only
+Info : only one transport option; autoselect 'jtag'
+RCLK - adaptive
+adapter_nsrst_delay: 100
+srst_only separate srst_gates_jtag srst_open_drain
+usb_set_debug: Setting debugging level to 10 (on)
+usb_os_init: Found USB VFS at /dev/bus/usb
+usb_os_find_busses: Found 008
+usb_os_find_busses: Found 002
+usb_os_find_busses: Found 001
+usb_os_find_busses: Found 006
+usb_os_find_busses: Found 007
+usb_os_find_busses: Found 005
+usb_os_find_busses: Found 003
+usb_os_find_busses: Found 004
+usb_os_find_devices: Found 001 on 008
+usb_os_find_devices: Found 001 on 002
+usb_os_find_devices: Found 042 on 001
+skipping descriptor 0x0
+skipped 1 class/vendor specific endpoint descriptors
+Descriptor data still left
+usb_os_find_devices: Found 011 on 001
+skipped 4 class/vendor specific interface descriptors
+usb_os_find_devices: Found 004 on 001
+skipped 1 class/vendor specific interface descriptors
+usb_os_find_devices: Found 003 on 001
+usb_os_find_devices: Found 002 on 001
+usb_os_find_devices: Found 001 on 001
+error obtaining child information: Inappropriate ioctl for device
+error obtaining child information: Inappropriate ioctl for device
+error obtaining child information: Inappropriate ioctl for device
+error obtaining child information: Inappropriate ioctl for device
+usb_os_find_devices: Found 001 on 006
+usb_os_find_devices: Found 001 on 007
+usb_os_find_devices: Found 001 on 005
+usb_os_find_devices: Found 001 on 003
+usb_os_find_devices: Found 001 on 004
+Info : USB JTAG Interface ready!
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from jtag_speed to khz not implemented
+Info : adapter-specific clock speed value 2049446416
+Info : TAP lm3s9b9x.cpu does not have IDCODE
+Warn : JTAG tap: lm3s9b9x.cpu       UNEXPECTED: 0x00000000 (mfg: 0x000,
+part: 0x0000, ver: 0x0)
+Error: JTAG tap: lm3s9b9x.cpu  expected 1 of 1: 0x4ba00477 (mfg: 0x23b,
+part: 0xba00, ver: 0x4)
+Warn : Unexpected idcode after end of chain: 1 0x00000000
+Warn : Unexpected idcode after end of chain: 33 0x00000000
+Warn : Unexpected idcode after end of chain: 65 0x00000000
+Warn : Unexpected idcode after end of chain: 97 0x00000000
+Warn : Unexpected idcode after end of chain: 129 0x00000000
+Warn : Unexpected idcode after end of chain: 161 0x00000000
+Warn : Unexpected idcode after end of chain: 193 0x00000000
+Warn : Unexpected idcode after end of chain: 225 0x00000000
+Warn : Unexpected idcode after end of chain: 257 0x00000000
+Warn : Unexpected idcode after end of chain: 289 0x00000000
+Warn : Unexpected idcode after end of chain: 321 0x00000000
+Warn : Unexpected idcode after end of chain: 353 0x00000000
+Warn : Unexpected idcode after end of chain: 385 0x00000000
+Warn : Unexpected idcode after end of chain: 417 0x00000000
+Warn : Unexpected idcode after end of chain: 449 0x00000000
+Warn : Unexpected idcode after end of chain: 481 0xffffff80
+Error: double-check your JTAG setup (interface, speed, missing TAPs, ...)
+Error: Trying to use configured scan chain anyway...
+Error: lm3s9b9x.cpu: IR capture error; saw 0x0f not 0x01
+Warn : Bypassing JTAG setup events due to errors
+Warn : Invalid ACK 0 in JTAG-DP transaction
+
+Stracing openocd shows it is indeed selecting the correct device:
+
+open(&quot;/dev/bus/usb/001/042&quot;, O_RDWR)    = 5
+ioctl(5, USBDEVFS_SETCONFIGURATION, 0x7fffad6be554) = 0
+ioctl(5, USBDEVFS_CLAIMINTERFACE, 0x7fffad6be54c) = 0
+ioctl(5, USBDEVFS_SETINTERFACE, 0x7fffad6be540) = 0
+write(2, &quot;Info : USB JTAG Interface ready!&quot;..., 33Info : USB JTAG
+Interface ready!
+
+But then, later on, all the messages:
+
+ioctl(5, USBDEVFS_SUBMITURB or USBDEVFS_SUBMITURB32, 0x7fffad6be490) = 0
+ioctl(5, USBDEVFS_REAPURBNDELAY or USBDEVFS_REAPURBNDELAY32,
+0x7fffad6be508) = -1 EAGAIN (Resource temporarily unavailable)
+select(6, NULL, [5], NULL, {0, 1000})   = 1 (out [5], left {0, 902})
+ioctl(5, USBDEVFS_REAPURBNDELAY or USBDEVFS_REAPURBNDELAY32,
+0x7fffad6be508) = 0
+ioctl(5, USBDEVFS_SUBMITURB or USBDEVFS_SUBMITURB32, 0x7fffad6be440) = 0
+ioctl(5, USBDEVFS_REAPURBNDELAY or USBDEVFS_REAPURBNDELAY32,
+0x7fffad6be4b8) = -1 EAGAIN (Resource temporarily unavailable)
+select(6, NULL, [5], NULL, {0, 1000})   = 1 (out [5], left {0, 999})
+ioctl(5, USBDEVFS_REAPURBNDELAY or USBDEVFS_REAPURBNDELAY32,
+0x7fffad6be4b8) = 0
+ioctl(5, USBDEVFS_SUBMITURB or USBDEVFS_SUBMITURB32, 0x7fffad6be470) = 0
+
+(repeating over and over and over)
+
+Can anyone tell me what's going on? I'm even suspecting the USB chip
+might be broken. Is that possible? Please, any help is greatly appreciated.
+
+Thank you,
+Johannes
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000456.html">[Usbprog-pub] usbprog not detected by openocd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#455">[ date ]</a>
+              <a href="thread.html#455">[ thread ]</a>
+              <a href="subject.html#455">[ subject ]</a>
+              <a href="author.html#455">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

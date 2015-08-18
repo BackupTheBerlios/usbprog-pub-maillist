@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] flash atmel atmegas
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-March/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20flash%20atmel%20atmegas&In-Reply-To=%3C1204545962.14751.11.camel%40herkules%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000395.html">
+   <LINK REL="Next"  HREF="000397.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] flash atmel atmegas</H1>
+    <B>Andieh</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20flash%20atmel%20atmegas&In-Reply-To=%3C1204545962.14751.11.camel%40herkules%3E"
+       TITLE="[Usbprog-pub] flash atmel atmegas">mail at andieh.de
+       </A><BR>
+    <I>Mon Mar  3 13:06:02 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000395.html">[Usbprog-pub] usbprog feature requests
+</A></li>
+        <LI>Next message: <A HREF="000397.html">[Usbprog-pub] usbprog feature requests
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#396">[ date ]</a>
+              <a href="thread.html#396">[ thread ]</a>
+              <a href="subject.html#396">[ subject ]</a>
+              <a href="author.html#396">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi there!
+
+Thank you. It works now! I wrote a litte article about my working here,
+maybe its interessting for you and you would like to put it to the wiki.
+<A HREF="http://www.infolexikon.de/blog/atmegas-usb-mit-usbprog-flashen">http://www.infolexikon.de/blog/atmegas-usb-mit-usbprog-flashen</A>
+regrettably, only in german.
+
+Maybe i found out a bug, too: it is related to this thread:
+<A HREF="http://forum.embedded-projects.net/viewtopic.php?id=204">http://forum.embedded-projects.net/viewtopic.php?id=204</A>
+i tested some code on my atmega8 and after optimizing it and delete many
+lines, USBprog stop working. Red LED on, Error in USB Receive. 
+Adding again some lines and it worked. Dont know what this should be.
+
+&quot;Looking forward hearing from you&quot;
+Andieh
+
+
+On Fri, 2008-02-29 at 07:42 +0100, Benedikt Sauter wrote:
+&gt;<i> Hello,
+</I>&gt;<i> 
+</I>&gt;<i> &gt;so here my question: i want to flash some atmel atmega8 chips. i found
+</I>&gt;<i> &gt;this circuit diagramm on the net:
+</I>&gt;<i> &gt;<A HREF="http://www.mikrocontroller.net/wikifiles/d/dd/Avr-schaltplan-1.gif">http://www.mikrocontroller.net/wikifiles/d/dd/Avr-schaltplan-1.gif</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;it seems easy to build this, but do i need this extra 4Mhz quarz? i just
+</I>&gt;<i> &gt;thought usbprog has its own?
+</I>&gt;<i> 
+</I>&gt;<i> You need for your target a clock source. You can choose between an
+</I>&gt;<i> external source or you can use the internal clock source of an avr. This
+</I>&gt;<i> is independent from USBprog.
+</I>&gt;<i> 
+</I>&gt;<i> The only association between the USBprog clock and the target speed ist,
+</I>&gt;<i> that you can only progamm you target if the USBprog ISP Speed (you can
+</I>&gt;<i> sellect this in AVR Studio at tab board or with avrdude -B ..) is max.
+</I>&gt;<i> 1/4 of cpu speed.
+</I>&gt;<i> 
+</I>&gt;<i> Regards Bene
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;thank you for your help!
+</I>&gt;<i> &gt;andieh
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;_______________________________________________
+</I>&gt;<i> &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000395.html">[Usbprog-pub] usbprog feature requests
+</A></li>
+	<LI>Next message: <A HREF="000397.html">[Usbprog-pub] usbprog feature requests
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#396">[ date ]</a>
+              <a href="thread.html#396">[ thread ]</a>
+              <a href="subject.html#396">[ subject ]</a>
+              <a href="author.html#396">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

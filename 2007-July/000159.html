@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] USB1 Geh&#228;use BAT49 Diode Richtung ISP
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Futf-8%3Fq%3FUSB1_Geh%3DC3%3DA4use_BAT49_Diode_Richtung_IS%3F%3D%20%3D%3Futf-8%3Fq%3FP%3F%3D&In-Reply-To=%3C001501c7c95e%24a3d013a0%240201a8c0%40jar%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000160.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] USB1 Geh&#228;use BAT49 Diode Richtung ISP</H1>
+    <B>Joachim Bohs(web.de)</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Futf-8%3Fq%3FUSB1_Geh%3DC3%3DA4use_BAT49_Diode_Richtung_IS%3F%3D%20%3D%3Futf-8%3Fq%3FP%3F%3D&In-Reply-To=%3C001501c7c95e%24a3d013a0%240201a8c0%40jar%3E"
+       TITLE="[Usbprog-pub] USB1 Geh&#228;use BAT49 Diode Richtung ISP">joachim-bohs at web.de
+       </A><BR>
+    <I>Wed Jul 18 19:11:11 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">[Usbprog-pub] So Geh&#228;use USB1 gekauft, Musterp latine fertig
+</A></li>
+        <LI>Next message: <A HREF="000160.html">[Usbprog-pub] Redesign CPLD f&#252;r 3,3 V und 5 V
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Du meinst das SRAM ist einen halben mm zu breit.
+</I>
+genau
+
+&gt;<i> Warum macht ihr immer solche Sachen ;-) Ein neues Geh&#228;use f&#252;r 0,3 &#8364; mehr
+</I>&gt;<i> statt 15 minuten feilen ist doch viel sinniger.
+</I>&gt;<i> Zugegebenerma&#223;en habe ich kein Vorschlag f&#252;r ein anderes Geh&#228;use.
+</I>
+
+nee ich find den USB Stick geil ! muss sein, notfall feile ich den Chip eben 
+schmaler, wenn nur die Platine mitspielt
+
+&gt;&gt;<i> noch eine Idee, eine BAT49 Schottky von Vcc in Richtung ISP Vcc Pin2
+</I>&gt;&gt;<i> speist entweder das Target oder wenn Selbstversorger, verhindert
+</I>&gt;&gt;<i> R&#252;ckspeisung des USB
+</I>
+&gt;<i> Und bei kleiner &#220;berlast der Zielschaltung ist die Diode weg. Die Idee
+</I>&gt;<i> hatte ich auch, finde ich aber inzwischen nicht mehr so prickelnd.
+</I>
+bitte bei USB ?
+also wenn Bene den als high power device anmeldet dann sind maximal 500mA 
+m&#246;glich
+wenn es nur als normalo device angemeldet wird 100mA , allerdings kann ich 
+aus 3 PC locker 250mA ziehen
+
+die BAT49 kann 1A die raucht nicht ab , eher begrenzt der USB Port ! , 
+wohlgemerkt es geht um Targetversorgung ! die Diode soll den Strom nur vom 
+USB in Richtung Target flie&#223;en lassen, wenn Kurzschlu&#223; , USB begrenzt oder 
+schlimmstenfalls Diode put ! aber es wird definitiv R&#252;ckspeisung verhindert 
+!
+
+find ich gut , weil heute musste ich 2 Prommer parallel auf den ISP packen, 
+klappt prima, wenn beide ihre F&#252;sse nach getaner Arbeit aus dem ISP nehmen
+
+&gt;<i> Ja, keep ist simple. Ich habe jetzt schon Probleme normale SMDs mit
+</I>&gt;<i> meinen 40 j&#228;hrigen Augen zu l&#246;ten. Wir w&#228;re es sogar egal, wenn es
+</I>&gt;<i> nicht SMD w&#228;re :-)
+</I>
+ja ich hab mit 51 auch so Problemchen, aber das ist nix gegen heute eine 
+1,27mm doppereihige Steckerleiste bohren (und ich hab nur 0,7mm Bohrer 
+gekauft) und l&#246;ten (auf SMD Pad Laborkarte), also freihand ank&#246;rnen, pi x 
+daumen, bohrertwist und Steckerleiste irgendwie reinkloppen, dann unter dem 
+Tr&#228;ger als Blindflug verl&#246;ten, also 0,35mm Zinn flie&#223;t doof, sieht aber 
+messtechnisch ohne Kurzschl&#252;sse aus
+aber was tut man nicht alles um das GPS Modul zu adaptieren , SD Connector 
+soll ja auch noch rauf und ein Pegelwandler, aber SO16 ist ja echt bequem 
+dagegen
+
+mal sehen wenn ich das erste mal mit dem Modul talke
+
+wenn das Layout innerhalb des USB1 bleiben kann und nur der Chip &#252;bersteht, 
+kein Problem, den halben mm vom Chip wegzufeilen, muss ja der normal Nutzer 
+nicht machen ! nur wer die Platine wie ich unbedingt in das USB 1 bringen 
+will
+
+das USB1 hat den unbestrittenen Vorteil klar zu sein, alle on board LED sind 
+aus jeder Richtung sichbar, vermeidet externe LED nach aussen
+
+gruss
+jar
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">[Usbprog-pub] So Geh&#228;use USB1 gekauft, Musterp latine fertig
+</A></li>
+	<LI>Next message: <A HREF="000160.html">[Usbprog-pub] Redesign CPLD f&#252;r 3,3 V und 5 V
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

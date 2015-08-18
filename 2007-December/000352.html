@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] segfault in usbprog-gui and usb bus problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20segfault%20in%20usbprog-gui%20and%20usb%20bus%20problems&In-Reply-To=%3Cc15656ada3f25b2ffeb9141a0781cfab%40jaeger.mine.nu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] segfault in usbprog-gui and usb bus problems</H1>
+    <B>christian at jaeger.mine.nu</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20segfault%20in%20usbprog-gui%20and%20usb%20bus%20problems&In-Reply-To=%3Cc15656ada3f25b2ffeb9141a0781cfab%40jaeger.mine.nu%3E"
+       TITLE="[Usbprog-pub] segfault in usbprog-gui and usb bus problems">christian at jaeger.mine.nu
+       </A><BR>
+    <I>Sat Dec  1 04:31:00 CET 2007</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#352">[ date ]</a>
+              <a href="thread.html#352">[ thread ]</a>
+              <a href="subject.html#352">[ subject ]</a>
+              <a href="author.html#352">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello
+
+I'm writing in english, even if I'm speaking german natively, in the
+assumption that's for the benefit of other folks.
+
+Today I've soldered together the USBprog 3 I ordered a week
+ago. Plugging it into my linux PC (Debian) my kernel is saying
+something like
+
+Dec  1 02:11:41 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 121
+Dec  1 02:11:41 palme kernel: usb 3-2: config 1 descriptor has 1 excess byte, ignoring
+Dec  1 02:11:41 palme kernel: usb 3-2: configuration #1 chosen from 1 choice
+
+After some time, or attempts to get it to show up in usbprog-gui, it further says:
+
+Dec  1 02:11:50 palme kernel: usb 3-2: usbfs: USBDEVFS_CONTROL failed cmd usbprog-gui rqt 128 rq 6 len 255 ret -71
+Dec  1 02:11:55 palme last message repeated 9 times
+Dec  1 03:39:22 palme kernel: usb 3-2: usbfs: USBDEVFS_CONTROL failed cmd usbprog-gui rqt 128 rq 6 len 255 ret -110
+Dec  1 03:39:22 palme kernel: usb 3-2: usbfs: USBDEVFS_CONTROL failed cmd usbprog-gui rqt 128 rq 6 len 255 ret -71
+Dec  1 03:39:28 palme last message repeated 8 times
+Dec  1 03:41:01 palme last message repeated 5 times
+
+Plugging it out and in again:
+
+Dec  1 03:41:52 palme kernel: usb 3-2: USB disconnect, address 121
+
+(Waiting for several minutes here as I *suspect* that the capacitor
+might hold some charge which doesn't let the cpu fully shut down
+quickly. Maybe I'm wrong.)
+
+Dec  1 03:45:19 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 122
+Dec  1 03:45:19 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:45:19 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:45:19 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 123
+Dec  1 03:45:19 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:45:19 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:45:20 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 124
+Dec  1 03:45:20 palme kernel: usb 3-2: device not accepting address 124, error -71
+Dec  1 03:45:20 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 125
+Dec  1 03:45:21 palme kernel: usb 3-2: device not accepting address 125, error -71
+
+(ok, had bad luck--this happens about (precisely?) every second time
+I'm connecting. Plugging out and in again:)
+
+(hm, nothing shows up at all. Plugging out and in again:)
+
+Dec  1 03:49:25 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 126
+Dec  1 03:49:25 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:49:25 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:49:25 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 127
+Dec  1 03:49:25 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:49:26 palme kernel: usb 3-2: device descriptor read/64, error -71
+Dec  1 03:49:26 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 2
+Dec  1 03:49:26 palme kernel: usb 3-2: device not accepting address 2, error -71
+Dec  1 03:49:26 palme kernel: usb 3-2: new full speed USB device using uhci_hcd and address 4
+Dec  1 03:49:27 palme kernel: usb 3-2: device not accepting address 4, error -71
+
+ok, it doesn't come back up again at all anymore :(.
+
+
+Earlier today I got usbprog-gui to show it up in the Device menu. When
+I then selected 'Online Pool' and 'LEDBLINK' and hit 'Update', it
+would wait for ~1-2 minutes and then get a segfault. I've investigated
+with gdb and see in ../lib2/usbprog.cpp (segfault at line 310):
+
+int usbprog_update_mode_number(struct usbprog_context* usbprog, int number)
+{
+  struct usb_bus *busses;
+  struct usb_dev_handle* usb_handle;
+  struct usb_bus *bus;
+  struct usb_device *dev;
+
+  usb_find_busses();
+  usb_find_devices();
+  busses = usb_get_busses();
+  int i=0;
+  
+  char vendor[255];
+  char product[255];
+  int vendorlen=0, productlen=0;
+
+  for (bus = busses; bus; bus = bus-&gt;next) {
+    for (dev = bus-&gt;devices; dev; dev = dev-&gt;next){
+	// segfault happens in the above line; both dev and bus are 0x0.
+...
+	while(1){
+	  usb_find_busses();
+	  usb_find_devices();
+	  /*struct usb_bus * */busses = usb_get_busses();
+	  /*struct usb_bus *bus; */
+	  for (bus = busses; bus; bus = bus-&gt;next) {
+	    for (dev = bus-&gt;devices; dev; dev = dev-&gt;next){
+		...
+	    }
+	  }
+	  timeout++;
+	  if(timeout&gt;100)
+	    break;	
+	..
+	  sleep(1);
+	..
+	}
+      }
+      i++;
+    }
+  }
+  return 0;
+}
+
+
+The problem is that in the inner loop (for which I don't really
+understand the reason) the same loop variables are used as in the
+outer loop: bus and dev are 0x0 when the while loop is break'en out
+after timeout&gt;100, and the outer for loop then tries to dereference
+the 0x0 dev value.
+
+I've inserted new local variable declarations in C style comments
+above, those should help (well, as I said I don't really understand
+the intended control flow, so be wary). Sadly, I couldn't test them
+out anymore since the USBprog doesn't connect to the usb bus properly
+anymore, as you can see from the above kernel messages.
+
+I did use the usbprog-gui code from the usbprog_tools.tar.gz from the
+website. Now I've also checked out the svn code from berlios. The
+above variable scope problem hasn't been changed in the mean time
+(worse, it has been duplicated in the new usbprog_update_mode_device
+procedure).
+
+
+I did now also detach a bluetooth dongle from my second usb port and
+plugged in the usbprog there instead. Small difference (maybe just by
+coincidence):
+
+Dec  1 04:20:51 palme kernel: usb 3-1: new full speed USB device using uhci_hcd and address 13
+Dec  1 04:20:51 palme kernel: usb 3-1: config 1 descriptor has 1 excess byte, ignoring
+Dec  1 04:20:51 palme kernel: usb 3-1: configuration #1 chosen from 1 choice
+
+but when I start usbprog-gui (unmodified, but that doesn't matter yet,
+since the segfaulting code isn't triggered before hitting the Upload
+button, but th4ese messages appear already as it is scanning the bus):
+
+Dec  1 04:22:23 palme kernel: usb 3-1: usbfs: USBDEVFS_CONTROL failed cmd usbprog-gui rqt 128 rq 6 len 255 ret -110
+Dec  1 04:22:23 palme kernel: usb 3-1: usbfs: USBDEVFS_CONTROL failed cmd usbprog-gui rqt 128 rq 6 len 255 ret -71
+
+(lsusb -v used to show the USBprog correctly (Vendor/Product
+0x1781/0x0c63, iManufacturer B.Sauter, iProduct OpenOCD Debugger,..)
+but not anymore now.)
+
+
+Do you have suggestions on how to deal with the usb bus problems? Then
+I could at least continue looking into the usbprog-gui problem.
+
+
+Thanks,
+Christian.
+
+
+(Full backtrace just in case (code from usbprog_tools.tar.gz):
+
+#0  0x0805241e in usbprog_update_mode_number (usbprog=0x806e660, number=0)
+    at ../lib2/usbprog.cpp:310
+#1  0x08053bd6 in usbprogFrm::WxButton3Click (this=0x80f7f80, event=@0xbfcadc50)
+    at usbprogFrm.cpp:295
+#2  0xb7979665 in wxAppConsole::HandleEvent () from /usr/lib/libwx_baseu-2.6.so.0
+#3  0xb7a06e82 in wxEvtHandler::ProcessEventIfMatches () from /usr/lib/libwx_baseu-2.6.so.0
+#4  0xb7a06fcb in wxEventHashTable::HandleEvent () from /usr/lib/libwx_baseu-2.6.so.0
+#5  0xb7a0714f in wxEvtHandler::ProcessEvent () from /usr/lib/libwx_baseu-26.so.0
+#6  0xb7ca175c in wxWindowBase::TryParent () from /usr/lib/libwx_gtk2u_core-2.6.so.0
+#7  0xb7a070fe in wxEvtHandler::ProcessEvent () from /usr/lib/libwx_baseu-26.so.0
+#8  0xb7bec294 in wxButton::wxCreateObject () from /usr/lib/libwx_gtk2u_core-2.6.so.0
+#9  0xb7187e1b in g_cclosure_marshal_VOID__VOID () from /usr/lib/libgobject-2.0.so.0
+#10 0xb717a98b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#11 0xb718b213 in g_signal_chain_from_overridden () from /usr/lib/libgobject-2.0.so.0
+#12 0xb718c429 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#13 0xb718c5d9 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#14 0xb7441f11 in gtk_button_clicked () from /usr/lib/libgtk-x11-2.0.so.0
+#15 0xb74437dc in gtk_button_set_alignment () from /usr/lib/libgtk-x11-2.0.so.0
+#16 0xb7187e1b in g_cclosure_marshal_VOID__VOID () from /usr/lib/libgobject-2.0.so.0
+#17 0xb7178f49 in g_value_set_boxed () from /usr/lib/libgobject-2.0.so.0
+#18 0xb717a98b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#19 0xb718b3b8 in g_signal_chain_from_overridden () from /usr/lib/libgobject-2.0.so.0
+#20 0xb718c429 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#21 0xb718c5d9 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#22 0xb7441fa1 in gtk_button_released () from /usr/lib/libgtk-x11-2.0.so.0
+#23 0xb7442001 in gtk_button_released () from /usr/lib/libgtk-x11-2.0.so.0
+#24 0xb7510250 in _gtk_marshal_BOOLEAN__BOXED () from /usr/lib/libgtk-x11-20.so.0
+#25 0xb7178f49 in g_value_set_boxed () from /usr/lib/libgobject-2.0.so.0
+#26 0xb717a98b in g_closure_invoke () from /usr/lib/libgobject-2.0.so.0
+#27 0xb718b56f in g_signal_chain_from_overridden () from /usr/lib/libgobject-2.0.so.0
+#28 0xb718c208 in g_signal_emit_valist () from /usr/lib/libgobject-2.0.so.0
+#29 0xb718c5d9 in g_signal_emit () from /usr/lib/libgobject-2.0.so.0
+#30 0xb75f9f64 in gtk_widget_get_default_style () from /usr/lib/libgtk-x11-2.0.so.0
+#31 0xb7509bd3 in gtk_propagate_event () from /usr/lib/libgtk-x11-2.0.so.0
+#32 0xb750ae07 in gtk_main_do_event () from /usr/lib/libgtk-x11-2.0.so.0
+#33 0xb73a2eea in _gdk_events_init () from /usr/lib/libgdk-x11-2.0.so.0
+#34 0xb7103731 in g_main_context_dispatch () from /usr/lib/libglib-2.0.so.0
+#35 0xb71067a6 in g_main_context_check () from /usr/lib/libglib-2.0.so.0
+#36 0xb7106b67 in g_main_loop_run () from /usr/lib/libglib-2.0.so.0
+#37 0xb750b281 in gtk_main () from /usr/lib/libgtk-x11-2.0.so.0
+#38 0xb7b96aeb in wxEventLoop::Run () from /usr/lib/libwx_gtk2u_core-2.6.so0
+#39 0xb7c2e4be in wxAppBase::MainLoop () from /usr/lib/libwx_gtk2u_core-2.6so.0
+#40 0xb7c2db61 in wxAppBase::OnRun () from /usr/lib/libwx_gtk2u_core-2.6.so0
+#41 0xb79ae45a in wxEntry () from /usr/lib/libwx_baseu-2.6.so.0
+#42 0xb79ae506 in wxEntry () from /usr/lib/libwx_baseu-2.6.so.0
+#43 0x08051882 in main (argc=26140, argv=0xb7f52278) at usbprogApp.cpp:13
+)
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#352">[ date ]</a>
+              <a href="thread.html#352">[ thread ]</a>
+              <a href="subject.html#352">[ subject ]</a>
+              <a href="author.html#352">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

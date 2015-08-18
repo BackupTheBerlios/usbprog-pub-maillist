@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] [PATCH] Improve error handling
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%5BPATCH%5D%20Improve%20error%20handling&In-Reply-To=%3C20071020150036.GA19905%40mail1.bwalle.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000345.html">
+   <LINK REL="Next"  HREF="000347.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] [PATCH] Improve error handling</H1>
+    <B>Bernhard Walle</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%5BPATCH%5D%20Improve%20error%20handling&In-Reply-To=%3C20071020150036.GA19905%40mail1.bwalle.de%3E"
+       TITLE="[Usbprog-pub] [PATCH] Improve error handling">Bernhard.Walle at gmx.de
+       </A><BR>
+    <I>Sat Oct 20 17:00:36 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000345.html">[Usbprog-pub] [PATCH] Fix device detection for multiple USB devices
+</A></li>
+        <LI>Next message: <A HREF="000347.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#346">[ date ]</a>
+              <a href="thread.html#346">[ thread ]</a>
+              <a href="subject.html#346">[ subject ]</a>
+              <a href="author.html#346">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This patch improves error handling. If the process has no permission, the
+current implementation silently ignores this, i.e. reports success.
+
+Even worse, if the device is not available (i.e. the IDs 0x1781,0x0c62 which
+could be in case other firmware is loaded -- but this will be a new patch), the
+behaviour was undefined because the return was missing and the usb_handle was
+not checked.
+
+
+
+Signed-off-by: Bernhard Walle &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">bernhard.walle at gmx.de</A>&gt;
+
+---
+ lib/avrupdate.c    |   28 +++++++++++++++++++++++++---
+ lib/avrupdate.h    |    2 +-
+ usbprog-old/main.c |   17 +++++++++++++----
+ 3 files changed, 39 insertions(+), 8 deletions(-)
+
+--- a/lib/avrupdate.c
++++ b/lib/avrupdate.c
+@@ -14,10 +14,11 @@
+ #define SETVERSION     0x04
+ #define STOPPROGMODE   0x05
+ 
+-void avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file)
++int avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file)
+ {
+     char buf[64];
+     char cmd[64];
++    int ret;
+ 
+     FILE *fd;
+ 
+@@ -55,10 +56,19 @@ void avrupdate_flash_bin(struct usb_dev_
+           // command message
+           cmd[0]=WRITEPAGE;
+           cmd[1]=(char)page; // page number
+-          usb_bulk_write(usb_handle,2,cmd,64,100);
++          ret = usb_bulk_write(usb_handle,2,cmd,64,100);
++          if (ret &lt; 0) {
++              printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
++              return -1;
++          }
++
+ 
+           // data message 
+-          usb_bulk_write(usb_handle,2,buf,64,100);
++          ret = usb_bulk_write(usb_handle,2,buf,64,100);
++          if (ret &lt; 0) {
++              printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
++              return -1;
++          }
+           offset = 0;
+           page++;
+       }
+@@ -70,10 +80,20 @@ void avrupdate_flash_bin(struct usb_dev_
+       cmd[0]=WRITEPAGE;
+       cmd[1]=(char)page; // page number
+       usb_bulk_write(usb_handle,2,cmd,64,100);
++      if (ret &lt; 0) {
++          printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
++          return -1;
++      }
+ 
+       // data message 
+       usb_bulk_write(usb_handle,2,buf,64,100);
++      if (ret &lt; 0) {
++          printf(&quot;Error while writing to USB device: %s\n&quot;, usb_strerror());
++          return -1;
++      }
+     }   
++
++    return 0;
+ }
+ 
+ 
+@@ -217,6 +237,8 @@ struct usb_dev_handle* avrupdate_open(sh
+        }
+     }  
+   }
++
++   return NULL;
+ }
+ 
+ 
+--- a/lib/avrupdate.h
++++ b/lib/avrupdate.h
+@@ -22,7 +22,7 @@ struct usb_dev_handle* avrupdate_open(sh
+ void avrupdate_close(struct usb_dev_handle* usb_handle);
+ 
+ /* lowlevel funktions for avr */
+-void avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file);
++int avrupdate_flash_bin(struct usb_dev_handle* usb_handle,char *file);
+ void avrupdate_startapp(struct usb_dev_handle* usb_handle);
+ 
+ int avrupdate_find_usbdevice();
+--- a/usbprog-old/main.c
++++ b/usbprog-old/main.c
+@@ -17,11 +17,13 @@
+ */
+ 
+ #include &lt;stdio.h&gt;
++#include &lt;stdlib.h&gt;
+ #include &lt;usb.h&gt;
+ #include &quot;../lib/avrupdate.h&quot;
+ 
+ int main(int argc, char **argv)
+ {
++   	int ret;
+ 	
+  	// start with the destination of your bin file
+ 	
+@@ -88,12 +90,12 @@ int main(int argc, char **argv)
+ 		default:
+ 			printf(&quot;Error: Can't find vaild usbprog adapter on usb bus.\n \
+ Be sure that you are root or have enough permissions to access usb.\n&quot;);
+-			return -1;
++			return EXIT_FAILURE;
+ 	}
+ 
+  	if(argc!=2) {
+ 		printf(&quot;Error: Firmware file missing! (usbprog avrispmk2.bin)\n&quot;);
+-		return -1;
++		return EXIT_FAILURE;
+ 	}
+ 	else {
+ 		printf(&quot;start update to %s \n&quot;,argv[1]);
+@@ -101,7 +103,14 @@ Be sure that you are root or have enough
+ 
+ 
+ 	usb_handle = avrupdate_open(0x1781,0x0c62);
+- 	avrupdate_flash_bin(usb_handle,argv[1]);
++	if (!usb_handle) {
++	  printf(&quot;Not possible to open USB device.\n&quot;);
++	  return EXIT_FAILURE;
++	}
++ 	ret = avrupdate_flash_bin(usb_handle,argv[1]);
++	if (ret &lt; 0) {
++	  return EXIT_FAILURE;
++	}
+  	printf(&quot;start new firmware\n\n&quot;);
+  	avrupdate_startapp(usb_handle);
+  	avrupdate_close(usb_handle);
+@@ -109,7 +118,7 @@ Be sure that you are root or have enough
+ 	printf(&quot;Have fun with your new adapter!\n&quot;);
+ 
+ 
+-	return;
++	return EXIT_SUCCESS;
+ /*
+ 	char *url = &quot;<A HREF="http://www.ixbat.de/versions.conf">http://www.ixbat.de/versions.conf</A>&quot;;
+ 	printf(&quot;Found %i version(s)\n&quot;,avrupdate_net_versions(url));	
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000345.html">[Usbprog-pub] [PATCH] Fix device detection for multiple USB devices
+</A></li>
+	<LI>Next message: <A HREF="000347.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#346">[ date ]</a>
+              <a href="thread.html#346">[ thread ]</a>
+              <a href="subject.html#346">[ subject ]</a>
+              <a href="author.html#346">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

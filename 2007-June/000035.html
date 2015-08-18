@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Usbprog Fehlermeldung am USB
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Usbprog%20Fehlermeldung%20am%20USB&In-Reply-To=%3C20070605110244.1E0F17CB33%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000034.html">
+   <LINK REL="Next"  HREF="000036.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Usbprog Fehlermeldung am USB</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Usbprog%20Fehlermeldung%20am%20USB&In-Reply-To=%3C20070605110244.1E0F17CB33%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Usbprog Fehlermeldung am USB">sauter at sistecs.de
+       </A><BR>
+    <I>Tue Jun  5 13:00:24 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000034.html">[Usbprog-pub] Usbprog Fehlermeldung am USB
+</A></li>
+        <LI>Next message: <A HREF="000036.html">[Usbprog-pub] Usbprog Fehlermeldung am USB
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#35">[ date ]</a>
+              <a href="thread.html#35">[ thread ]</a>
+              <a href="subject.html#35">[ subject ]</a>
+              <a href="author.html#35">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Lars,
+
+h&#228;ngt bei dem anderen Rechner kein Hub dazwischen?
+
+
+Gruss Bene
+
+Am 5.6.2007 schrieb &quot;Lars&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-list at kessnernet.de</A>&gt;:
+
+&gt;<i>Hallo zusammen,
+</I>&gt;<i>
+</I>&gt;<i>ich bin nun seit kurzem Besitzer eines usbprog. Leider hab ich ein
+</I>&gt;<i>kleines Problem damit. Vielleicht kann mir ja jemand ein Tip geben woran
+</I>&gt;<i>es liegt. Und zwar wird der Adapter an meinem Notebook nicht richtig
+</I>&gt;<i>erkannt, sowohl unter Linux als auch unter Windows. Das einspielen der
+</I>&gt;<i>usbprog_base.hex, setzen der FUSE-Bits mittels Ponyprog und
+</I>&gt;<i>Parallelkabel hat noch ohne Probleme funktioniert. 
+</I>&gt;<i>Ich habe dann den Adapter noch an zwei anderen Notebooks probiert, da
+</I>&gt;<i>funktioniert er dann sowohl unter Linux als auch unter Windows. Somit
+</I>&gt;<i>kann ich eigentlich kalte L&#195;&#182;tstellen etc. ausschlie&#195;&#159;en.
+</I>&gt;<i>Anbei sende ich mal Euch mal die USB-Debug Meldungen meines Notebooks.
+</I>&gt;<i>vielleicht kann damit ja jemand was anfangen und wei&#195;&#159; ein Rat.
+</I>&gt;<i>
+</I>&gt;<i>--------------------------------------
+</I>&gt;<i>Jun  5 07:46:36 miboII hub 1-0:1.0: state 7 ports 6 chg 0000 evt 0008
+</I>&gt;<i>Jun  5 07:46:36 miboII ehci_hcd 0000:00:1d.7: GetStatus port 3 status
+</I>&gt;<i>001803 POWER sig=j CSC CONNECT
+</I>&gt;<i>Jun  5 07:46:36 miboII hub 1-0:1.0: port 3, status 0501, change 0001,
+</I>&gt;<i>480 Mb/s
+</I>&gt;<i>Jun  5 07:46:36 miboII hub 1-0:1.0: debounce: port 3: total 100ms stable
+</I>&gt;<i>100ms status 0x501
+</I>&gt;<i>Jun  5 07:46:36 miboII ehci_hcd 0000:00:1d.7: port 3 full speed --&gt;
+</I>&gt;<i>companion
+</I>&gt;<i>Jun  5 07:46:36 miboII ehci_hcd 0000:00:1d.7: GetStatus port 3 status
+</I>&gt;<i>003801 POWER OWNER sig=j CONNECT
+</I>&gt;<i>Jun  5 07:46:36 miboII uhci_hcd 0000:00:1d.1: wakeup_rh (auto-start)
+</I>&gt;<i>Jun  5 07:46:36 miboII hub 3-0:1.0: state 7 ports 2 chg 0000 evt 0002
+</I>&gt;<i>Jun  5 07:46:36 miboII uhci_hcd 0000:00:1d.1: port 1 portsc 0093,00
+</I>&gt;<i>Jun  5 07:46:36 miboII hub 3-0:1.0: port 1, status 0101, change 0001, 12
+</I>&gt;<i>Mb/s
+</I>&gt;<i>Jun  5 07:46:37 miboII hub 3-0:1.0: debounce: port 1: total 100ms stable
+</I>&gt;<i>100ms status 0x101
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: new full speed USB device using uhci_hcd
+</I>&gt;<i>and address 18
+</I>&gt;<i>Jun  5 07:46:37 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 500000
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7d74380] link (37d742c2) element (37c8a090)
+</I>&gt;<i>Jun  5 07:46:37 miboII Element != First TD
+</I>&gt;<i>Jun  5 07:46:37 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=0 EP=0(IN) CTL
+</I>&gt;<i>Jun  5 07:46:37 miboII 1: [f7c8a030] link (37c8a060) e3 Length=7
+</I>&gt;<i>MaxLen=7 DT0 EndPt=0 Dev=0, PID=2d(SETUP) (buf=2cec2c80)
+</I>&gt;<i>Jun  5 07:46:37 miboII 2: [f7c8a060] link (37c8a090) e3 SPD Length=7
+</I>&gt;<i>MaxLen=3f DT1 EndPt=0 Dev=0, PID=69(IN) (buf=0ddaf880)
+</I>&gt;<i>Jun  5 07:46:37 miboII 3: [f7c8a090] link (37c8a0c0) e3 IOC Stalled
+</I>&gt;<i>Babble Length=7ff MaxLen=7ff DT1 EndPt=0 Dev=0, PID=e1(OUT)
+</I>&gt;<i>(buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7c8a0c0] link (37c8a030) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII 
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: ep0 maxpacket = 8
+</I>&gt;<i>Jun  5 07:46:37 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 500000
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7d74380] link (37d742c2) element (37c8a060)
+</I>&gt;<i>Jun  5 07:46:37 miboII Element != First TD
+</I>&gt;<i>Jun  5 07:46:37 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=18 EP=0(IN) CTL
+</I>&gt;<i>Jun  5 07:46:37 miboII 1: [f7c8a030] link (37c8a060) e3 Length=7
+</I>&gt;<i>MaxLen=7 DT0 EndPt=0 Dev=12, PID=2d(SETUP) (buf=2cec2de0)
+</I>&gt;<i>Jun  5 07:46:37 miboII 2: [f7c8a060] link (37c8a090) e3 SPD Stalled
+</I>&gt;<i>Babble Length=7 MaxLen=7 DT1 EndPt=0 Dev=12, PID=69(IN) (buf=2cec2c80)
+</I>&gt;<i>Jun  5 07:46:37 miboII 3: [f7c8a090] link (37c8a0c0) e3 SPD Active
+</I>&gt;<i>Length=0 MaxLen=7 DT0 EndPt=0 Dev=12, PID=69(IN) (buf=2cec2c88)
+</I>&gt;<i>Jun  5 07:46:37 miboII 4: [f7c8a0c0] link (37c8a0f0) e3 SPD Active
+</I>&gt;<i>Length=0 MaxLen=1 DT1 EndPt=0 Dev=12, PID=69(IN) (buf=2cec2c90)
+</I>&gt;<i>Jun  5 07:46:37 miboII 5: [f7c8a0f0] link (37c8a120) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=12, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7c8a120] link (37c8a150) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII 
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: device descriptor read/all, error -75
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: new full speed USB device using uhci_hcd
+</I>&gt;<i>and address 19
+</I>&gt;<i>Jun  5 07:46:37 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 500000
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7d74380] link (37d742c2) element (37c8a060)
+</I>&gt;<i>Jun  5 07:46:37 miboII Element != First TD
+</I>&gt;<i>Jun  5 07:46:37 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=0 EP=0(IN) CTL
+</I>&gt;<i>Jun  5 07:46:37 miboII 1: [f7c8a030] link (37c8a060) e3 Length=7
+</I>&gt;<i>MaxLen=7 DT0 EndPt=0 Dev=0, PID=2d(SETUP) (buf=2cec2c80)
+</I>&gt;<i>Jun  5 07:46:37 miboII 2: [f7c8a060] link (37c8a090) e3 SPD Stalled
+</I>&gt;<i>Babble Length=3f MaxLen=3f DT1 EndPt=0 Dev=0, PID=69(IN) (buf=0ddaf880)
+</I>&gt;<i>Jun  5 07:46:37 miboII 3: [f7c8a090] link (37c8a0c0) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7c8a0c0] link (37c8a0f0) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII 
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: ep0 maxpacket = 8
+</I>&gt;<i>Jun  5 07:46:37 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 500000
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7d74380] link (37d742c2) element (37c8a060)
+</I>&gt;<i>Jun  5 07:46:37 miboII Element != First TD
+</I>&gt;<i>Jun  5 07:46:37 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=19 EP=0(IN) CTL
+</I>&gt;<i>Jun  5 07:46:37 miboII 1: [f7c8a030] link (37c8a060) e3 Length=7
+</I>&gt;<i>MaxLen=7 DT0 EndPt=0 Dev=13, PID=2d(SETUP) (buf=2cec2f40)
+</I>&gt;<i>Jun  5 07:46:37 miboII 2: [f7c8a060] link (37c8a090) e3 SPD Stalled
+</I>&gt;<i>Babble Length=7 MaxLen=7 DT1 EndPt=0 Dev=13, PID=69(IN) (buf=2cec2ea0)
+</I>&gt;<i>Jun  5 07:46:37 miboII 3: [f7c8a090] link (37c8a0c0) e3 SPD Active
+</I>&gt;<i>Length=0 MaxLen=7 DT0 EndPt=0 Dev=13, PID=69(IN) (buf=2cec2ea8)
+</I>&gt;<i>Jun  5 07:46:37 miboII 4: [f7c8a0c0] link (37c8a0f0) e3 SPD Active
+</I>&gt;<i>Length=0 MaxLen=1 DT1 EndPt=0 Dev=13, PID=69(IN) (buf=2cec2eb0)
+</I>&gt;<i>Jun  5 07:46:37 miboII 5: [f7c8a0f0] link (37c8a120) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=13, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7c8a120] link (37c8a150) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII 
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: device descriptor read/all, error -75
+</I>&gt;<i>Jun  5 07:46:37 miboII usb 3-1: new full speed USB device using uhci_hcd
+</I>&gt;<i>and address 20
+</I>&gt;<i>Jun  5 07:46:37 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 500000
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7d74380] link (37d742c2) element (37c8a030)
+</I>&gt;<i>Jun  5 07:46:37 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=0 EP=0(OUT) CTL
+</I>&gt;<i>Jun  5 07:46:37 miboII 1: [f7c8a030] link (37c8a060) e3 Stalled Babble
+</I>&gt;<i>Length=7 MaxLen=7 DT0 EndPt=0 Dev=0, PID=2d(SETUP) (buf=2cec2ea0)
+</I>&gt;<i>Jun  5 07:46:37 miboII 2: [f7c8a060] link (37c8a090) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=0, PID=69(IN) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7c8a090] link (37c8a0c0) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII 
+</I>&gt;<i>Jun  5 07:46:37 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 440000
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7d74380] link (37d742c2) element (37c8a090)
+</I>&gt;<i>Jun  5 07:46:37 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=0 EP=0(OUT) CTL
+</I>&gt;<i>Jun  5 07:46:37 miboII 1: [f7c8a090] link (37c8a030) e0 Stalled
+</I>&gt;<i>CRC/Timeo Length=7 MaxLen=7 DT0 EndPt=0 Dev=0, PID=2d(SETUP)
+</I>&gt;<i>(buf=2cec2ea0)
+</I>&gt;<i>Jun  5 07:46:37 miboII 2: [f7c8a030] link (37c8a060) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=0, PID=69(IN) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:37 miboII [f7c8a060] link (37c8a090) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:37 miboII 
+</I>&gt;<i>Jun  5 07:46:38 miboII usb 3-1: device not accepting address 20, error
+</I>&gt;<i>-71
+</I>&gt;<i>Jun  5 07:46:38 miboII usb 3-1: new full speed USB device using uhci_hcd
+</I>&gt;<i>and address 21
+</I>&gt;<i>Jun  5 07:46:38 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 440000
+</I>&gt;<i>Jun  5 07:46:38 miboII [f7d74380] link (37d742c2) element (37c8a030)
+</I>&gt;<i>Jun  5 07:46:38 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=21 EP=0(IN) CTL
+</I>&gt;<i>Jun  5 07:46:38 miboII 1: [f7c8a030] link (37c8a060) e0 Stalled
+</I>&gt;<i>CRC/Timeo Length=7 MaxLen=7 DT0 EndPt=0 Dev=15, PID=2d(SETUP)
+</I>&gt;<i>(buf=2cec2f40)
+</I>&gt;<i>Jun  5 07:46:38 miboII 2: [f7c8a060] link (37c8a090) e3 SPD Active
+</I>&gt;<i>Length=0 MaxLen=7 DT1 EndPt=0 Dev=15, PID=69(IN) (buf=2cec2ea0)
+</I>&gt;<i>Jun  5 07:46:38 miboII 3: [f7c8a090] link (37c8a0c0) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=15, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:38 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:38 miboII [f7c8a0c0] link (37c8a0f0) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:38 miboII 
+</I>&gt;<i>Jun  5 07:46:38 miboII usb 3-1: device descriptor read/8, error -71
+</I>&gt;<i>Jun  5 07:46:38 miboII uhci_hcd 0000:00:1d.1: uhci_result_control:
+</I>&gt;<i>failed with status 440000
+</I>&gt;<i>Jun  5 07:46:38 miboII [f7d74380] link (37d742c2) element (37c8a0c0)
+</I>&gt;<i>Jun  5 07:46:38 miboII urb_priv [cd1823bc] urb [cd5985c0] qh [f7d74380]
+</I>&gt;<i>Dev=21 EP=0(IN) CTL
+</I>&gt;<i>Jun  5 07:46:38 miboII 1: [f7c8a0c0] link (37c8a030) e0 Stalled
+</I>&gt;<i>CRC/Timeo Length=7 MaxLen=7 DT0 EndPt=0 Dev=15, PID=2d(SETUP)
+</I>&gt;<i>(buf=2cec2d80)
+</I>&gt;<i>Jun  5 07:46:38 miboII 2: [f7c8a030] link (37c8a060) e3 SPD Active
+</I>&gt;<i>Length=0 MaxLen=7 DT1 EndPt=0 Dev=15, PID=69(IN) (buf=2cec2f40)
+</I>&gt;<i>Jun  5 07:46:38 miboII 3: [f7c8a060] link (37c8a090) e3 IOC Active
+</I>&gt;<i>Length=0 MaxLen=7ff DT1 EndPt=0 Dev=15, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:38 miboII Dummy TD
+</I>&gt;<i>Jun  5 07:46:38 miboII [f7c8a090] link (37c8a0c0) e0 Length=0 MaxLen=7ff
+</I>&gt;<i>DT0 EndPt=0 Dev=0, PID=e1(OUT) (buf=00000000)
+</I>&gt;<i>Jun  5 07:46:38 miboII 
+</I>&gt;<i>Jun  5 07:46:38 miboII usb 3-1: device descriptor read/8, error -71
+</I>&gt;<i>Jun  5 07:46:38 miboII hub 3-0:1.0: state 7 ports 2 chg 0000 evt 0002
+</I>&gt;<i>--------------------------------------
+</I>&gt;<i>
+</I>&gt;<i>Gru&#195;&#159;
+</I>&gt;<i>
+</I>&gt;<i>Lars
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000034.html">[Usbprog-pub] Usbprog Fehlermeldung am USB
+</A></li>
+	<LI>Next message: <A HREF="000036.html">[Usbprog-pub] Usbprog Fehlermeldung am USB
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#35">[ date ]</a>
+              <a href="thread.html#35">[ thread ]</a>
+              <a href="subject.html#35">[ subject ]</a>
+              <a href="author.html#35">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

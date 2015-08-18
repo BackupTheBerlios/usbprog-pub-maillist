@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Unstable ATmega32 startup at power on
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Unstable%20ATmega32%20startup%20at%20power%20on&In-Reply-To=%3C1f4ebb3c0709011432o404669f4pde1a2ed398e086d1%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000322.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Unstable ATmega32 startup at power on</H1>
+    <B>Alexey Gapotchenko</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Unstable%20ATmega32%20startup%20at%20power%20on&In-Reply-To=%3C1f4ebb3c0709011432o404669f4pde1a2ed398e086d1%40mail.gmail.com%3E"
+       TITLE="[Usbprog-pub] Unstable ATmega32 startup at power on">alex.s.gap at gmail.com
+       </A><BR>
+    <I>Sat Sep  1 23:32:01 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000322.html">[Usbprog-pub] Unstable ATmega32 startup at power on
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#321">[ date ]</a>
+              <a href="thread.html#321">[ thread ]</a>
+              <a href="subject.html#321">[ subject ]</a>
+              <a href="author.html#321">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi
+
+I experienced troubles during frequent manual usbprog
+connection/disconnection to/from USB port. Approx. 30% of connections fail -
+PC do not detects usbprog or detects it as 'Unknown device'. After some
+experimentations I found out that the cause of the problem is unstable
+ATmega32 startup.
+
+Any USB device experiences nearly random power conditions when it gets
+connected to the host USB port. The source of the bad power conditions is
+fuzzy electrical contact during USB plug insertion. And AVR MCUs can easily
+get stucked by noisy DC power source...
+
+So I looked at the recommended MCU fuses for the usbprog to check whether
+brown-out detector (BOD) is enabled. BOD is internal MCU unit which
+guarantees that MCU core will enter stable running mode at noisy power
+conditions. And I was surprized - BOD was disabled! This fact explained me
+why usbprog's ATmega32 MCU often got stucked at USB port plugging.
+
+I have changed fuses according to MCU's datasheet to enable BOD:
+BODLEVEL=0
+BODEN=0
+SUT1=0
+SUT0=0
+
+See attached file to see a screenshot of 'Configuration and Security bits'
+window from PonyProg.
+
+After that I was unable to repeat any USB connection failures - they do not
+happen anymore. PC reliably detects usbprog whenever it becomes connected to
+USB port.
+
+I suggest author to change the official recommended fuse bits settings for
+usbprog to BOD-enabled derivation described at this mail.
+
+P.S. I want to thank author and all the contributors for the great project!
+usbprog is the most flexible programming tool I have ever seen!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070902/f51c1cbf/attachment.html">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070902/f51c1cbf/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: reliable-usbprog-fuses.PNG
+Type: image/png
+Size: 11217 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070902/f51c1cbf/attachment.png">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20070902/f51c1cbf/attachment.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000322.html">[Usbprog-pub] Unstable ATmega32 startup at power on
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#321">[ date ]</a>
+              <a href="thread.html#321">[ thread ]</a>
+              <a href="subject.html#321">[ subject ]</a>
+              <a href="author.html#321">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

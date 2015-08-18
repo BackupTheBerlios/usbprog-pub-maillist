@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Problems with first own firmware
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problems%20with%20first%20own%20firmware&In-Reply-To=%3C47FDC349.10606%40gmx.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000401.html">
+   <LINK REL="Next"  HREF="000403.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Problems with first own firmware</H1>
+    <B>Thomas Wittmann</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problems%20with%20first%20own%20firmware&In-Reply-To=%3C47FDC349.10606%40gmx.de%3E"
+       TITLE="[Usbprog-pub] Problems with first own firmware">thomwitt at gmx.de
+       </A><BR>
+    <I>Thu Apr 10 09:35:37 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000401.html">[Usbprog-pub] usbn2mc differences
+</A></li>
+        <LI>Next message: <A HREF="000403.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#402">[ date ]</a>
+              <a href="thread.html#402">[ thread ]</a>
+              <a href="subject.html#402">[ subject ]</a>
+              <a href="author.html#402">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello!
+
+I tried to build my first own firmware. It emulates a standard
+game-controller. Actually only the throttle.
+For model i choose the firmware from the &quot;usbserial&quot; and &quot;PS2 to USB&quot;
+from ixbat.de.
+
+The enumeration works, i think. The USBprog is recognized by windows as
+a HID and is listed as &quot;HID-konformer Gamecontroller&quot;.
+But after the enumeration there is no datatransmission from the USBprog
+to the Host. I choose the interrupt-transfer and two requests
+for data were send from host to USBprog. In adiition to the sourcecode I
+included a logfile from usbsnoop in the link [1].
+I have a real game-controller which protocol during enumeration i used
+for model. So there shouldn't be any big mistakes.
+
+During the research of my firmware I had two problems:
+- When i choosed the &quot;main&quot;-part from usbn2mc, i wasn't able to assign
+the report descriptor. How can I do this?
+
+- Actually i choose the &quot;tiny&quot;-part. There it is easy to build the
+report descriptor. But in this Version I can't convince the USBprog
+    to send data after enumeration.
+
+[1] <A HREF="http://www.etechnik.info.ms/FirstTry.zip">http://www.etechnik.info.ms/FirstTry.zip</A>
+
+
+Please have a look on my files. Did i overlook a flag or a comment? I
+forage for the solution since days.
+
+
+Regards,
+Thomas
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000401.html">[Usbprog-pub] usbn2mc differences
+</A></li>
+	<LI>Next message: <A HREF="000403.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#402">[ date ]</a>
+              <a href="thread.html#402">[ thread ]</a>
+              <a href="subject.html#402">[ subject ]</a>
+              <a href="author.html#402">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

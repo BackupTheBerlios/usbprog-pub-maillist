@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Platinen Redesign f&#252;r usbprog  3.  0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog__3%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F%3D2E__0%3F%3D&In-Reply-To=%3C20070717150916.1380BFD7BE%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000150.html">
+   <LINK REL="Next"  HREF="000152.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Platinen Redesign f&#252;r usbprog  3.  0</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog__3%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F%3D2E__0%3F%3D&In-Reply-To=%3C20070717150916.1380BFD7BE%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Platinen Redesign f&#252;r usbprog  3.  0">sauter at sistecs.de
+       </A><BR>
+    <I>Tue Jul 17 17:09:07 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000150.html">[Usbprog-pub] Leiterbahnendicke
+</A></li>
+        <LI>Next message: <A HREF="000152.html">[Usbprog-pub] wenn die Platinenrouter noch etwas warten k&#246;nnen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Fred
+
+&gt;<i>Hallo Bene,
+</I>&gt;<i>
+</I>&gt;<i>Du hast jetzt nicht in der Gruppe geschrieben. Absichtlich?
+</I>
+aehm nein, ich glaub ich mach auch grad zuviel aufeinmal :-)
+
+&gt;<i>Kann man die Mailing-Liste nicht so einstellen, da&#223; die
+</I>&gt;<i>Mails als Reply-To die Gruppen-Adresse haben?
+</I>
+ich schau mal gleich
+
+&gt;&gt;<i> K&#246;nnte man einfach irgendwas einbauen, das alles mit
+</I>&gt;&gt;<i> 3,3 V statt mit 5 V arbeitet? Macht vor allem f&#252;r die openocd Firmware
+</I>&gt;&gt;<i> Sinn. Die meisten ARMs arbeiten glaub mit 3,3 Volt.
+</I>&gt;<i>
+</I>&gt;<i>Man k&#246;nnte, wenn der USBN9604 auch mit 3,3V l&#228;uft und wenn man den ATmega32L benutzt, der aber nur bis 8 Mhz Takt vertr&#228;gt. Ich wei&#223; nicht, ob er dann schnell genug l&#228;uft.
+</I>&gt;<i>
+</I>&gt;<i>Au&#223;erdem w&#252;rden dann Probleme mit 5V-Systemen auftreten. Diese k&#246;nnten dann nicht mehr richtig programmiert werden. Dazu habe ich aber Null
+</I>&gt;<i>Erfahrung, vielleicht kann ein Mitleser das Gegenteil belegen.
+</I>&gt;<i>
+</I>&gt;<i>Wenn auf 3.3 V umgestiegen wird, dann mu&#223; ein Spannungsregler eingebaut werden, der erzeugt aber Verlustw&#228;rme. Weiterhin werden ca. 3 Kondensatoren noch gebraucht. Langsam aber sicher
+</I>&gt;<i>wird es in dem vorgesehenen Geh&#228;use zu eng. Diese Anforderung sollten wir
+</I>&gt;<i>uns genau &#252;berlegen. Ein externer Pegelumsetzer w&#228;re wohl die bessere L&#246;sung.
+</I>
+Ok extener Pegelumsetzer. Cool w&#228;re es gewesen wenn man einfach irgend
+einen Baustein oder mit klassischen Bauelementen vor jeden Port etwas
+schalte h&#228;tten k&#246;nnen. Und mit einem Zentralen Jumper h&#228;tte man sagen
+k&#246;nnen ob die I/O-Ports mit 3,3 oder 5 Volt arbeiten. Der ATMega32 und
+USBN9604 wuerden immer mit den 5 dann arbeiten. Also sozusagen einen
+Bustreiber mit integrierten Spannungswandler 3,3 oder 5 V.
+
+Gruss Bene
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000150.html">[Usbprog-pub] Leiterbahnendicke
+</A></li>
+	<LI>Next message: <A HREF="000152.html">[Usbprog-pub] wenn die Platinenrouter noch etwas warten k&#246;nnen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

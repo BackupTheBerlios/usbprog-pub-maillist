@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] JTAG Level, Fragen allgemein
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAG%20Level%2C%20Fragen%20allgemein&In-Reply-To=%3C466C2A69.4070207%40mail15.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000044.html">
+   <LINK REL="Next"  HREF="000045.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] JTAG Level, Fragen allgemein</H1>
+    <B>Mathias</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAG%20Level%2C%20Fragen%20allgemein&In-Reply-To=%3C466C2A69.4070207%40mail15.com%3E"
+       TITLE="[Usbprog-pub] JTAG Level, Fragen allgemein">mathias at mail15.com
+       </A><BR>
+    <I>Sun Jun 10 18:44:25 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000044.html">[Usbprog-pub] Probleme an Win2K mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000045.html">[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#42">[ date ]</a>
+              <a href="thread.html#42">[ thread ]</a>
+              <a href="subject.html#42">[ subject ]</a>
+              <a href="author.html#42">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Benedikt Sauter wrote:
+&gt;&gt;<i> --&gt; Wozu ist JP2? Das erschliesst sich mir aus dem Schaltbild nicht.
+</I>&gt;<i> 
+</I>&gt;<i> Es gibt Firmware Versionen wie die f&#252;r den OpenOCD oder RS232 Wandler,
+</I>&gt;<i> die ben&#246;tigen diese zus&#228;tzlichen Leitungen. (Das ist nicht sehr
+</I>&gt;<i> gl&#252;cklich das die JP2 heissen, IO1 und IO2 waeren irgendwie besser
+</I>&gt;<i> gewesen)
+</I>
+Danke! K&#246;nntest du evtl ds Schaltbild an der Stelle etwas optimieren und
+die beiden Leitungen des Jumpers mit den Signalen benamsen? Ich wei&#223; es
+jetzt zwar, der n&#228;chste wird aber wieder fragen.
+
+
+&gt;&gt;<i> --&gt; ich halte es f&#252;r ungl&#252;cklich VCC vom USB Port und VCC vom JTag
+</I>&gt;&gt;<i> zusammen zu legen. ...
+</I>&gt;<i> 
+</I>&gt;<i> Es sollen ja viele verschiedene Firmware Versionen mit dem Baustein
+</I>&gt;<i> enstehen. Da waere mal eine allgemeine L&#246;sung sinnvoll. Also die nicht
+</I>&gt;<i> nur speziell fuer JTAG gut ist, sondern da man alles damit machen kann.
+</I>
+Ja, voll Ack. Nur die Pegel am Stecker sollten optimaler Weise denen des
+Zielsystem entsprechen. Wenn man hinter den Atmel Pegelwandler setzt,
+ist man bzgl. der Signalrichtung (Ausgang/Eingang) festgelegt, wenn man
+den Atmel mit VCC aus dem Ziel versorgen k&#246;nnte, w&#228;re man da fein raus.
+
+&gt;<i> Und ich muss gestehen ich bin nur Informatiker :-) Also wenn jemand
+</I>&gt;<i> konkrete Ideen hat, irgendwie aufpinseln und herdamit :-)
+</I>
+Dto. (Technischer - Informatiker). Mein Abschl&#223; ist aber schon ~14 Jahre
+her, und mit Technik ahb ich nur noch am Rande was zu tun :( Ich frage
+evtl. mal einen Kollgen. K&#246;nntest du mir das *.sch per Mail zukommen
+lassen? - Versprechen kann ich aber nix.
+&gt;<i> 
+</I>&gt;&gt;<i> --&gt; Ich habe mir die OpenOCD patchen durchgesehen. Hat jmd. mal versucht
+</I>&gt;&gt;<i> OpenOCD mit MinGW unter Win32 mit usbprog zum laufen zu bekommen?
+</I>&gt;<i> 
+</I>&gt;<i> Ja das hat einer und zwar hier:
+</I>&gt;<i> <A HREF="http://www.mikrocontroller.net/topic/68313#573561">http://www.mikrocontroller.net/topic/68313#573561</A>
+</I>
+Danke!
+
+Alles Gute f&#252;r's Diplom. Ich schau mir die Platte mal n&#228;her an, wenn ich
+sie in H&#228;nden halte...
+
+Gru&#223;
+Mathias
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000044.html">[Usbprog-pub] Probleme an Win2K mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000045.html">[Usbprog-pub] usbprog, initialflashen &#252;ber LPT1, AVR device antwortet nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#42">[ date ]</a>
+              <a href="thread.html#42">[ thread ]</a>
+              <a href="subject.html#42">[ subject ]</a>
+              <a href="author.html#42">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

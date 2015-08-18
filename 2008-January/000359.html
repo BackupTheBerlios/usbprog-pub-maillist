@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] segfault in usbprog-gui and usb bus problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20segfault%20in%20usbprog-gui%20and%20usb%20bus%20problems&In-Reply-To=%3C47863457.1020809%40jaeger.mine.nu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000357.html">
+   <LINK REL="Next"  HREF="000360.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] segfault in usbprog-gui and usb bus problems</H1>
+    <B>Christian Jaeger</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20segfault%20in%20usbprog-gui%20and%20usb%20bus%20problems&In-Reply-To=%3C47863457.1020809%40jaeger.mine.nu%3E"
+       TITLE="[Usbprog-pub] segfault in usbprog-gui and usb bus problems">christian at jaeger.mine.nu
+       </A><BR>
+    <I>Thu Jan 10 16:05:59 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000357.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+        <LI>Next message: <A HREF="000360.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#359">[ date ]</a>
+              <a href="thread.html#359">[ thread ]</a>
+              <a href="subject.html#359">[ subject ]</a>
+              <a href="author.html#359">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello all
+
+I have fetched the current code from the svn repository (SVN ID:
+<A HREF="http://svn.berlios.de/svnroot/repos/usbprog@938">http://svn.berlios.de/svnroot/repos/usbprog@938</A> 
+70244ea8-9721-0410-aa8e-e1a1530c7cc1), installed the packages avr-libc 
+avra binutils-avr gcc-avr gdb-avr from Debian Etch,
+
+$ avr-gcc --version
+avr-gcc (GCC) 4.1.0)
+(..)
+$ cd usbprog/
+$ patch -p0 &lt; michaels_patch
+patching file trunk/usbprog_base/firmware/usbn2mc/tiny/usbn960x.c
+$ cd trunk/usbprog_base/firmware
+$ make
+
+which ran successfully (see attached output), then I gave the main.hex 
+file to a colleague with an Atmel programmer who flashed it onto the 
+usbprog (the messages from the Atmel programmer indicated success in 
+flashing it).
+
+But the usbprog didn't show up in the USB device tree on the colleague's 
+OSX machine, and on my Linux machine the kernel is printing the 
+following when I plug the usbprog in:
+
+Jan 10 15:42:16 palme kernel: usb 5-1: new full speed USB device using 
+ohci_hcd and address 8
+Jan 10 15:42:16 palme kernel: usb 5-1: device descriptor read/64, error -62
+Jan 10 15:42:16 palme kernel: usb 5-1: device descriptor read/64, error -62
+Jan 10 15:42:17 palme kernel: usb 5-1: new full speed USB device using 
+ohci_hcd and address 9
+Jan 10 15:42:17 palme kernel: usb 5-1: device descriptor read/64, error -62
+Jan 10 15:42:17 palme kernel: usb 5-1: device descriptor read/64, error -62
+Jan 10 15:42:17 palme kernel: usb 5-1: new full speed USB device using 
+ohci_hcd and address 10
+Jan 10 15:42:18 palme kernel: usb 5-1: device not accepting address 10, 
+error -62
+Jan 10 15:42:18 palme kernel: usb 5-1: new full speed USB device using 
+ohci_hcd and address 11
+Jan 10 15:42:18 palme kernel: usb 5-1: device not accepting address 11, 
+error -62
+
+The usbprog's power led (green) is on, and the red led is flashing 
+repeatedly for about 30 seconds (2 times in a row, 
+blink-blink-pause-blink-blink-pause-...) then goes off (just the green 
+led stays on).
+
+What does that mean? What to do now?
+
+Michael, have you tested it further? Can you confirm that you've got a 
+working firmware for Linux? If so, could you please send me your 
+firmware hex file?
+
+I can borrow the Atmel programmer and use avr-gdb to debug the thing but 
+I really don't have got more than maybe a day of time to go into 
+debugging. (My backup plan is to build a wiggler and hoping to be able 
+to program/flash my ARM with that.)
+
+Thanks,
+Christian.
+
+
+Michael Poetters wrote:
+&gt;<i> Hello Christian, hello list,
+</I>&gt;<i>
+</I>&gt;<i> this seems to be a problem of the usbn2mc part of the firmware
+</I>&gt;<i> in combination with the usb-stack of linux.
+</I>&gt;<i>
+</I>&gt;<i> I solved the problem with adding the GET_STATUS part in usbn960x.c
+</I>&gt;<i> I'm still testing the rest of usbn2mc. More when it's done :)
+</I>&gt;<i>
+</I>&gt;<i> Patch appended to this mail.
+</I>&gt;<i>
+</I>&gt;<i> Greetings
+</I>&gt;<i> Michael &quot;ratte&quot; Poetters
+</I>&gt;<i>   
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> --- save/usbprog_base/firmware/usbn2mc/tiny/usbn960x.c	2008-01-03 10:25:34.000000000 +0100
+</I>&gt;<i> +++ trunk/usbprog_base/firmware/usbn2mc/tiny/usbn960x.c	2008-01-03 11:01:50.000000000 +0100
+</I>&gt;<i> @@ -259,12 +267,16 @@
+</I>&gt;<i>  							USBNDebug(&quot;GET INTERFACE\n\r&quot;);	
+</I>&gt;<i>  							#endif
+</I>&gt;<i>  						break;	
+</I>&gt;<i> +							#endif
+</I>&gt;<i>  						case GET_STATUS:
+</I>&gt;<i>  							#if DEBUG
+</I>&gt;<i>  							USBNDebug(&quot;GET STATUS\n\r&quot;);	
+</I>&gt;<i>  							#endif
+</I>&gt;<i> +							USBNWrite(TXC0,FLUSH);
+</I>&gt;<i> +							USBNWrite(TXD0,1);
+</I>&gt;<i> +							USBNWrite(TXD0,0);
+</I>&gt;<i> +							USBNWrite(TXC0,TX_TOGL+TX_EN);  //enable the TX (DATA1)
+</I>&gt;<i>  						break;
+</I>&gt;<i> -							#endif
+</I>&gt;<i>  						case SET_ADDRESS:
+</I>&gt;<i>  							#if DEBUG
+</I>&gt;<i>  							USBNDebug(&quot;SET ADDRESS &quot;);	
+</I>&gt;<i>   
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Usbprog-pub mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i>   
+</I>-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: Don_Jan_10_155114_MET_2008.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20080110/6e1b5c77/attachment.txt">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20080110/6e1b5c77/attachment.txt</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000357.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+	<LI>Next message: <A HREF="000360.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#359">[ date ]</a>
+              <a href="thread.html#359">[ thread ]</a>
+              <a href="subject.html#359">[ subject ]</a>
+              <a href="author.html#359">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

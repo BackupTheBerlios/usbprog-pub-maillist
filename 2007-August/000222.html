@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Problem mit usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problem%20mit%20usbprog&In-Reply-To=%3C20070813033003.D60F6FF4F6%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000221.html">
+   <LINK REL="Next"  HREF="000224.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Problem mit usbprog</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problem%20mit%20usbprog&In-Reply-To=%3C20070813033003.D60F6FF4F6%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Problem mit usbprog">sauter at sistecs.de
+       </A><BR>
+    <I>Mon Aug 13 05:29:44 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000221.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000224.html">[Usbprog-pub] usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#222">[ date ]</a>
+              <a href="thread.html#222">[ thread ]</a>
+              <a href="subject.html#222">[ subject ]</a>
+              <a href="author.html#222">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ah ok, sag bescheid wenn du irgendwas erreicht hast. W&#252;rd mich sehr
+interessieren!
+
+Die Mailingliste ist nur ein grosser E-Mail Verteiler den alle bekommen
+k&#246;nnen die sich f&#252;r usbprog interessieren. Dadurch kann in einem
+Open-Source Projekte geholfen werden bei Fragen, und ebenso k&#246;nnen
+technische Sachen diskutiert werden.
+
+Also das &quot;Rede&quot; Medium f&#252;r die ganze Gruppe Rund um ein Projekt.
+
+
+Gruss Bene
+
+&gt;<i>Hallo Benedikt,
+</I>&gt;<i>
+</I>&gt;<i>jetzt sieht es viel besser aus  (gestern abend war ich wohl doch etwas m&#252;de) !
+</I>&gt;<i>Offenbar hat der download von openocd.bin nicht richtig funktioniert.
+</I>&gt;<i>Ich habe es jetzt mit meinem AVRISP Adapter gemacht. 
+</I>&gt;<i>Das installieren mit usbprog_openocd.inf hat jetzt auch geklappt. 
+</I>&gt;<i>Das Ger&#228;t hat sich jetzt als OpenOCDDebugger angemeldet.
+</I>&gt;<i>
+</I>&gt;<i>Jetzt gibts folgende Meldung:
+</I>&gt;<i>
+</I>&gt;<i>D:\&gt;openocd.exe  -f usbprog.cfg
+</I>&gt;<i>Info:    openocd.c:92 main(): Open On-Chip Debugger (2007-07-31 19:00 CEST)
+</I>&gt;<i>Info:    usbprog.c:222 usbprog_init(): USB JTAG Interface ready!
+</I>&gt;<i>Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> mismatch, scan returned 0x3f
+</I>&gt;<i>Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> mismatch, scan returned 0x3f
+</I>&gt;<i>Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> mismatch, scan returned 0x3f
+</I>&gt;<i>Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> mismatch, scan returned 0x3f
+</I>&gt;<i>Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> mismatch, scan returned 0x3f
+</I>&gt;<i>Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+</I>&gt;<i> mismatch, scan returned 0x3f
+</I>&gt;<i>Error:   jtag.c:1442 jtag_init(): Could not validate JTAG chain, exit
+</I>&gt;<i>
+</I>&gt;<i>D:\&gt;
+</I>&gt;<i>
+</I>&gt;<i>Jetzt habe ich wohl ein Problem mit meiner Zielhardware bzw. dem selbstgebauten
+</I>&gt;<i>Kabel-Adapter (auf dem Prototypeboard ist ein 20-poliger JTAG Stecker). 
+</I>&gt;<i>Wahrscheinlich muss ich mich dann auch mal mit dem Inhalt der
+</I>&gt;<i>usbprog.cfg besch&#228;ftigen.
+</I>&gt;<i>
+</I>&gt;<i>Was hat es mit dieser Mailingliste auf sich ? Wie funktioniert das und wozu ist das gut ?
+</I>&gt;<i>Bekomme ich eine Antwort jetzt an meine email Adresse oder muss ich da jetzt in eine Liste schauen ?
+</I>&gt;<i>Bitte nicht lachen - ich bin 40 Jahre bevor &#252;berhaupt irgendeiner was vom Internet wusste aufgewachsen (da wusste auch keiner was ein Computer ist).
+</I>&gt;<i>
+</I>&gt;<i>Gruss
+</I>&gt;<i>  Detlef
+</I>&gt;<i>
+</I>&gt;<i>__________________________________________________________________________
+</I>&gt;<i>Erweitern Sie FreeMail zu einem noch leistungsst&#228;rkeren E-Mail-Postfach!		
+</I>&gt;<i>Mehr Infos unter <A HREF="http://produkte.web.de/club/?mc=021131">http://produkte.web.de/club/?mc=021131</A>
+</I>&gt;<i>
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000221.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000224.html">[Usbprog-pub] usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#222">[ date ]</a>
+              <a href="thread.html#222">[ thread ]</a>
+              <a href="subject.html#222">[ subject ]</a>
+              <a href="author.html#222">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

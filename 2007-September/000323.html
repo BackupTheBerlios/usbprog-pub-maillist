@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Unstable ATmega32 startup at power on
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Unstable%20ATmega32%20startup%20at%20power%20on&In-Reply-To=%3C20070903080458.136940%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000322.html">
+   <LINK REL="Next"  HREF="000324.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Unstable ATmega32 startup at power on</H1>
+    <B>Fred Sonnenrein</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Unstable%20ATmega32%20startup%20at%20power%20on&In-Reply-To=%3C20070903080458.136940%40gmx.net%3E"
+       TITLE="[Usbprog-pub] Unstable ATmega32 startup at power on">Fred.Sonnenrein at gmx.de
+       </A><BR>
+    <I>Mon Sep  3 10:04:58 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000322.html">[Usbprog-pub] Unstable ATmega32 startup at power on
+</A></li>
+        <LI>Next message: <A HREF="000324.html">[Usbprog-pub] MBRS130T3G Diode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#323">[ date ]</a>
+              <a href="thread.html#323">[ thread ]</a>
+              <a href="subject.html#323">[ subject ]</a>
+              <a href="author.html#323">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Alexey wrote on Sun, 2 Sep 2007 00:32:01 +0300
+&gt;<i> I have changed fuses according to MCU's datasheet to enable BOD:
+</I>&gt;<i> BODLEVEL=0
+</I>&gt;<i> BODEN=0
+</I>&gt;<i> SUT1=0
+</I>&gt;<i> SUT0=0
+</I>&gt;<i> 
+</I>&gt;<i> After that I was unable to repeat any USB connection failures - they do
+</I>&gt;<i> not
+</I>&gt;<i> happen anymore. PC reliably detects usbprog whenever it becomes connected
+</I>&gt;<i> to
+</I>&gt;<i> USB port.
+</I>
+But there is one small problem: If you connect the target to the usbprog after you have
+connected the usbprog to the usb bus, an the target gets the power from the 
+programming port, the small glitch in the usb power will reset the usbprog, and the 
+connection to the usb host may disappear. 
+
+Because of this, the new usbprog 3.0 has a diode an an capacitor to stabilize the 
+power supply of the mega32 on the usbprog
+
+Fred
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000322.html">[Usbprog-pub] Unstable ATmega32 startup at power on
+</A></li>
+	<LI>Next message: <A HREF="000324.html">[Usbprog-pub] MBRS130T3G Diode
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#323">[ date ]</a>
+              <a href="thread.html#323">[ thread ]</a>
+              <a href="subject.html#323">[ subject ]</a>
+              <a href="author.html#323">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

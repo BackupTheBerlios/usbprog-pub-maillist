@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] JTAG Level, Fragen allgemein
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAG%20Level%2C%20Fragen%20allgemein&In-Reply-To=%3C20070610112901.76C75216E0%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000057.html">
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] JTAG Level, Fragen allgemein</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAG%20Level%2C%20Fragen%20allgemein&In-Reply-To=%3C20070610112901.76C75216E0%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] JTAG Level, Fragen allgemein">sauter at sistecs.de
+       </A><BR>
+    <I>Sun Jun 10 13:26:37 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000057.html">[Usbprog-pub] JTAG Level, Fragen allgemein
+</A></li>
+        <LI>Next message: <A HREF="000044.html">[Usbprog-pub] Probleme an Win2K mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#41">[ date ]</a>
+              <a href="thread.html#41">[ thread ]</a>
+              <a href="subject.html#41">[ subject ]</a>
+              <a href="author.html#41">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Mathias,
+&gt;<i>--&gt; Wozu ist JP2? Das erschliesst sich mir aus dem Schaltbild nicht.
+</I>
+Es gibt Firmware Versionen wie die f&#252;r den OpenOCD oder RS232 Wandler,
+die ben&#246;tigen diese zus&#228;tzlichen Leitungen. (Das ist nicht sehr
+gl&#252;cklich das die JP2 heissen, IO1 und IO2 waeren irgendwie besser
+gewesen)
+
+&gt;<i>--&gt; ich halte es f&#252;r ungl&#252;cklich VCC vom USB Port und VCC vom JTag
+</I>&gt;<i>zusammen zu legen. Ich w&#252;rde evtl. einen -L Atmel einsetzen und die
+</I>&gt;<i>Versorgung des Atmel vom JTag nehmen, VCC zum USBN per Jumper
+</I>&gt;<i>auftrennbar machen und den USBN per USB versorgen. Ggf. sind dann
+</I>&gt;<i>allerdings Levelshifter notwendig, evtl. reichen Pullups. Problem: ich
+</I>&gt;<i>wei&#223; nicht, das die beiden machen, wenn einer nicht versorgt wird...,
+</I>&gt;<i>ggf. ist einen entsprechende Reset Schaltung notwendig, die beide am
+</I>&gt;<i>Boden h&#228;lt, bis Spannung an beiden Seiten anliegt.
+</I>&gt;<i>Alternativ (bis 3V) die ganze Schaltung vom JTag versorgen (die
+</I>&gt;<i>Leitungen vom USB sind ja gut erreichbar  :) .
+</I>
+Es sollen ja viele verschiedene Firmware Versionen mit dem Baustein
+enstehen. Da waere mal eine allgemeine L&#246;sung sinnvoll. Also die nicht
+nur speziell fuer JTAG gut ist, sondern da man alles damit machen kann.
+Und ich muss gestehen ich bin nur Informatiker :-) Also wenn jemand
+konkrete Ideen hat, irgendwie aufpinseln und herdamit :-)
+
+&gt;<i>--&gt; Ich habe mir die OpenOCD patchen durchgesehen. Hat jmd. mal versucht
+</I>&gt;<i>OpenOCD mit MinGW unter Win32 mit usbprog zum laufen zu bekommen?
+</I>
+Ja das hat einer und zwar hier:
+
+<A HREF="http://www.mikrocontroller.net/topic/68313#573561">http://www.mikrocontroller.net/topic/68313#573561</A>
+
+&gt;<i>--&gt; JTAGICE Entwicklung - Wie ist der Status, was f&#252;r Unterst&#252;tzung w&#228;re
+</I>&gt;<i> hilfreich?
+</I>&gt;<i>Die Original JTAG ICE Schaltung ist bekannt? z.B. von Olimex?
+</I>
+Das ist das Evertool, die verwenden nur die Bin&#228;re Firmware von Atmel und
+die gibt es nur f&#252;r ein RS232 Anschluss. Kann man leider nicht mit dem
+usbprog Adapter so einfach verwenden. Ich will ja mit usbprog debuggen.
+Aber die Entwicklung geht grad gut vorran. Langsam da ich gerade mit
+meiner Diplomarbeit sehr besch&#228;ftigt bin, aber ich vermute im August
+kann fleissigt gedebuggt werden :-)
+
+
+
+Gruss Bene
+
+
+
+&gt;<i>
+</I>&gt;<i>Gru&#223;
+</I>&gt;<i>Mathias
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000057.html">[Usbprog-pub] JTAG Level, Fragen allgemein
+</A></li>
+	<LI>Next message: <A HREF="000044.html">[Usbprog-pub] Probleme an Win2K mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#41">[ date ]</a>
+              <a href="thread.html#41">[ thread ]</a>
+              <a href="subject.html#41">[ subject ]</a>
+              <a href="author.html#41">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

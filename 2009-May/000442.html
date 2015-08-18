@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] I2C for USBProg
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2009-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20I2C%20for%20USBProg&In-Reply-To=%3C4A07F0A8.4080601%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000441.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] I2C for USBProg</H1>
+    <B>OB</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20I2C%20for%20USBProg&In-Reply-To=%3C4A07F0A8.4080601%40gmail.com%3E"
+       TITLE="[Usbprog-pub] I2C for USBProg">obconseil at gmail.com
+       </A><BR>
+    <I>Mon May 11 11:32:24 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000441.html">[Usbprog-pub] USBPROG LINUX UBUNTU 904
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#442">[ date ]</a>
+              <a href="thread.html#442">[ thread ]</a>
+              <a href="subject.html#442">[ subject ]</a>
+              <a href="author.html#442">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I've worked on an I2C firmware + kernel module for the usbprog, I think you
+might be interested.
+
+Here is the repost of the message I've put on the forum.
+Don't hesitate to comment the code and the solution !
+
+&gt;<i> I wrote an I2C firmware + a kernel module which , after much grey hair, finally work.
+</I>&gt;<i> I'm currently using it with lm-sensors to get temperature from an lm76.
+</I>&gt;<i> 
+</I>&gt;<i> It's developed using the current trunk, so I can provide a patch.
+</I>&gt;<i> The kernel module is currently working on 2.6.26, not tried on other versions.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> For the short story, I first started to check the usbprogI2C, but it was incomplete and no kernel module existed.
+</I>&gt;<i> 
+</I>&gt;<i> So I went for the i2c-tiny, with the secret goal to emulate its behavior so no other kernel module would be necessary.
+</I>&gt;<i> It went well until I found out that the usbn904 cannot accept controls endpoints transactions of more than 8 bytes. It was a show-stopper because the i2c-tiny-usb uses control endpoint exclusively, adding the data at the end of the packet.
+</I>&gt;<i> After trying, and failing, to emulate this behavior with the usbn904, I finally gave up and made a new kernel module that uses bulk endpoints, keeping more or less the same protocol. (I know at this point I could have used the original &quot;usbprogI2C&quot; protocol, but after all this crawl I was kind of familiar with the i2c-tiny-usb one).
+</I>&gt;<i> I used the serial port on the usbprog extensively for debugging, but all the debug info is #defined away in the patch.
+</I>&gt;<i> 
+</I>&gt;<i> Pin SCL is PB5 (pin1), SDA is PB1 (pin 6), it's 5V only , of course, unless you have the 3.3V adapter.
+</I>&gt;<i> The led blink when a request is done (either read or write).
+</I>&gt;<i> Everything is GPL, of course.
+</I>&gt;<i> 
+</I>&gt;<i> So, the patch is here:
+</I>&gt;<i> <A HREF="http://obcd.dynalias.org/repo/">http://obcd.dynalias.org/repo/</A>
+</I>&gt;<i> 
+</I>&gt;<i> You can also have a look at the simpleport_ob.patch file, which is a small improvement for the simpleport firmware. (it add the GETPORTDIR instruction to get the direction of all pins at once - I found that useful, in a program which might restart sometime, it avoid changing pin direction at startup, which was critical in my application).
+</I>&gt;<i> 
+</I>&gt;<i> Feel free to criticize the code, It's a first shot (I got it working today) so I know there must be some problems. I'm willing to follow any advice you may have.
+</I>&gt;<i> 
+</I>&gt;<i> One &quot;bug&quot; I did not take care of at all is the speed of the transaction: I still have to make the actual speed measurement and change the delay algorithm accordingly. For now is it completely untouched from i2c-tiny-usb. I just know it must be &lt; 400Khz since my LM76 doe not work above this speed....
+</I>
+
+obconseil
+
+
+
+-- 
+People in the embedded space don't do prototypes. They hack something until it
+works, then it's done.
+---
+Always code as if the person who will maintain your code is a maniac serial
+killer that knows where you live
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000441.html">[Usbprog-pub] USBPROG LINUX UBUNTU 904
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#442">[ date ]</a>
+              <a href="thread.html#442">[ thread ]</a>
+              <a href="subject.html#442">[ subject ]</a>
+              <a href="author.html#442">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

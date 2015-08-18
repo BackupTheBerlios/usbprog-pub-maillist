@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog.c und openocd
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog.c%20und%20openocd&In-Reply-To=%3C1363862584%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000258.html">
+   <LINK REL="Next"  HREF="000264.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog.c und openocd</H1>
+    <B>dezagar at web.de</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog.c%20und%20openocd&In-Reply-To=%3C1363862584%40web.de%3E"
+       TITLE="[Usbprog-pub] usbprog.c und openocd">dezagar at web.de
+       </A><BR>
+    <I>Sat Aug 18 21:01:04 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000258.html">[Usbprog-pub] usbprog.c und openocd
+</A></li>
+        <LI>Next message: <A HREF="000264.html">[Usbprog-pub] FW: Re:  usbprog.c und openocd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Also beim Starten in der DOS box kommt das hier:
+
+D:\&gt;openocd -f usbprog.cfg -d3
+Info:    openocd.c:92 main(): Open On-Chip Debugger (2007-07-31 19:00 CEST)
+Debug:   jtag.c:1407 jtag_init(): -
+Info:    usbprog.c:222 usbprog_init(): USB JTAG Interface ready!
+Debug:   usbprog.c:396 usbprog_reset(): trst: 0, srst: 0
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   jtag.c:1291 jtag_examine_chain(): JTAG device found: 0x4f1f0f0f (Manufa
+cturer: 0x787, Part: 0xf1f0, Version: 0x4
+Debug:   openocd.c:112 main(): jtag init complete
+Debug:   embeddedice.c:218 embeddedice_read_reg_w_check(): 4
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST released
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   embeddedice.c:218 embeddedice_read_reg_w_check(): 0
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 0: 0x00000000
+Debug:   arm7_9_common.c:657 arm7_9_assert_reset(): target-&gt;state: unknown
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: SRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Warning: arm7_9_common.c:684 arm7_9_assert_reset(): srst resets test logic, too
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: SRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST asserted
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   usbprog.c:396 usbprog_reset(): trst: 1, srst: 1
+Debug:   usbprog.c:396 usbprog_reset(): trst: 1, srst: 1
+Debug:   arm7_9_common.c:723 arm7_9_deassert_reset(): target-&gt;state: reset
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: SRST released
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   usbprog.c:396 usbprog_reset(): trst: 0, srst: 0
+Debug:   openocd.c:116 main(): target init complete
+Debug:   openocd.c:120 main(): flash init complete
+Debug:   openocd.c:124 main(): NAND init complete
+Debug:   openocd.c:128 main(): pld init complete
+Debug:   gdb_server.c:1315 gdb_init(): gdb service for target arm7tdmi at port 3
+333
+Debug:   embeddedice.c:218 embeddedice_read_reg_w_check(): 1
+Debug:   jtag.c:295 jtag_call_event_callbacks(): jtag event: TRST released
+Debug:   jtag.c:1197 jtag_reset_callback(): -
+Debug:   arm7_9_common.c:879 arm7_9_halt(): target-&gt;state: running
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 9: 0xffffffff
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 11: 0xffffffff
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 12: 0x00000100
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 13: 0x000000f7
+Debug:   embeddedice.c:218 embeddedice_read_reg_w_check(): 1
+Debug:   arm7_9_common.c:621 arm7_9_poll(): DBGACK set, dbg_state-&gt;value: 0x9
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 0: 0x00000005
+Debug:   embeddedice.c:315 embeddedice_write_reg(): 12: 0x00000000
+Debug:   arm7_9_common.c:997 arm7_9_debug_entry(): target entered debug from ARM
+ state
+Debug:   arm7_9_common.c:1029 arm7_9_debug_entry(): target entered debug state i
+n System mode
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r0: 0x00000000
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r1: 0x40000234
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r2: 0x00000400
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r3: 0x3fffc01c
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r4: 0x00000000
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r5: 0xe01fc040
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r6: 0xe358ecce
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r7: 0x6f018c07
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r8: 0xfcbd4c6a
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r9: 0x6fdaf396
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r10: 0x1ede38be
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r11: 0x40007ec4
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r12: 0x40007ea0
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r13: 0x40007eb0
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r14: 0x000001dc
+Debug:   arm7_9_common.c:1058 arm7_9_debug_entry(): r15: 0x00000144
+Debug:   arm7_9_common.c:1064 arm7_9_debug_entry(): entered debug state at PC 0x
+144
+Debug:   target.c:468 target_call_event_callbacks(): target event 0
+
+
+D:\&gt;
+
+Was bei einem Step gemeldet wird, schick ich gleich noch!
+
+Gruss
+  Detlef
+
+
+
+&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> Von: &quot;Benedikt Sauter&quot;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i> Gesendet: 18.08.07 20:44:28
+</I>&gt;<i> An: &quot;Detlef Zagar&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">dezagar at web.de</A>&gt;
+</I>&gt;<i> Betreff: Re: [Usbprog-pub] usbprog.c und openocd
+</I>
+
+&gt;<i> 
+</I>&gt;<i> Am 18.8.2007 schrieb &quot;Detlef Zagar&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">dezagar at web.de</A>&gt;:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Deine openocd.exe Datei vom 9.8.2007 habe ich die ganze Zeit benutzt. 
+</I>&gt;<i> 
+</I>&gt;<i> Ok wenn du das mit der Option -d3 startest was gibt openocd aus, w&#228;hrend
+</I>&gt;<i> einem step?
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Den Rest, den Du mir da schreibst verstehe ich jetzt nicht. Mit usbprog.exe wird doch das AT-Mega32 programm in die Hardware geladen - richtig ?
+</I>&gt;<i> 
+</I>&gt;<i> ja richtig .bin Dateien!
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Das habe ich gestern mit dem AVR-Studio, meinem AVRISP Adapter und der neuesten Datei openocd.hex von Dir getan.
+</I>&gt;<i> &gt;Was hat das Ganze jetzt mit usbprog.c und dem compilieren zu tun - ich weiss jetzt immer noch nicht wie das geht.
+</I>&gt;<i> &gt;Ich hatte gedacht, das ich eine neue openocd.exe erzeugen muss ?!
+</I>&gt;<i> 
+</I>&gt;<i> Eigentlich ist meine eine neue und schnell. Also wenn du mal mit -d3
+</I>&gt;<i> openocd starten k&#246;nntest und mir zeigen k&#246;nntest was kommt.
+</I>&gt;<i> 
+</I>&gt;<i> Gruss Bene
+</I>&gt;<i> 
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Gruss
+</I>&gt;<i> &gt;  Detlef
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> &gt;&gt; Von: &quot;Benedikt Sauter&quot;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i> &gt;&gt; Gesendet: 18.08.07 18:03:30
+</I>&gt;<i> &gt;&gt; An:  &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+</I>&gt;<i> &gt;&gt; Betreff: Re: [Usbprog-pub] usbprog.c und openocd
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Hallo Detlef,
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; vergiss das openocd4usbprog zeug bitte! Das ich noch &#228;lter und lahmer!
+</I>&gt;<i> &gt;&gt; Hast du eigentlich meine .exe Datei schon mal probiert?
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; <A HREF="http://www.ixbat.de/files/admin/projekte/openocd/openocd_win32.tar.gz">http://www.ixbat.de/files/admin/projekte/openocd/openocd_win32.tar.gz</A>
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; In die Dosbox gehen und da direkt mit deinem Config File starten
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; usbprog.exe -f deinedatein.exe
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Und dann kannst dich mit telnet localhost 4444
+</I>&gt;<i> &gt;&gt; oder eclipse verbinden (port 3333)
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Gruss Bene
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Am 18.8.2007 schrieb &quot;Detlef Zagar&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">dezagar at web.de</A>&gt;:
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; &gt;Ich tue mich jetzt hier etwas schwer. Offenbar braucht man noch diverse Quellen von einem Herrn Dominic Rath, um das Ganze &#252;bersetzen zu k&#246;nnen.
+</I>&gt;<i> &gt;&gt; &gt;Ich habe mir jetzt openocd4usbprog heruntergeladen und ausgepackt. Jetzt weiss ich erstmal nicht mehr weiter. Wie und mit was compiliert man das jetzt ?
+</I>&gt;<i> &gt;&gt; &gt;Gibts da ne Beschreibung oder ein paar Hinweise ?
+</I>&gt;<i> &gt;&gt; &gt;Ich stelle mich wahrscheinlich ziemlich bl&#246;d an, aber ist halt hier alles neu f&#252;r mich !
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;Gruss
+</I>&gt;<i> &gt;&gt; &gt;  Detlef
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;______________________________________________________________________________
+</I>&gt;<i> &gt;&gt; &gt;Jetzt neu! Im riesigen WEB.DE Club SmartDrive Dateien freigeben und mit 
+</I>&gt;<i> &gt;&gt; &gt;Freunden teilen! <A HREF="http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134">http://www.freemail.web.de/club/smartdrive_ttc.htm/?mc=021134</A>
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;_______________________________________________
+</I>&gt;<i> &gt;&gt; &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;&gt; &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt; &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;__________________________________________________________________________
+</I>&gt;<i> &gt;Erweitern Sie FreeMail zu einem noch leistungsst&#228;rkeren E-Mail-Postfach!		
+</I>&gt;<i> &gt;Mehr Infos unter <A HREF="http://produkte.web.de/club/?mc=021131">http://produkte.web.de/club/?mc=021131</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;_______________________________________________
+</I>&gt;<i> &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i> 
+</I>
+
+_____________________________________________________________________
+Der WEB.DE SmartSurfer hilft bis zu 70% Ihrer Onlinekosten zu sparen!
+<A HREF="http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066">http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000258.html">[Usbprog-pub] usbprog.c und openocd
+</A></li>
+	<LI>Next message: <A HREF="000264.html">[Usbprog-pub] FW: Re:  usbprog.c und openocd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#259">[ date ]</a>
+              <a href="thread.html#259">[ thread ]</a>
+              <a href="subject.html#259">[ subject ]</a>
+              <a href="author.html#259">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

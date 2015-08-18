@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Usbprog funzt nicht wirklich
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Usbprog%20funzt%20nicht%20wirklich&In-Reply-To=%3C20070820191450.124170%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000283.html">
+   <LINK REL="Next"  HREF="000285.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Usbprog funzt nicht wirklich</H1>
+    <B>flotzinger at gmx.at</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Usbprog%20funzt%20nicht%20wirklich&In-Reply-To=%3C20070820191450.124170%40gmx.net%3E"
+       TITLE="[Usbprog-pub] Usbprog funzt nicht wirklich">flotzinger at gmx.at
+       </A><BR>
+    <I>Mon Aug 20 21:14:50 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000283.html">[Usbprog-pub] Ubuntu Problem
+</A></li>
+        <LI>Next message: <A HREF="000285.html">[Usbprog-pub] Usbprog funzt nicht wirklich
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#284">[ date ]</a>
+              <a href="thread.html#284">[ thread ]</a>
+              <a href="subject.html#284">[ subject ]</a>
+              <a href="author.html#284">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo, liebe usbprog Gemeinde,
+
+vor kurzem hab ich meinen Usbprog bekommen - nat&#252;rlich hab ich ihn gleich zusammengel&#246;tet - leider nicht mit 100%igen erfolt...eher 0%igen...
+
+Was hab ich gemacht:
+-) zun&#228;chst hab ich alles zusammengel&#246;tet.
+-) dann hab ich mir einen Parallelport genommen und ihn entsprechend mit dem ISP-Stecker verbunden. Stromversorgung gibts durch USB - LED2 leuchtet. Den Jumper hab ich auf Prog gestellt.
+-) Als n&#228;chstes hab ich programmiert, und da gab es Probleme: 
+
+
+  avrdude -p m32 -c bsd -u -U lfuse:w:0xe0:m -U hfuse:w:0xd9:m 
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x000102
+avrdude: Expected signature for ATMEGA32 is 1E 95 02
+         Double check chip, or use -F to override this check.
+
+avrdude done.  Thank you.
+
+  avrdude -p m32 -c bsd -u -U lfuse:w:0xe0:m -U hfuse:w:0xd9:m -F
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x000102
+avrdude: Expected signature for ATMEGA32 is 1E 95 02
+avrdude: current erase-rewrite cycle count is -50462977 (if being tracked)
+avrdude: reading input file &quot;0xe0&quot;
+avrdude: writing lfuse (1 bytes):
+
+Writing |                                                    | 0% 0.00s ***failed;  
+Writing | ################################################## | 100% 0.03s
+
+avrdude: 1 bytes of lfuse written
+avrdude: verifying lfuse memory against 0xe0:
+avrdude: load data lfuse data from input file 0xe0:
+avrdude: input file 0xe0 contains 1 bytes
+avrdude: reading on-chip lfuse data:
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: verifying ...
+avrdude: verification error, first mismatch at byte 0x0000
+         0xe0 != 0x00
+avrdude: verification error; content mismatch
+
+avrdude done.  Thank you.
+
+Irgendwie &#252;bernimmt er beim Brennen nicht ganz die FUSES, bzw. hab ich da schon was falsch gemacht.
+
+Ich hoffe einer hat vl. einen Ansatz.
+
+Gr&#252;&#223;e Simon
+
+
+-- 
+-
+
+GMX FreeMail: 1 GB Postfach, 5 E-Mail-Adressen, 10 Free SMS.
+Alle Infos und kostenlose Anmeldung: <A HREF="http://www.gmx.net/de/go/freemail">http://www.gmx.net/de/go/freemail</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000283.html">[Usbprog-pub] Ubuntu Problem
+</A></li>
+	<LI>Next message: <A HREF="000285.html">[Usbprog-pub] Usbprog funzt nicht wirklich
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#284">[ date ]</a>
+              <a href="thread.html#284">[ thread ]</a>
+              <a href="subject.html#284">[ subject ]</a>
+              <a href="author.html#284">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

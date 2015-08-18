@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog - firmware wechseln unter Windows
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C20070615074951.8E0E484A05%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000073.html">
+   <LINK REL="Next"  HREF="000076.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog - firmware wechseln unter Windows</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog%20-%20firmware%20wechseln%20unter%20Windows&In-Reply-To=%3C20070615074951.8E0E484A05%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] usbprog - firmware wechseln unter Windows">sauter at sistecs.de
+       </A><BR>
+    <I>Fri Jun 15 09:47:31 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000073.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+        <LI>Next message: <A HREF="000076.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+bin gerade in den Endz&#252;gen meiner Diplomarbeit, drum kann ich leider
+nicht so mitreden.
+
+F&#252;r den Bootloader muss hfuse auf 0xd9!!!!! stehen.
+
+Das ganze Funktioniert so.
+Jede Firmware von usbprog muss einen soganannten Vendor Request anbieten,
+mit dem man das Ger&#228;t in den Update Modus versetzen kann.
+
+Um diesen Vendor Request an das Ger&#228;t senden zu k&#246;nnen braucht man einen
+Treiber.
+
+Wir die Firmware &#252;ber einen externen Treiber angesteuert, wie im Fall vom
+AVRISP mk2 und dem AVR Studio Treiber,  dann kann ich &#252;ber diesen
+Treiber eine Verbindung aufbauen aber daf&#252;r ist unbedingt dieser Filter
+Treiber von der libusb notwendigt. Sonst kann man sich da nicht
+&quot;andocken&quot;.
+
+Anders ist es wiederum wenn man das Blinkdemo, oder nur den Update Modus
+drauf hat, da muss man eine libusb .inf Datei f&#252;r das Ger&#228;t erzeugen das
+man darauf zugreifen kann.  Leider ist da Windows so umst&#228;ndlich. In
+Linux kann man mit der libusb einfach auf jedes Ger&#228;t zugreifen, egal ob
+es spezielle Treiber daf&#252;r gibt die geladen sind.
+
+Kam das einigermassen rueber was das Problem ist, warum das immer so eine
+Wissenschaft ist?
+
+Gruss Bene
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Am 15.6.2007 schrieb &quot;mes&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog at mestro.de</A>&gt;:
+
+&gt;<i>Moin,
+</I>&gt;<i>
+</I>&gt;<i>Frank schrieb:
+</I>&gt;<i>
+</I>&gt;&gt;<i>ja, ich bin auc weitergekommen. Was passiert aber, wenn ich das &quot;Blikdemo&quot;
+</I>&gt;&gt;<i>auf meinen usbprog brenne? Ich kann mir nicht vorstellen, da&#223; AV Studio
+</I>&gt;&gt;<i>dann den &quot;Blinker&quot; in den Updatemodus setzen kann. Ich denke es ist
+</I>&gt;&gt;<i>wichtig, dass die Prozedur mit &quot;usbprog firmware.bin&quot; funktoniert.
+</I>&gt;<i>
+</I>&gt;<i>Hmm, ich habe auch schon &#252;berlegt. Theoretisch m&#252;ssten die befehle, die an
+</I>&gt;<i>den usbprog gesendet werden m&#252;ssen, um in den bootloadermodus zu kommen doch
+</I>&gt;<i>immer unterschiedlich sein, da sie von der aktiven firmware abh&#228;ngen.
+</I>&gt;<i>
+</I>&gt;&gt;<i>Hast Du denn andere bits als lfuse 0xe0 und hfuse 0xd8  gesetzt?
+</I>&gt;<i>
+</I>&gt;<i>- Die Sicherungsbits, so dass der Bootloader nicht beschrieben und
+</I>&gt;<i>ausgelesen werden kann.
+</I>&gt;<i>- High Byte: 0xD8 wobei die 8 wohl das wichtigere ist (Bootloader)
+</I>&gt;<i>- Low Byte: 0xE0 wobei die 0 das wichtigere ist (Clock Source)
+</I>&gt;<i>
+</I>&gt;&gt;<i>Aber bei Dir geht ja der Weg &#252;ber &quot;usbprog firmware.bin&quot; auch nicht oder?
+</I>&gt;<i>
+</I>&gt;<i>Doch, mittlerweile sogar komplett ohne Administratoren-Rechte. Aber
+</I>&gt;<i>vorsichtshalber ja nur mit dem avrispmk2.bin
+</I>&gt;<i>
+</I>&gt;<i>Wie's von der (z.B.) Blinkdemo zur&#252;ck in den Bootloader geht, fehlt mir
+</I>&gt;<i>noch.
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e,
+</I>&gt;<i>mes
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000073.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+	<LI>Next message: <A HREF="000076.html">[Usbprog-pub] usbprog - firmware wechseln unter Windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

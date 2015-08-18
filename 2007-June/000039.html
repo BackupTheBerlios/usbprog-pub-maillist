@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] JTAG Level, Fragen allgemein
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAG%20Level%2C%20Fragen%20allgemein&In-Reply-To=%3C466BCEEB.3000200%40mail15.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000038.html">
+   <LINK REL="Next"  HREF="000040.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] JTAG Level, Fragen allgemein</H1>
+    <B>Mathias</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JTAG%20Level%2C%20Fragen%20allgemein&In-Reply-To=%3C466BCEEB.3000200%40mail15.com%3E"
+       TITLE="[Usbprog-pub] JTAG Level, Fragen allgemein">mathias at mail15.com
+       </A><BR>
+    <I>Sun Jun 10 12:14:03 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000038.html">[Usbprog-pub] Usbprog Fehlermeldung am USB
+</A></li>
+        <LI>Next message: <A HREF="000040.html">[Usbprog-pub] JTAG Level, Fragen allgemein
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Morgen!
+
+ich habe ein paar Fragen/Anmerkungen zum USB Prog. Ich schreibe es
+mal stichwortartig auf, vielleicht ergibt sich ja eine Diskussion..
+
+--&gt; Wozu ist JP2? Das erschliesst sich mir aus dem Schaltbild nicht.
+
+--&gt; ich halte es f&#252;r ungl&#252;cklich VCC vom USB Port und VCC vom JTag
+zusammen zu legen. Ich w&#252;rde evtl. einen -L Atmel einsetzen und die
+Versorgung des Atmel vom JTag nehmen, VCC zum USBN per Jumper
+auftrennbar machen und den USBN per USB versorgen. Ggf. sind dann
+allerdings Levelshifter notwendig, evtl. reichen Pullups. Problem: ich
+wei&#223; nicht, das die beiden machen, wenn einer nicht versorgt wird...,
+ggf. ist einen entsprechende Reset Schaltung notwendig, die beide am
+Boden h&#228;lt, bis Spannung an beiden Seiten anliegt.
+Alternativ (bis 3V) die ganze Schaltung vom JTag versorgen (die
+Leitungen vom USB sind ja gut erreichbar  :) .
+
+--&gt; Ich habe mir die OpenOCD patchen durchgesehen. Hat jmd. mal versucht
+OpenOCD mit MinGW unter Win32 mit usbprog zum laufen zu bekommen?
+
+--&gt; JTAGICE Entwicklung - Wie ist der Status, was f&#252;r Unterst&#252;tzung w&#228;re
+ hilfreich?
+Die Original JTAG ICE Schaltung ist bekannt? z.B. von Olimex?
+
+Gru&#223;
+Mathias
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000038.html">[Usbprog-pub] Usbprog Fehlermeldung am USB
+</A></li>
+	<LI>Next message: <A HREF="000040.html">[Usbprog-pub] JTAG Level, Fragen allgemein
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

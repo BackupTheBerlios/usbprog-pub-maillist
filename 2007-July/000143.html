@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Fwd: Re: Fw: USB prog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Fwd%3A%20Re%3A%20Fw%3A%20USB%20prog&In-Reply-To=%3C20070717055200.9AE3E2FE2D%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000142.html">
+   <LINK REL="Next"  HREF="000144.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Fwd: Re: Fw: USB prog</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Fwd%3A%20Re%3A%20Fw%3A%20USB%20prog&In-Reply-To=%3C20070717055200.9AE3E2FE2D%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Fwd: Re: Fw: USB prog">sauter at sistecs.de
+       </A><BR>
+    <I>Tue Jul 17 07:51:52 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000142.html">[Usbprog-pub] Fw: USB prog
+</A></li>
+        <LI>Next message: <A HREF="000144.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#143">[ date ]</a>
+              <a href="thread.html#143">[ thread ]</a>
+              <a href="subject.html#143">[ subject ]</a>
+              <a href="author.html#143">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>zum Platinentread der Mailingliste USBprog:
+1 ich weiss nicht wie ich da reinschreibe, deswegen so
+2 die originalbelegung ISP 10 pol
+  1.. MOSI
+  2.. VCC vom Zielsystem
+  3.. n.c (not connected )
+  4.. GND
+  5.. Reset
+  6.. GND
+  7.. SCK
+  8.. GND
+  9.. MISO
+  10.. GND
+
+ist deswegen so gew&#228;hlt (so viele GND) weil es als Abschirmung der
+Datenleitung dient, vgl. IDE oder UDMA Leitung
+
+deswegen vergesse in der SW nicht bei normalen MISO MOSI Betrieb, die
+Quasi
+GND Leitungen auf OUT und low zu stellen !
+
+3. ist das v3 Layout schon super (schmal) aber immer noch mit USB B ???
+4. der Cu-Rand , na ja in 3 klicks gel&#246;scht ,aber warum mit Cu Rand ? und
+warum verschieden gro&#223; ?
+5, Rand vom ISP Stecker ist mir fast egal jetzt, solange keine Bahnen
+zwischen ISP und Rand laufen feilt man den eben so kurz wie n&#246;tig
+
+wenn ich die akt. BRD Version so sehe k&#246;nnte es fast passen f&#252;r USB1
+Geh&#228;use, evt. auf den USB B Stecker nochg mal hinweise, notfalls muss ich
+halt wieder einen USB A handverdrahten
+
+gruss
+jar
+
+
+
+
+
+----- Original Message -----
+From: &quot;Benedikt Sauter&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+To: &quot;Joachim Bohs(web.de)&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">joachim-bohs at web.de</A>&gt;
+Cc: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+Sent: Monday, July 16, 2007 8:40 PM
+Subject: Re: Fw: USB prog
+
+
+einfach die die mail adress deine E-Mail schicken:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>
+
+
+Gruss Bene
+
+(den rest bentworte ich gleich. Muss grad noch meine Kurzfassung meiner
+Diplomarbeit tippen)
+
+Am 16.7.2007 schrieb &quot;Joachim Bohs(web.de)&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">joachim-bohs at web.de</A>&gt;:
+
+&gt;&gt;&gt;<i>puh also du sagt das eeprom auslesen mit dem AVR Studio klappt nicht oder
+</I>&gt;<i>wie?
+</I>&gt;<i>genau
+</I>&gt;<i>
+</I>&gt;<i>lese ich EEPROM vom Pony und speicher als *.bin !!! seh ich die erwarteten
+</I>&gt;<i>EEPROM Daten als *.hex nicht !
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i>hier auch mit dem AVR Studio klappt das nicht oder wie?
+</I>&gt;<i>ebend weder als *.bin noch als *.hex gespeichert
+</I>&gt;<i>
+</I>&gt;<i>ich vermute aber es liegt am Format, wie weiss ich noch nicht, denn f&#252;r 
+</I>&gt;<i>mich
+</I>&gt;<i>sind *.hex Dateien immer eine Folge von Bytes gewesen
+</I>&gt;<i>
+</I>&gt;<i>-&gt; hexeditor32 nutzend, aber wie gesagt aus dem Pony nur sichtbar als *.bin
+</I>&gt;<i>gespeichert als *.hex kommt da Schrott
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>aus dem AVR File so geschrieben
+</I>&gt;<i>
+</I>&gt;<i> { eeprom_busy_wait();
+</I>&gt;<i>  eeprom_write_byte ((uint8_t *)0x001, 'T');
+</I>&gt;<i>  eeprom_busy_wait();
+</I>&gt;<i>  eeprom_write_byte ((uint8_t *)0x002, 'e');
+</I>&gt;<i>  eeprom_busy_wait();
+</I>&gt;<i>  eeprom_write_byte ((uint8_t *)0x003, 's');
+</I>&gt;<i>  eeprom_busy_wait();
+</I>&gt;<i>  eeprom_write_byte ((uint8_t *)0x004, 't');
+</I>&gt;<i> }
+</I>&gt;<i>
+</I>&gt;<i>mit save EEPROM 2 file
+</I>&gt;<i>
+</I>&gt;<i>sollte doch &quot;Test&quot; ab Adresse 1 geben , ohne Nullterminator
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>wie kann ich im forum(mailingliste) zu USBprog v3 antworten ?
+</I>&gt;<i>
+</I>&gt;<i>ich habe mich angemeldet, aber finde im Thread keinen Antwortbutton
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000142.html">[Usbprog-pub] Fw: USB prog
+</A></li>
+	<LI>Next message: <A HREF="000144.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#143">[ date ]</a>
+              <a href="thread.html#143">[ thread ]</a>
+              <a href="subject.html#143">[ subject ]</a>
+              <a href="author.html#143">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

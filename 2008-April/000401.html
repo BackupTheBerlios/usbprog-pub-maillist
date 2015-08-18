@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbn2mc differences
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbn2mc%20differences&In-Reply-To=%3C20080403012147.3110413a.michael%40poetters.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000402.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbn2mc differences</H1>
+    <B>Michael Poetters</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbn2mc%20differences&In-Reply-To=%3C20080403012147.3110413a.michael%40poetters.net%3E"
+       TITLE="[Usbprog-pub] usbn2mc differences">michael at poetters.net
+       </A><BR>
+    <I>Thu Apr  3 01:21:47 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000402.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#401">[ date ]</a>
+              <a href="thread.html#401">[ thread ]</a>
+              <a href="subject.html#401">[ subject ]</a>
+              <a href="author.html#401">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Bene, hi list,
+
+i'm a little confused about the usbn2mc-library.
+
+- Why did they take part in every single firmware directory?
+- Why are there ~4 different versions in tiny and ~5 in main along the firmware dirs?
+  (See below, this is a clean trunk without any modifications by me)
+- Wouldn't it be a better solution to use the one from the main directory?
+- What's about the GET_STATUS patch I send in around the middle of January?
+  Will it be added to usbn2mc? (I can send in a generic patch for tiny/*, if you like)
+- Has anyone else still problems under linux to use this device?
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">ratte at nahooya</A>:~/tmp/build/usbprog/save &gt; find . -name usbn960x.c | grep &quot;tiny&quot; | xargs ls -Sl
+-rw-r--r-- 1 ratte users 16270 Jan  3 10:25 ./usbprogPIC/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 14697 Jan  3 10:25 ./usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 14697 Jan  3 10:25 ./usbprog_base/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 14695 Jan  3 10:25 ./msp430/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 14695 Jan  3 10:25 ./usbprogRS232/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13778 Jan  3 10:25 ./simpleport_rs232/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./avrispmk2klon/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./blinkdemo/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./simpleport/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./usb_bdm_tblcf/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./usbprogCAN/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./usbprogI2C/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./usbprogJTAG/firmware/usbn2mc/tiny/usbn960x.c
+-rw-r--r-- 1 ratte users 13626 Jan  3 10:25 ./usbprogXSVF/firmware/usbn2mc/tiny/usbn960x.c
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">ratte at nahooya</A>:~/tmp/build/usbprog/save &gt; find . -name usbn960x.c | grep &quot;main&quot; | xargs ls -Sl
+-rw-r--r-- 1 ratte users 16504 Jan  3 10:25 ./msp430/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 16504 Jan  3 10:25 ./usbprogPIC/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 16504 Jan  3 10:25 ./usbprogRS232/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 16420 Jan  3 10:25 ./blinkdemo/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 16036 Jan  3 10:25 ./usbprog_base/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 16034 Jan  3 10:25 ./usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15752 Jan  3 10:25 ./avrispmk2klon/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15508 Jan  3 10:25 ./simpleport_rs232/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15499 Jan  3 10:25 ./simpleport/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15499 Jan  3 10:25 ./usb_bdm_tblcf/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15499 Jan  3 10:25 ./usbprogCAN/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15499 Jan  3 10:25 ./usbprogI2C/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15499 Jan  3 10:25 ./usbprogJTAG/firmware/usbn2mc/main/usbn960x.c
+-rw-r--r-- 1 ratte users 15499 Jan  3 10:25 ./usbprogXSVF/firmware/usbn2mc/main/usbn960x.c
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">ratte at nahooya</A>:~/tmp/build/usbprog/save &gt; 
+
+Greetings
+Michael &quot;ratte&quot; Poetters
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000402.html">[Usbprog-pub] Problems with first own firmware
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#401">[ date ]</a>
+              <a href="thread.html#401">[ thread ]</a>
+              <a href="subject.html#401">[ subject ]</a>
+              <a href="author.html#401">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog&In-Reply-To=%3C46C1E4FC.40605%40arcor.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000234.html">
+   <LINK REL="Next"  HREF="000227.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] usbprog</H1>
+    <B>Timo</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20usbprog&In-Reply-To=%3C46C1E4FC.40605%40arcor.de%3E"
+       TITLE="[Usbprog-pub] usbprog">timowirtz at arcor.de
+       </A><BR>
+    <I>Tue Aug 14 19:23:08 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000234.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+        <LI>Next message: <A HREF="000227.html">[Usbprog-pub] USBprog Problem mit dem mega644
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#226">[ date ]</a>
+              <a href="thread.html#226">[ thread ]</a>
+              <a href="subject.html#226">[ subject ]</a>
+              <a href="author.html#226">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Benedikt,
+
+hab die Firmware draufgebruzelt.
+Leider ist das Ergebnis dasgleiche:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$ cat /proc/bus/usb/devices
+
+T:  Bus=02 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=480 MxCh= 8
+B:  Alloc=  0/800 us ( 0%), #Int=  0, #Iso=  0
+D:  Ver= 2.00 Cls=09(hub  ) Sub=00 Prot=01 MxPS=64 #Cfgs=  1
+P:  Vendor=0000 ProdID=0000 Rev= 2.06
+S:  Manufacturer=Linux 2.6.20-16-lowlatency ehci_hcd
+S:  Product=EHCI Host Controller
+S:  SerialNumber=0000:00:02.1
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:  If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   4 Ivl=256ms
+
+T:  Bus=01 Lev=00 Prnt=00 Port=00 Cnt=00 Dev#=  1 Spd=12  MxCh= 8
+B:  Alloc= 28/900 us ( 3%), #Int=  2, #Iso=  0
+D:  Ver= 1.10 Cls=09(hub  ) Sub=00 Prot=00 MxPS=64 #Cfgs=  1
+P:  Vendor=0000 ProdID=0000 Rev= 2.06
+S:  Manufacturer=Linux 2.6.20-16-lowlatency ohci_hcd
+S:  Product=OHCI Host Controller
+S:  SerialNumber=0000:00:02.0
+C:* #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=  0mA
+I:  If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
+E:  Ad=81(I) Atr=03(Int.) MxPS=   2 Ivl=255ms
+
+T:  Bus=01 Lev=01 Prnt=01 Port=01 Cnt=01 Dev#=  3 Spd=1.5 MxCh= 0
+D:  Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+P:  Vendor=046d ProdID=c517 Rev=38.10
+S:  Manufacturer=Logitech
+S:  Product=USB Receiver
+C:* #Ifs= 2 Cfg#= 1 Atr=a0 MxPwr= 98mA
+I:  If#= 0 Alt= 0 #EPs= 1 Cls=03(HID  ) Sub=01 Prot=01 Driver=usbhid
+E:  Ad=81(I) Atr=03(Int.) MxPS=   8 Ivl=10ms
+I:  If#= 1 Alt= 0 #EPs= 1 Cls=03(HID  ) Sub=01 Prot=02 Driver=usbhid
+E:  Ad=82(I) Atr=03(Int.) MxPS=   8 Ivl=10ms
+
+T:  Bus=01 Lev=01 Prnt=01 Port=04 Cnt=02 Dev#=  6 Spd=12  MxCh= 0
+D:  Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+P:  Vendor=03eb ProdID=2104 Rev= 2.00
+S:  Manufacturer=B.Sauter
+S:  Product=AVRISP mkII Klon
+S:  SerialNumber=0000A00128255
+C:* #Ifs= 1 Cfg#= 1 Atr=a0 MxPwr= 50mA
+I:  If#= 0 Alt= 0 #EPs= 2 Cls=00(&gt;ifc ) Sub=00 Prot=00 Driver=(none)
+E:  Ad=82(I) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+E:  Ad=02(O) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$ sudo ./usbprog
+usbprog GNU/GPL2 Update Tool
+Author: Benedikt Sauter, <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at ixbat.de</A> 2007
+Firmware Pool: <A HREF="http://www.embedded-projects.net/usbprog">http://www.embedded-projects.net/usbprog</A>
+
+Error: Can't find vaild usbprog adapter on usb bus.
+                        Be sure that you are root or have enough 
+permissions to access usb.
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$
+
+
+
+Frage mich auch, ob es richtig ist, dass dem Dongle keinerlei Treiber 
+zugewiesen wird, muss da nicht vllt. irgendein Standart-Treiber assigned 
+sein?
+
+
+Liebe Gr&#252;&#223;e,
+
+Timo
+
+
+
+
+
+Benedikt Sauter schrieb:
+&gt;<i> Hallo Timo,
+</I>&gt;<i>
+</I>&gt;<i> bist du weitergekommen? Hab vorgestern mal den Mac Fehler gesucht warum,
+</I>&gt;<i> der dort nicht erkannt worden ist. Vielleicht h&#228;ngt es damit auch mit
+</I>&gt;<i> dem Ubuntu zusammen.
+</I>&gt;<i>
+</I>&gt;<i> Probier doch mal den avrisp mk2 klon aus dem Anhang. Wenn der erkannt
+</I>&gt;<i> wird dann waere ich ein St&#252;ck schlauer.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Gruss Bene
+</I>&gt;<i>
+</I>&gt;<i> Am 10.8.2007 schrieb &quot;Timo&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timowirtz at arcor.de</A>&gt;:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> die aktuelle usbprog.c hab ich schon in openocd eingebaut.
+</I>&gt;&gt;<i> Ich komme aber nicht weiter, da ich unter Linux leider nicht auf den 
+</I>&gt;&gt;<i> Dongle zugreifen kann.
+</I>&gt;&gt;<i> Nutze Ubuntu Feisty mit udev.
+</I>&gt;&gt;<i> Hab ihn bei der Arbeit mal an ne Windows Maschine geh&#228;ngt und er wird 
+</I>&gt;&gt;<i> sofort als ocddebugger erkannt, da ist es kein Prob,
+</I>&gt;&gt;<i> nur hier an der Linux-M&#246;hre krieg ichs noch nicht gebacken.
+</I>&gt;&gt;<i> Ich bin mir da recht sicher, dass es nicht an dem Dongle liegt, sondern 
+</I>&gt;&gt;<i> eher am System.
+</I>&gt;&gt;<i> Komme aber noch nicht weiter, hab schon ein paar Tutorials zu udev durch....
+</I>&gt;&gt;<i> Usbprog findet ihn auch nicht, nicht mal als root.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Muss mal forschen...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Gr&#252;&#223;e, Timo
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Benedikt Sauter schrieb:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Ne die neuste openocd Version ziehen, dann noch die usbprog.c austauschen
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> <A HREF="http://svn.berlios.de/svnroot/repos/usbprog/trunk/openocd/patch/usbprog.c">http://svn.berlios.de/svnroot/repos/usbprog/trunk/openocd/patch/usbprog.c</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 1. sh bootstrap
+</I>&gt;&gt;&gt;<i> 2. ./configure --enable-usbprog
+</I>&gt;&gt;&gt;<i> 3. make
+</I>&gt;&gt;&gt;<i> 4. make install (als root)
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> und starten auch als root oder das s bit setzen.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Bin gespannt &#252;ber eine ersten Ergebnisse.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Gruss Bene
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Am 9.8.2007 schrieb &quot;Timo&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timowirtz at arcor.de</A>&gt;:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>   
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;&gt;&gt;<i> Na sieh mal einer kuck:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$ cat /proc/bus/usb/devices
+</I>&gt;&gt;&gt;&gt;<i> ........
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> T:  Bus=01 Lev=01 Prnt=01 Port=04 Cnt=02 Dev#=  6 Spd=12  MxCh= 0
+</I>&gt;&gt;&gt;&gt;<i> D:  Ver= 1.10 Cls=00(&gt;ifc ) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+</I>&gt;&gt;&gt;&gt;<i> P:  Vendor=1781 ProdID=0c63 Rev= 2.00
+</I>&gt;&gt;&gt;&gt;<i> S:  Manufacturer=B.Sauter
+</I>&gt;&gt;&gt;&gt;<i> S:  Product=OpenOCD Debugger
+</I>&gt;&gt;&gt;&gt;<i> S:  SerialNumber=GNU/GPL2
+</I>&gt;&gt;&gt;&gt;<i> C:* #Ifs= 1 Cfg#= 1 Atr=a0 MxPwr= 50mA
+</I>&gt;&gt;&gt;&gt;<i> I:  If#= 0 Alt= 0 #EPs= 2 Cls=00(&gt;ifc ) Sub=00 Prot=00 Driver=(none)
+</I>&gt;&gt;&gt;&gt;<i> E:  Ad=82(I) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+</I>&gt;&gt;&gt;&gt;<i> E:  Ad=03(O) Atr=02(Bulk) MxPS=  64 Ivl=0ms
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">timo at ubuntu2</A>:~/Desktop$
+</I>&gt;&gt;&gt;&gt;<i> Wer h&#228;tte es gedacht, habe die Firmware mit AVRDude aufgespielt und dann 
+</I>&gt;&gt;&gt;&gt;<i> wird er auch erkannt, ansonsten ist alles wie vorher.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Muss ich den Dongle jetzt noch irgendwie mounten?
+</I>&gt;&gt;&gt;&gt;<i> Kann n&#228;mlich noch immer nicht drauf zugreifen.
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Thx, Timo
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>     
+</I>&gt;&gt;&gt;&gt;<i>         
+</I>&gt;&gt;&gt;<i>   
+</I>&gt;&gt;&gt;<i>       
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000234.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+	<LI>Next message: <A HREF="000227.html">[Usbprog-pub] USBprog Problem mit dem mega644
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#226">[ date ]</a>
+              <a href="thread.html#226">[ thread ]</a>
+              <a href="subject.html#226">[ subject ]</a>
+              <a href="author.html#226">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

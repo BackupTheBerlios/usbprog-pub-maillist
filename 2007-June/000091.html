@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Schaltungsfrage
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Schaltungsfrage&In-Reply-To=%3C007301c7b370%24f2798df0%24010414ac%40yourc43b3fd694%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000090.html">
+   <LINK REL="Next"  HREF="000094.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Schaltungsfrage</H1>
+    <B>Lars</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Schaltungsfrage&In-Reply-To=%3C007301c7b370%24f2798df0%24010414ac%40yourc43b3fd694%3E"
+       TITLE="[Usbprog-pub] Schaltungsfrage">usbprog-list at kessnernet.de
+       </A><BR>
+    <I>Wed Jun 20 21:26:48 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000090.html">[Usbprog-pub] Schaltungsfrage
+</A></li>
+        <LI>Next message: <A HREF="000094.html">[Usbprog-pub] usbprog-online.exe Link?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#91">[ date ]</a>
+              <a href="thread.html#91">[ thread ]</a>
+              <a href="subject.html#91">[ subject ]</a>
+              <a href="author.html#91">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+war ein ganz dummer Fehler von mir, ich hab die ISP Freq im AVR Studio auf 
+125 kHz gesetzt und schon gehts.
+
+Gru&#223;
+
+Lars
+----- Original Message ----- 
+From: &quot;Lars&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-list at kessnernet.de</A>&gt;
+To: &quot;Benedikt Sauter&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+Sent: Wednesday, June 20, 2007 9:22 PM
+Subject: Re: [Usbprog-pub] Schaltungsfrage
+
+
+Hallo,
+
+ne das hab ich leider nicht. Leider auch kein LogicAnalyser.
+Aber wenn ich mit einem Multimeter vom Zielsystem bis zum USBProg &#252;ber alle
+Stecker etc. messe, dann sieht das eigentlich gut aus. Mal gucken vielleicht
+ist ja noch irgendwas in der Zielschaltung falsch.
+
+Gru&#223;
+
+Lars
+----- Original Message ----- 
+From: &quot;Benedikt Sauter&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+To: &quot;Lars&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-list at kessnernet.de</A>&gt;; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+Sent: Wednesday, June 20, 2007 9:11 PM
+Subject: Re: [Usbprog-pub] Schaltungsfrage
+
+
+hast du ein Oszi da?
+Kannst du die SCK und MOSI Signale und die Resetleitung sehen?
+Dein Zielprozessor muss die Resetleitung richtig gesetzt bekommen.
+
+
+Oder ich hab oft zuwenig loetzinn bei dem 10 poligen ISP Wannenstecker.
+Also bei der schwarzen  Buchse. Es gibt da ein paar Leitungen die von
+oben weggehen, obwohl von unten geloetet wird. wenn da die
+durchontaktierung
+keinen gescheiten kontakt macht, kann sein das ein Pin &quot;in der Luft&quot;
+ist.
+
+Gruss Bene
+
+
+Am 20.6.2007 schrieb &quot;Lars&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-list at kessnernet.de</A>&gt;:
+
+&gt;<i>Hallo,
+</I>&gt;<i>
+</I>&gt;<i>nein die LED bleibt nicht rot, wenn ich auf Read im AVR Studio klicke dann
+</I>&gt;<i>geht die rote LED kurz an und dann wieder aus.
+</I>&gt;<i>
+</I>&gt;<i>Gru&#223;
+</I>&gt;<i>
+</I>&gt;<i>Lars
+</I>&gt;<i>----- Original Message ----- 
+</I>&gt;<i>From: &quot;Benedikt Sauter&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i>To: &quot;Lars&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-list at kessnernet.de</A>&gt;; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+</I>&gt;<i>Sent: Wednesday, June 20, 2007 9:02 PM
+</I>&gt;<i>Subject: Re: [Usbprog-pub] Schaltungsfrage
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>die led bleibt dann rot?
+</I>&gt;<i>das hab ich meistens dann wenn ich zuviel loetzinn
+</I>&gt;<i>auf den beinchen vom atmega32 habe.
+</I>&gt;<i>
+</I>&gt;<i>Irgendwie scheint mir dass so, als wuerde da ein kurzschluss unter last
+</I>&gt;<i>enstehen.
+</I>&gt;<i>Gibts sowas &#252;berhaupt?
+</I>&gt;<i>
+</I>&gt;<i>Also ich nehm dann immer etwas loetlitze und &quot;saug&quot; etwas loetzinn ab,
+</I>&gt;<i>dann geht es meistens.
+</I>&gt;<i>
+</I>&gt;<i>Gruss Bene
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>Am 20.6.2007 schrieb &quot;Lars&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-list at kessnernet.de</A>&gt;:
+</I>&gt;<i>
+</I>&gt;&gt;<i>Hallo zusammen,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>ich habe ein kleines Problem mit dem USBprog vielleicht kann mir ja jemand
+</I>&gt;&gt;<i>den entscheidenen Tip geben, was bei mir fehlt damit es richtig
+</I>&gt;&gt;<i>funktioniert.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Ich habe eine Schaltung wie in der beigef&#252;gten Schaltung aufgebaut und
+</I>&gt;&gt;<i>wollte einfach mal mit dem AVRStudio die FUSE Bits auslesen (der Atmega
+</I>&gt;&gt;<i>ist
+</I>&gt;&gt;<i>neu) allerdings bekomme ich immer eine Fehlermeldung. Das er kein IC
+</I>&gt;&gt;<i>finden
+</I>&gt;&gt;<i>kann. Der USBprog wurde erkannt und die rote LED f&#228;ngt an zu leuchten,
+</I>&gt;&gt;<i>wenn
+</I>&gt;&gt;<i>ich auf Read klicke.
+</I>&gt;&gt;<i>Ich muss noch dazu sagen der Atmega ist ein 644 und nicht wie in der
+</I>&gt;&gt;<i>Zeichnung 16.
+</I>&gt;&gt;<i>Ich bedanke mich jetzt schonmal f&#252;r die Tips.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Gru&#223;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Lars
+</I>&gt;<i>
+</I>&gt;<i>--------------------------------------------
+</I>&gt;<i>This email was Anti Virus checked by Astaro Security Gateway on Kessnernet
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+--------------------------------------------
+This email was Anti Virus checked by Astaro Security Gateway on Kessnernet
+
+
+
+_______________________________________________
+Usbprog-pub mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+
+--------------------------------------------
+This email was Anti Virus checked by Astaro Security Gateway on Kessnernet
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000090.html">[Usbprog-pub] Schaltungsfrage
+</A></li>
+	<LI>Next message: <A HREF="000094.html">[Usbprog-pub] usbprog-online.exe Link?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#91">[ date ]</a>
+              <a href="thread.html#91">[ thread ]</a>
+              <a href="subject.html#91">[ subject ]</a>
+              <a href="author.html#91">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

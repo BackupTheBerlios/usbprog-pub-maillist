@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Problem mit usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problem%20mit%20usbprog&In-Reply-To=%3C1357389992%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000224.html">
+   <LINK REL="Next"  HREF="000234.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Problem mit usbprog</H1>
+    <B>Detlef Zagar</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Problem%20mit%20usbprog&In-Reply-To=%3C1357389992%40web.de%3E"
+       TITLE="[Usbprog-pub] Problem mit usbprog">dezagar at web.de
+       </A><BR>
+    <I>Tue Aug 14 19:08:17 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000224.html">[Usbprog-pub] usbprog
+</A></li>
+        <LI>Next message: <A HREF="000234.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Benedikt,
+
+ich habe jetzt den Kabel-Adapter mehrfach &#252;berpr&#252;ft und auch mal die Taktfrequenz meines
+Zielsystems herabgesetzt (von 12 auf 8MHz) - alles bisher ohne Erfolg.
+Der LPC2148 ist auch 5V tolerant, sodass es hier kein Problem mit den Pegeln geben sollte.
+
+Ich bekomme immer folgende Meldung:
+
+D:\&gt;openocd.exe  -f usbprog.cfg
+Info:    openocd.c:92 main(): Open On-Chip Debugger (2007-07-31 19:00 CEST)
+Info:    usbprog.c:222 usbprog_init(): USB JTAG Interface ready!
+Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+ mismatch, scan returned 0x3f
+Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+ mismatch, scan returned 0x3f
+Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+ mismatch, scan returned 0x3f
+Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+ mismatch, scan returned 0x3f
+Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+ mismatch, scan returned 0x3f
+Error:   jtag.c:1346 jtag_validate_chain(): Error validating JTAG scan chain, IR
+ mismatch, scan returned 0x3f
+Error:   jtag.c:1442 jtag_init(): Could not validate JTAG chain, exit
+
+D:\&gt;
+
+Nachdem sich mein Frust etwas gelegt hat,
+habe ich mein Oszilloskop scharf gemacht und die Signale direkt am usbprog-Stecker,
+beim Schicken von &quot;openocd.exe -f usbprog.cfg&quot;, angeschaut (alles ohne Zielsystem).
+Hierbei ist mir aufgefallen, dass an pin9 (MISO) einige Pulse ausgegeben werden.
+Pin9 (MISO) soll laut Deiner Verdrahtungstabelle mit TDO am JTAG verbunden werden.
+TDO (Test Data Output) ist aber ebenfalls ein Ausgang, falls ich nicht irgendwas falsch
+verstanden habe. Somit w&#252;rden sich da mit angeschlossenem Zielsystem 2 Ausg&#228;nge angucken,
+was nat&#252;rlich nicht sein darf. Am Signal MOSI (pin1) kann man nichts messen - das scheint mir 
+der Eingang zu sein. Kann es sein, dass diese beiden Signale in Deinem Verdrahtungsplan
+vertauscht sind und eigentlich MOSI an TDO und MISO an TDI angeschlossen werden muss ?
+(oder sind die Signale in der Quelle von openocd.bin vertauscht ?)
+Bevor ich jetzt hier wild rumtausche und was verheize, w&#252;rde ich Dich bitten, dass zu 
+&#252;berpr&#252;fen. Vielleicht habe ich ja auch einen Fehler gemacht. Hat schon irgend jemand
+nach diesem Plan einen Adapter gebaut und das JTAG-Interface mit dieser openocd.exe-version
+zum Laufen gebracht ?
+  
+
+Gruss
+  Detlef
+
+_____________________________________________________________________
+Der WEB.DE SmartSurfer hilft bis zu 70% Ihrer Onlinekosten zu sparen!
+<A HREF="http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066">http://smartsurfer.web.de/?mc=100071&amp;distributionid=000000000066</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000224.html">[Usbprog-pub] usbprog
+</A></li>
+	<LI>Next message: <A HREF="000234.html">[Usbprog-pub] Problem mit usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

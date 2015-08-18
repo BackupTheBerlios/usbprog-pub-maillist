@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] geht nicht, geht doch; Fallstrick Fuses
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20geht%20nicht%2C%20geht%20doch%3B%20Fallstrick%20Fuses&In-Reply-To=%3C20070809074522.2BB40C822C%40server6.web4a.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000213.html">
+   <LINK REL="Next"  HREF="000215.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] geht nicht, geht doch; Fallstrick Fuses</H1>
+    <B>beroot at beroot.de</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20geht%20nicht%2C%20geht%20doch%3B%20Fallstrick%20Fuses&In-Reply-To=%3C20070809074522.2BB40C822C%40server6.web4a.de%3E"
+       TITLE="[Usbprog-pub] geht nicht, geht doch; Fallstrick Fuses">beroot at beroot.de
+       </A><BR>
+    <I>Thu Aug  9 09:45:22 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000213.html">[Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprog jtag nicht
+</A></li>
+        <LI>Next message: <A HREF="000215.html">[Usbprog-pub] geht nicht, geht doch; Fallstrick Fuses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#214">[ date ]</a>
+              <a href="thread.html#214">[ thread ]</a>
+              <a href="subject.html#214">[ subject ]</a>
+              <a href="author.html#214">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo zusammen,
+
+(m&#246;glicherweise hilft das auch dem Windows-Treiber-Problem-Thread:)
+gestern hatte ich meinen Usbprog-Bausatz in der Post und habe ihn
+nat&#252;rlich gleich aufgebaut. Die \&quot;Aufbauanleitung\&quot; ist dahingehend
+auch gut gelungen. Das Flashen des ATmega32 hat auch funktioniert (mit
+Ponyprog). Die Fusebits habe ich entsprechend der Grafik \&quot;Firmware
+austauschen\&quot; gesetzt (das sah ganz nach einem Ponyprog-Screenshot
+aus). 
+
+Nur wurde das Ger&#228;t nie von Windows als neues Ger&#228;t erkannt. Ich habe
+mehrfach alles gepr&#252;ft und geflasht. Keine Chance. Ich habe mir sogar
+eine Blink-Demo selbst geschrieben (wo ist der Download auf der
+Poolseite?). Die hat nach Flashen mit Ponyprog sogar wunderbarer Weise
+funktioniert. Der Takt von 4MHz kam also am Atmel an. Dann habe ich die
+Fuse-Werte 0xe0 und 0xd9 auf dem Fuserechner &#252;berpr&#252;ft. 
+
+Und nun kommt die L&#246;sung:
+Mit Ponyprog m&#252;ssen die H&#228;kchen im Vergleich zum Screenshot invertiert
+gesetzt werden. Also alle H&#228;kchen l&#246;schen und alle leeren Felder
+setzen. Dann funktioniert auch die Hardwareerkennung und
+Treiberinstallation unter Windows.
+
+Aber was ist dann mit der Abbildung auf der \&quot;Firmware\&quot;-Seite gemeint,
+wenn es so
+gar nicht funktionieren kann? Das ist sehr irritierend und zun&#228;chst
+auch sehr frustierend ;)
+
+Vielleicht hilft dieser Hinweis noch mehr Leuten.
+
+Ciao,
+Michi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000213.html">[Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprog jtag nicht
+</A></li>
+	<LI>Next message: <A HREF="000215.html">[Usbprog-pub] geht nicht, geht doch; Fallstrick Fuses
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#214">[ date ]</a>
+              <a href="thread.html#214">[ thread ]</a>
+              <a href="subject.html#214">[ subject ]</a>
+              <a href="author.html#214">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

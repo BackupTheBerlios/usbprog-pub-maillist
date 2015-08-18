@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JP4%20auf%203.1-Schaltplan/alternatives%20Layout&In-Reply-To=%3Cop.txox3sh6a5ghe1%40thomas%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000318.html">
+   <LINK REL="Next"  HREF="000309.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout</H1>
+    <B>Thomas Faust</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JP4%20auf%203.1-Schaltplan/alternatives%20Layout&In-Reply-To=%3Cop.txox3sh6a5ghe1%40thomas%3E"
+       TITLE="[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout">Thomas.Faust at physik.uni-muenchen.de
+       </A><BR>
+    <I>Mon Aug 27 01:56:06 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000318.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+        <LI>Next message: <A HREF="000309.html">[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#308">[ date ]</a>
+              <a href="thread.html#308">[ thread ]</a>
+              <a href="subject.html#308">[ subject ]</a>
+              <a href="author.html#308">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo zusammen
+
+ich wollte mir auch einen sch&#246;nen uspprog-adapter bauen.
+Da ich mir jedoch eigentlich meine Platinen immer selber &#228;tze und gerade  
+beim L&#246;ten der Vias von Hand das Original-Layout etwas ung&#252;nstig ist, hab  
+ich heute abend den 3.1er-Schaltplan in das von mir verwendete  
+Layoutsystem (BAE, www.bartels.de/bae) &#252;bertragen.
+Jedoch frage ich mich, f&#252;r was eigentlich der Jumper JP4 gut ist?
+Er dient ja wohl dazu, den (&#252;brigens am Bustap nicht beschrifteten) Pin A7  
+auf Masse ziehen zu k&#246;nnen. Einerseits frage ich mich nat&#252;rlich, f&#252;r was  
+das gut sein soll, f&#252;r zuk&#252;nftige Erweiterungen?
+Andererseits frage ich mich, warum da ein 10kOhm-Pullup verbaut ist, wo  
+der Mega32 doch interne Pullups hat, und man sich dadurch den Widerstand  
+und das Routing von VCC in die Ecke sparen kann.
+
+Wer sich f&#252;r das Layout interessiert:
+Schaltplan: <A HREF="http://tza.m-faq.de/images/platinen/usbprog/schem.pdf">http://tza.m-faq.de/images/platinen/usbprog/schem.pdf</A>
+Ich hab ein paar kleine &#196;nderungen vorgenommen, der Widerstand R7 ist  
+schon raus, der Quarz ist SMD weil Reichelt leider keinen 24 MHz Grundton  
+in einem anderen Geh&#228;use hat, der Umschalt-Jumper f&#252;r  
+buspowered/selfpowered ist ein wenig anders aufgebaut.
+Layout: <A HREF="http://tza.m-faq.de/images/platinen/usbprog/layout.pdf">http://tza.m-faq.de/images/platinen/usbprog/layout.pdf</A> (die Datei  
+hat Lagen, afaik nur mit dem Adobe Reader benutzbar)
+Gr&#246;&#223;e ist 50x34mm&#178;, also deutlich mehr als das original-Layout, aber noch  
+nicht sperrig ;)
+Das ganze passt hoffentlich in ein 53x37x20mm&#179; (Au&#223;enma&#223;e)  
+Kunststoffegeh&#228;use, was ich mal bei Reichelt gekauft hatte.
+In meinen Augen sind die Vorteile weniger Vias (19 St&#252;ck) und wesentlich  
+weniger Vias unter den ICs (nur 8 St&#252;ck).
+
+Ich hoffe es kann jemand etwas zu dem Pullup-Widerstand und dem Sinn des  
+Jumpers sagen.
+
+Thomas
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000318.html">[Usbprog-pub] ubuntu problem gel&#246;st?
+</A></li>
+	<LI>Next message: <A HREF="000309.html">[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#308">[ date ]</a>
+              <a href="thread.html#308">[ thread ]</a>
+              <a href="subject.html#308">[ subject ]</a>
+              <a href="author.html#308">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

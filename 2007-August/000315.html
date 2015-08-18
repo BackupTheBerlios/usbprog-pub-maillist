@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JP4%20auf%203.1-Schaltplan/alternatives%20Layout&In-Reply-To=%3C20070827131112.216540%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000314.html">
+   <LINK REL="Next"  HREF="000319.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout</H1>
+    <B>Fred Sonnenrein</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20JP4%20auf%203.1-Schaltplan/alternatives%20Layout&In-Reply-To=%3C20070827131112.216540%40gmx.net%3E"
+       TITLE="[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout">Fred.Sonnenrein at gmx.de
+       </A><BR>
+    <I>Mon Aug 27 15:11:12 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000314.html">[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+</A></li>
+        <LI>Next message: <A HREF="000319.html">[Usbprog-pub] Usbprog-pub Digest, Vol 5, Issue 30
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#315">[ date ]</a>
+              <a href="thread.html#315">[ thread ]</a>
+              <a href="subject.html#315">[ subject ]</a>
+              <a href="author.html#315">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Frag mich nicht mehr, welche &#228;u&#223;eren Umst&#228;nde es waren.
+
+Fakt ist, da&#223; mir beim alten Adapter 2 mal die ersten 
+128 Byte des Flash &quot;zerschossen&quot; worden sind.
+
+Ablauf: Fertig konfigurierten Adapter (usbprog-base.hex +
+avrispmkII.bin) am USB angesteckt (unter Win2k) -&gt; 
+&quot;unbekanntes Ger&#228;t&quot;.
+
+Auch ein Neustart des Rechners brachte keinen erfolg, dann mit
+externen Programmer den Inhalt des Mega32 ausgelesen: erster 
+Speicherblock mit FF gef&#252;llt, rest (vermutlich) noch im 
+Originalzustand. Zeitweise habe ich dann daher den usbprog_base
+rausgeschmissen und mit dem avrispmkII.hex (direkt geflasht)
+gearbeitet. Dann trat das Problem nicht mehr auf.
+
+Gr&#252;&#223;e,
+
+Fred
+
+-------- Original-Nachricht --------
+&gt;<i> Datum: Mon, 27 Aug 2007 11:23:26 +0200
+</I>&gt;<i> Von: &quot;Benedikt Sauter&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i> An: &quot;Fred Sonnenrein&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Fred.Sonnenrein at gmx.de</A>&gt;, &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+</I>&gt;<i> Betreff: Re: [Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+</I>
+&gt;<i> Die Version 3.1 ist leider schon fertig. Also abgeschlossen.
+</I>&gt;<i> 
+</I>&gt;<i> Das updaten hab ich langsam mit Windows im Griff.
+</I>&gt;<i> 
+</I>&gt;<i> Hab grad den Plan nicht hier, aber wenn der an A7 haengt, das war nur ne
+</I>&gt;<i> Bauchentscheidung, da es nicht mehr kostet. Dann hab ich gedacht kann ja
+</I>&gt;<i> nicht schaden das man von ausen einer Firmware irgendwas sagen kann.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Das mit dem ausversehen ist aber eigentlich nicht so leicht, da man erst
+</I>&gt;<i> ueber USB ein bestimmtes Kommando der laufenden Firmware schicken muss.
+</I>&gt;<i> Oder wie muss ich das verstehen unbeabsichtigt updaten?
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Gruss Bene
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Am 27.8.2007 schrieb &quot;Fred Sonnenrein&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Fred.Sonnenrein at gmx.de</A>&gt;:
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Hallo zusammen,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;meines Wissens (Bene, bitte koorigiere mich ggf.) ist der JP4 vorgesehen,
+</I>&gt;<i> &gt;un ein unbeabsichtigtes Update der Firmware zu verhindern (ich hatte
+</I>&gt;<i> diesen
+</I>&gt;<i> &gt;Effekt auch schon). 
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Statt des JP4 habe ich aber vielleicht einen besseren Vorschlag: 
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Das Flashen der Firmware wird nur zugelassen, wenn ein Jumper
+</I>&gt;<i> &gt;auf TxD-RxD gesetzt wird.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Gr&#252;&#223;e,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Fred
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;-------- Original-Nachricht --------
+</I>&gt;<i> &gt;&gt; Datum: Mon, 27 Aug 2007 09:44:00 +0200
+</I>&gt;<i> &gt;&gt; Von: &quot;Thomas Faust&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">tza at gmx.net</A>&gt;
+</I>&gt;<i> &gt;&gt; An: &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">usbprog-pub at lists.berlios.de</A>&gt;
+</I>&gt;<i> &gt;&gt; Betreff: Re: [Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; On Mon, 27 Aug 2007 07:17:01 +0200, Benedikt Sauter &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">sauter at sistecs.de</A>&gt;
+</I>&gt;<i>  
+</I>&gt;<i> &gt;&gt; wrote:
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; &gt; Hallo Thomas,
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt; JP4 an A7 dient einfach f&#252;r sp&#228;tere Erweiterungen. Der Platz war da
+</I>&gt;<i> &gt;&gt; und
+</I>&gt;<i> &gt;&gt; &gt; dann hab ich mir gedacht dann ist es schon mal da. Er kann in einer
+</I>&gt;<i> &gt;&gt; &gt; Firmware als Schalter genutzt werden.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Ok. So wie ich das sehe gibt es noch kein finales Layout f&#252;r die  
+</I>&gt;<i> &gt;&gt; 3.1-Revision.
+</I>&gt;<i> &gt;&gt; Dann w&#228;re mein Vorschlag, den Widerstand R7 zu streichen, da er  
+</I>&gt;<i> &gt;&gt; &#252;berfl&#252;ssig ist (der interne Pullup des AVRs reicht aus).
+</I>&gt;<i> &gt;&gt; Ansonsten w&#228;re meine Version dann nicht mehr Hardware-kompatibel zur  
+</I>&gt;<i> &gt;&gt; offiziellen Version (sollte diese den Widerstand behalten ;) ).
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt; Kannst du mir alle deine Dateien zu senden? Dann haben da auch andere
+</I>&gt;<i> &gt;&gt; &gt; etwas davon.  Also die originalen BAE Dateien mein ich, ganz im Sinne
+</I>&gt;<i> &gt;&gt; &gt; der GPL halt.
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt; Vielleicht kannst du dann auch deine Reicheltbestell liste
+</I>&gt;<i> &gt;&gt; &gt; mitschichecken, denk die Hilft dann auch seht weiter.
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt; Ich w&#252;rd mich dann noch &#252;ber ein Foto freuen wenn es mal aufgebaut
+</I>&gt;<i> &gt;&gt; ist.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Das gibt es alles wenn das ganze aufgebaut ist und auch funktioniert.
+</I>&gt;<i> &gt;&gt; Ich ging blo&#223; davon aus, dass hier keiner BAE hat, und hab deswegen
+</I>&gt;<i> &gt;&gt; besser  
+</I>&gt;<i> &gt;&gt; PDFs gemacht.
+</I>&gt;<i> &gt;&gt; <A HREF="http://tza.m-faq.de/images/platinen/usbprog/usbprog.ddb">http://tza.m-faq.de/images/platinen/usbprog/usbprog.ddb</A> w&#228;re mal die  
+</I>&gt;<i> &gt;&gt; vorl&#228;ufige Version.
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; Thomas (der gestern Nacht wohl mit der falschen Email-Adresse gepostet
+</I>&gt;<i> &gt;&gt; hat)
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; 
+</I>&gt;<i> &gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt; Usbprog-pub mailing list
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>&gt;<i> &gt;_______________________________________________
+</I>&gt;<i> &gt;Usbprog-pub mailing list
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000314.html">[Usbprog-pub] JP4 auf 3.1-Schaltplan/alternatives Layout
+</A></li>
+	<LI>Next message: <A HREF="000319.html">[Usbprog-pub] Usbprog-pub Digest, Vol 5, Issue 30
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#315">[ date ]</a>
+              <a href="thread.html#315">[ thread ]</a>
+              <a href="subject.html#315">[ subject ]</a>
+              <a href="author.html#315">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Probleme mit usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Probleme%20mit%20usbprog&In-Reply-To=%3C46372AE7.5000608%40hrbacek.info%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000029.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Probleme mit usbprog</H1>
+    <B>Jan Hrb&#225;c(ek</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Probleme%20mit%20usbprog&In-Reply-To=%3C46372AE7.5000608%40hrbacek.info%3E"
+       TITLE="[Usbprog-pub] Probleme mit usbprog">jan at hrbacek.info
+       </A><BR>
+    <I>Tue May  1 13:56:23 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000029.html">[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24">[ date ]</a>
+              <a href="thread.html#24">[ thread ]</a>
+              <a href="subject.html#24">[ subject ]</a>
+              <a href="author.html#24">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Bene,
+danke f&#252;r deine Ratschl&#228;ge...
+&gt;<i> Hast du die libusb Treiber + Filter Treiber installiert?
+</I>&gt;<i> Hast du das AVR Studio 4 mit dem USB Treibern installiert?
+</I>&gt;<i>
+</I>&gt;<i> Die libusbTreiber braucht man dann immer wenn das Ger&#228;t als unbekanntes
+</I>&gt;<i> erkannt wird. Die Filter Treiber braucht man, wenn das AVR Studio 4
+</I>&gt;<i> installiert ist und usbprog als AVRISP mk2 arbeitet. Denn dann kann ich
+</I>&gt;<i> nicht &#252;ber die originalen Treiber vom AVR Studio mit meinem Ger&#228;t
+</I>&gt;<i> kommunizieren, sondern kann nur &#252;ber diese Filter Treiber meine
+</I>&gt;<i> Nachrichten &#252;ber den AVR Studio Treiber abschicken.
+</I>&gt;<i>
+</I>&gt;<i> Pers&#246;nlich benutze ich nur Linux, aber auf meinem Windows XP Rechner den
+</I>&gt;<i> ich einmal im Jahr einschalte hat es so geklappt.
+</I>&gt;<i>   
+</I>Alle Treiber habe ich korrekt installiert - der eine Adapter
+funktioniert problemlos. Den anderen kann ich nicht nur unter Windows,
+sondern auch unter Linux gar nicht finden... (Heute begann der
+Konsolenprogramm mit dem ersten Adapter wieder zu sprechen, mit dem
+anderem immer nicht.)
+&gt;<i> Also wenn du usbprog_base.hex oder direkt avrispmk2.bin eingespielt hast,
+</I>&gt;<i> solltest du statt 4 MHz 16 MHz am Clock Out messen. Ich vermute mal das
+</I>&gt;<i> da einfach irgendwo ein ganz feiner Kurzschluss an den Beinchen vom
+</I>&gt;<i> ATMega32 ist. Das war bei mir meistens der Fall. Auch wenn ich dachte
+</I>&gt;<i> das da nichts ist, hat er pl&#246;tzlich nach einer kr&#228;ftigen Reinigung ohne
+</I>&gt;<i> Probleme gerarbeitet.
+</I>Ja, 16 MHz Clock gibt es dort.
+Jetzt habe ich alles noch einmal &#252;berpr&#252;ft, gereinigt und alle
+Anschl&#252;sse des ATmega durchgel&#246;tet - keine &#196;nderung. Ich hab auch direkt
+das Firmware avrispmk2.hex eingespielt (durch den funktionierenden
+Adapter) und die Fuse-Bits entsprechend eingestellt und der Adapter wird
+st&#228;ndig unerkannt, lsusb unter Linux findet ihn auch immer nicht :-(
+
+Also ich wei&#223; &#252;berhaupt nicht, was ich noch versuchen soll. Jetzt warte
+ich, ob Christian mit dem Ersatz USBN9604 etwas feststellt...
+
+Jan
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000029.html">[Usbprog-pub] Neue Firmware: USB JTAG f&#252;r Open OCD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#24">[ date ]</a>
+              <a href="thread.html#24">[ thread ]</a>
+              <a href="subject.html#24">[ subject ]</a>
+              <a href="author.html#24">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

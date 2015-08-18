@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprogjtag nicht
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-15%3Fq%3FOpenOCD_f%3DFCr_Windows_kennt_usbprog%3F%3D%0A%20%3D%3Fiso-8859-15%3Fq%3Fjtag_nicht%3F%3D&In-Reply-To=%3C46972B78.9080909%40aon.at%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000125.html">
+   <LINK REL="Next"  HREF="000128.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprogjtag nicht</H1>
+    <B>Johannes Sch&#246;ller</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%3D%3Fiso-8859-15%3Fq%3FOpenOCD_f%3DFCr_Windows_kennt_usbprog%3F%3D%0A%20%3D%3Fiso-8859-15%3Fq%3Fjtag_nicht%3F%3D&In-Reply-To=%3C46972B78.9080909%40aon.at%3E"
+       TITLE="[Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprogjtag nicht">johannes_schoeller at aon.at
+       </A><BR>
+    <I>Fri Jul 13 09:36:24 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000125.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+        <LI>Next message: <A HREF="000128.html">[Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprog jtag nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo!
+Vielen Dank Benedikt f&#252;r den Link, OpenOCD scheint nun zu starten.
+Allerdings hat sich nun ein weiteres Problem eingeschlichen dem ich 
+nicht Herr werde:
+
+D:\ARM\openocd4usbprog&gt;openocd.exe -f usbprog.cfg
+Info:    openocd.c:86 main(): Open On-Chip Debugger (2007-04-11 16:20 CEST)
+Error:   usbprog.c:180 usbprog_init(): Can't find USB JTAG Interface 
+(B.Sauter)!
+ Please check connection and permissions.
+
+bzw:
+
+D:\ARM\openocd4usbprog&gt;openocd.exe -f usbprog.cfg -d
+Info:    openocd.c:86 main(): Open On-Chip Debugger (2007-04-11 16:20 CEST)
+Debug:   jtag.c:1342 jtag_init(): -
+Error:   usbprog.c:180 usbprog_init(): Can't find USB JTAG Interface 
+(B.Sauter)!
+ Please check connection and permissions.
+
+Das Einspielen von 'usbprogjtag.bin' war soweit ich das beurteilen kann 
+erfolgreich, zumindest meldet USB View jetzt im Device Descriptor statt
+
+idVendor:           0x1781
+idProduct:          0x0C62
+bcdDevice:          0x0000
+
+(nur usbprog_base.hex eingespielt) folgenden DevDescriptor:
+
+Device Descriptor:
+bcdUSB:             0x0110
+bDeviceClass:         0x00
+bDeviceSubClass:      0x00
+bDeviceProtocol:      0x00
+bMaxPacketSize0:      0x08 (8)
+idVendor:           0x1781
+idProduct:          0x0C62
+bcdDevice:          0x0200
+iManufacturer:        0x01
+iProduct:             0x02
+iSerialNumber:        0x03
+bNumConfigurations:   0x01
+
+welcher dem im Source von 
+<A HREF="http://svn.berlios.de/svnroot/repos/usbprog/trunk/openocd/firmware/firmware/">http://svn.berlios.de/svnroot/repos/usbprog/trunk/openocd/firmware/firmware/</A> 
+entspricht.
+Wenn ich den kompletten Programmcode aus dem AVR mit PonyProg auslese 
+sieht man auch deutlich dass der Speicher von Adresse 0x0 weg aufgef&#252;llt 
+wurde.
+
+Muss ich im Windows eigentlich zus&#228;tzlich zum Treiber (ich verwende den 
+auf der HP unter Downloads angebotenen 'usbprog_win32_driver.zip') auch 
+noch USB JTAG Bibliotheken installieren, und wenn ja, wie funktioniert das?
+
+Leider bin ich etwas ratlos im Moment, vielleicht kannst du mir 
+nocheinmal helfen.
+Vielen Dank und mfG,
+Johannes Sch&#246;ller
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000125.html">[Usbprog-pub] Atmega32 funktioniert nicht
+</A></li>
+	<LI>Next message: <A HREF="000128.html">[Usbprog-pub] OpenOCD f&#252;r Windows kennt usbprog jtag nicht
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#126">[ date ]</a>
+              <a href="thread.html#126">[ thread ]</a>
+              <a href="subject.html#126">[ subject ]</a>
+              <a href="author.html#126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

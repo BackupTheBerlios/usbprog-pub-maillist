@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] segfault in usbprog-gui and usb bus problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20segfault%20in%20usbprog-gui%20and%20usb%20bus%20problems&In-Reply-To=%3C478784FD.5040708%40jaeger.mine.nu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000362.html">
+   <LINK REL="Next"  HREF="000364.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] segfault in usbprog-gui and usb bus problems</H1>
+    <B>Christian Jaeger</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20segfault%20in%20usbprog-gui%20and%20usb%20bus%20problems&In-Reply-To=%3C478784FD.5040708%40jaeger.mine.nu%3E"
+       TITLE="[Usbprog-pub] segfault in usbprog-gui and usb bus problems">christian at jaeger.mine.nu
+       </A><BR>
+    <I>Fri Jan 11 16:02:21 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000362.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+        <LI>Next message: <A HREF="000364.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#363">[ date ]</a>
+              <a href="thread.html#363">[ thread ]</a>
+              <a href="subject.html#363">[ subject ]</a>
+              <a href="author.html#363">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Christian Jaeger wrote:
+&gt;<i> I wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Failed to enter programming mode.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dunno what that means, I'll ask my colleague tomorrow.
+</I>&gt;&gt;<i>     
+</I>
+We tried again today on his computer (OSX) the same way we did flash the 
+usbprog yesterday, and we get the same error on his computer as on my 
+PC. He has got no idea what's wrong now. Since the red led is blinking 
+sometimes, he concludes that the clock is running and thus it should 
+always be possible to reprogram it.
+
+BTW I've tried to get to the Atmel programmer using avrdude (for the 
+purpose of getting closer to the fuse stuff), but I'm getting the 
+message &quot;can't claim device &quot;/dev/ttyS0&quot;: Invalid argument&quot;.
+
+ &gt; strace -o out -fF avrdude -p m32 -c bsd -P /dev/ttyS0 -t
+avrdude: can't claim device &quot;/dev/ttyS0&quot;: Invalid argument
+
+relevant part of strace output:
+3839  open(&quot;/dev/ttyS0&quot;, O_RDWR)        = 3
+3839  ioctl(3, PPCLAIM, 0x4)            = -1 EINVAL (Invalid argument)
+
+PPCLAIM sounds to me like the PP would stand for parallel port, so it 
+seems like it's trying to tread the serial port like a parallel one; but 
+I haven't seen any flag in the man page about switching off that ioctl call.
+
+This is avrdude 5.2-2 from Debian Etch.
+
+So my day to spend working on the thing is almost used up. I'll send 
+Benedikt the usbprog back to check what's going on. I'll be glad when we 
+get it back in a working state for Linux. I'll add a xubuntos live CD 
+we're also using here, which you can use if you haven't installed Linux 
+otherwise and so we can talk about the same system configuration.
+
+Thanks,
+Christian.
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000362.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+	<LI>Next message: <A HREF="000364.html">[Usbprog-pub] segfault in usbprog-gui and usb bus problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#363">[ date ]</a>
+              <a href="thread.html#363">[ thread ]</a>
+              <a href="subject.html#363">[ subject ]</a>
+              <a href="author.html#363">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

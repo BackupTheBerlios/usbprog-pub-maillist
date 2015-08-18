@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog_3%3D2E%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_0%3F%3D&In-Reply-To=%3C20070717132807.70B5AAD929%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000144.html">
+   <LINK REL="Next"  HREF="000149.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%0A%09%3D%3Fiso-8859-1%3Fq%3FPlatinen_Redesign_f%3DFCr_usbprog_3%3D2E%3F%3D%0A%09%3D%3Fiso-8859-1%3Fq%3F_0%3F%3D&In-Reply-To=%3C20070717132807.70B5AAD929%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0">sauter at sistecs.de
+       </A><BR>
+    <I>Tue Jul 17 15:27:59 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000144.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0
+</A></li>
+        <LI>Next message: <A HREF="000149.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#147">[ date ]</a>
+              <a href="thread.html#147">[ thread ]</a>
+              <a href="subject.html#147">[ subject ]</a>
+              <a href="author.html#147">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>Es w&#228;re sch&#246;n, wenn jetzt einer (meinetwegen ich) die Bearbeitung macht. 
+</I>&gt;<i>Au&#223;erdem mu&#223;t Du, Bene, mir mal sagen, wie ich neue Versionen ins SVN kriege.
+</I>
+schick dir mir am besten, dann kann ich sie einf&#252;gen. Da braucht man
+Schreibrechte usw....
+
+&gt;<i>Ist auf dieser Version bereits der USB-A-Stecker drauf? Du hast viele neue 
+</I>&gt;<i>Teile benutzt. 
+</I>
+Nein also kein USB-A-Stecker. Ich w&#252;rd glaub die USB B Buchse montieren
+und gut oder was meinst denn du?
+
+&gt;&gt;&gt;<i>Und welche Pin-Belegung? Macht die Software dann die Kompatibilit&#228;t
+</I>&gt;&gt;&gt;<i>zu bisherigen Schaltungen?
+</I>&gt;&gt;<i> Also das wird dann &#252;ber das Adapterkabel und die Firmware geregelt.
+</I>&gt;&gt;<i> Man wird dann wohl ein Adapterkabel f&#252;r JTAG, ISP usw.. haben. Wobei
+</I>&gt;&gt;<i> das
+</I>&gt;&gt;<i> klassische ISP Kabel kann das 10 polige Flachbandkabel bleiben.
+</I>&gt;&gt;<i> Wenn wie jetzt VCC und GND an den richtigen Stellen sind.
+</I>&gt;<i>
+</I>&gt;<i>OK. Wie aber schon gesagt wurde, sollten die anderen Leitungen auf Masse gezogen werden (zwecks Abschirmung). Oder kann es Probleme geben, wenn
+</I>&gt;<i>der Mega32 die Leitungen auf Low zieht und zus&#228;tzlich (durch Br&#252;cken
+</I>&gt;<i>in der Zielschaltung) die entsprechenden Leitungen geerdet sind?
+</I>
+Hm eigentlich will ich die 8 Leitungen vom Port B &#252;ber den 10 poligen
+Stecker erreichbar machen. Ich hoffe das geht so wie du sagst, das man
+die Leitungen auf Low zieht und gut. Sonst muss man doch nen kleinen
+Adapter auch fuer den AVRISP mk2 Klon bauen...
+
+&gt;&gt;&gt;<i>Bitte genauere Platinen-Abmessungen angeben.
+</I>&gt;&gt;<i> Hm versuch ich mal herauszufinden. So klein wie m&#246;glich aber
+</I>&gt;&gt;<i> w&#252;rd ich mal sagen oder?
+</I>&gt;<i>
+</I>&gt;<i>Sch&#246;n. Wenn Du aber ein konkretes Geh&#228;use im Auge hast, ist die L&#228;nge 
+</I>&gt;<i>des Adapters fix (weil er an beiden Enden Steckverbinder herausschauen
+</I>&gt;<i>sollen).
+</I>
+Das aus der E-Mail vom Joachim. Hast du die gelesen?
+
+&gt;&gt;&gt;<i>Welcher Stecker soll es denn sein? Woher beziehst Du die Bauteile?
+</I>&gt;<i>
+</I>&gt;&gt;<i> Ich glaub wir sollten da aber die USB Buchse nehmen die jetzt drauf
+</I>&gt;&gt;<i> ist oder?
+</I>&gt;&gt;<i> Meistens bei csd-electronic, schukat.
+</I>&gt;<i>
+</I>&gt;<i>Ist auch meine Meinung. Ggf. kann man einen nur Cent kostenden Adapter
+</I>&gt;<i>A-Stecker - B-Stecker benutzen.
+</I>
+Ah ok gut dann machen wir das so.
+
+&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> - Der Kupferrand sollte weg. Das gibt meist Probleme. (Wurde 
+</I>&gt;&gt;&gt;&gt;<i> mir gesagt)
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> Wer sagt das denn?
+</I>&gt;<i>
+</I>&gt;&gt;<i> Ein Autor einer E-Mail an mich, ich bin doch nur Informatiker :-)
+</I>&gt;<i>
+</I>&gt;<i>Hm. K&#246;nnten nur Kurzschl&#252;sse sein, wenn der Kupferrand wirklich
+</I>&gt;<i>bis zum Rand des Tr&#228;germaterials geht. Kann man aber anders machen.
+</I>
+Ich glaub das kann man so lassen.
+&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>- ISP Buchse etwas nach ausen, dass die schwarze Buspfostenbuche auf
+</I>&gt;&gt;&gt;&gt;<i>einer Ebene mit der Platine sein kann.
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> L&#246;cher so dicht am Platinenrand... schwierig. Mu&#223; der Hersteller der
+</I>&gt;&gt;&gt;<i> Platinen beantworten, ob das geht. Der Hersteller w&#228;re hinsichtlich
+</I>&gt;&gt;&gt;<i> der Design-Regeln (Leiterbahnbreiten etc.) sowieso wichtig zu wissen.
+</I>&gt;<i>
+</I>&gt;&gt;<i> www.bilex-lp.com da lass ich es machen.
+</I>&gt;<i>
+</I>&gt;<i>Ok. Dann wei&#223; ich bescheid.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> - eine Vcc Br&#252;cke vor dem Vcc Pin am 10 poligen Stecker. Das jeder
+</I>&gt;&gt;&gt;&gt;<i> selber entscheiden kann ob er die 5V als Spannungsversorgung f&#252;r 
+</I>&gt;&gt;&gt;&gt;<i> ein Zielboard braucht oder nicht.
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> Oder eine Shottky-Diode?
+</I>&gt;<i>
+</I>&gt;&gt;<i> Wie funktioniert das mit der Diode?
+</I>&gt;<i>
+</I>&gt;<i>Das h&#228;tte eine Zielschaltung ohne Speisung vom Board gespeist, eine
+</I>&gt;<i>R&#252;ckspeisung von der Zielschaltung zum PC w&#228;re aber ausgeschlossen.
+</I>&gt;<i>
+</I>&gt;<i>Angesichts der nicht begrenzten Stromaufnahme der Zielschaltung 
+</I>&gt;<i>halte ich inzwischen die Diode doch nicht f&#252;r so prickelnd.
+</I>
+ok :-)
+
+&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> - Vcc Leitungen sollten dicker sein
+</I>&gt;<i>
+</I>&gt;&gt;&gt;<i> Wer's braucht...
+</I>&gt;<i>
+</I>&gt;&gt;<i> :-)
+</I>&gt;<i>
+</I>&gt;<i>Ich werd sie so dick machen, wie es geht.
+</I>
+eh klar wunderbar!
+
+&gt;&gt;&gt;<i> Weiterhin w&#252;rde ich nach den Anregungen der anderen den Jumper JP1
+</I>&gt;&gt;&gt;<i> nicht an Masse h&#228;ngen (f&#252;r den Programmier-Modus), sondern an Pin 5
+</I>&gt;&gt;&gt;<i> von SV2.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Wieso? Welcher Grund steckt dahinter?
+</I>&gt;<i>
+</I>&gt;<i>Weil dann beim Programmieren der Firmware (usbprog_base) der 
+</I>&gt;<i>Reset des Atmel &quot;regelkonform&quot; vom &quot;Ur-Programmier-Adapter&quot; kommt. 
+</I>&gt;<i>Den R5 (Pull-Up des RESET) lege ich fest an RESET des Atmel, damit
+</I>&gt;<i>ein fehlender Jumper keine Probleme macht.
+</I>
+Ah ok verstehe. Klingt super!
+
+&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e,
+</I>&gt;<i>
+</I>&gt;<i>Fred Sonnenrein
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000144.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3.0
+</A></li>
+	<LI>Next message: <A HREF="000149.html">[Usbprog-pub] Platinen Redesign f&#252;r usbprog 3. 0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#147">[ date ]</a>
+              <a href="thread.html#147">[ thread ]</a>
+              <a href="subject.html#147">[ subject ]</a>
+              <a href="author.html#147">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

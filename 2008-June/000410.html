@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Own firmware recognized by GUI
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Own%20firmware%20recognized%20by%20GUI&In-Reply-To=%3C26c65fa90806111318u34e66e19k16b65bc77c34e878%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000409.html">
+   <LINK REL="Next"  HREF="000411.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Own firmware recognized by GUI</H1>
+    <B>Kubiack</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Own%20firmware%20recognized%20by%20GUI&In-Reply-To=%3C26c65fa90806111318u34e66e19k16b65bc77c34e878%40mail.gmail.com%3E"
+       TITLE="[Usbprog-pub] Own firmware recognized by GUI">kubiack at gmail.com
+       </A><BR>
+    <I>Wed Jun 11 22:18:16 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000409.html">[Usbprog-pub] Own firmware recognized by GUI
+</A></li>
+        <LI>Next message: <A HREF="000411.html">[Usbprog-pub] Own firmware recognized by GUI
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#410">[ date ]</a>
+              <a href="thread.html#410">[ thread ]</a>
+              <a href="subject.html#410">[ subject ]</a>
+              <a href="author.html#410">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Ok, that's working.
+I really can't explain why I missed the &quot;Local Disk&quot; field in the GUI...
+I modified the &quot;uart.c&quot; file in the usbprogRS232 project to change the line
+&quot;UBRRL=103&quot;
+to
+&quot;UBRRL=8&quot;
+
+Now my usbprog is working with my armadeus arm card (115200 bauds)!
+(see armadeus.org for more information on that).
+
+Thank you for your advice, if you want I submit the modified firmware
+somwhere, give me more information about how to proceed.
+
+Regards,
+Kubiack
+
+
+2008/6/8 Bernhard Walle &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">bernhard.walle at gmx.de</A>&gt;:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> * Kubiack &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">kubiack at gmail.com</A>&gt; [2008-06-03 14:22]:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I am currently working on a modified version of the RS232 firmware to adapt
+</I>&gt;&gt;<i> it to different speeds as a training before doing more complex programs.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I want my firmware be recognized by the GUI so the download to the USBProg
+</I>&gt;&gt;<i> and tests will be simple, but I didn't managed to do that.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I am on Linux Ubuntu, and i see that the GUI create some kind of XML file
+</I>&gt;&gt;<i> containing the firmwares caracteristics. I tryed to add my own here but it
+</I>&gt;&gt;<i> was deleted and replaced by the official firmware list.
+</I>&gt;&gt;<i> I think the GUI automatically download the list from the USBProg website at
+</I>&gt;&gt;<i> each launches, erasing changes made to the local files.
+</I>&gt;<i>
+</I>&gt;<i> Yes, that XML file is downloaded from the internal. It's only for
+</I>&gt;<i> caching on the local disk.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Is there an easy way to make the GUI recognise my local firmware(s) ?
+</I>&gt;&gt;<i> Is there an easy way to make the GUI download a firmware list from an other
+</I>&gt;&gt;<i> website ? (so I can build my own local firmware pool) If so, what is the
+</I>&gt;&gt;<i> needed structure and files for the new firmware pool be well recognized by
+</I>&gt;&gt;<i> th GUI ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thank you very much for any piece of advice on this problem, and thanks to
+</I>&gt;&gt;<i> all guys who developped this very usefull tool !
+</I>&gt;<i>
+</I>&gt;<i> Why do you think that is necessary? You can specify local firmware
+</I>&gt;<i> files in the GUI. After you are finished, that firmware should be added
+</I>&gt;<i> to the official pool so that others can download it there.
+</I>&gt;<i>
+</I>&gt;<i> For your local development, using the command line interface would be
+</I>&gt;<i> easier anyway. Just specify the firmware file here, for example:
+</I>&gt;<i>
+</I>&gt;<i>  (usbprog) upload /home/bwalle/projects/usbprog/firmware.bin
+</I>&gt;<i>
+</I>&gt;<i> instead of
+</I>&gt;<i>
+</I>&gt;<i>  (usbprog) upload blinkdemo
+</I>&gt;<i>
+</I>&gt;<i> That's it.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Bernhard
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000409.html">[Usbprog-pub] Own firmware recognized by GUI
+</A></li>
+	<LI>Next message: <A HREF="000411.html">[Usbprog-pub] Own firmware recognized by GUI
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#410">[ date ]</a>
+              <a href="thread.html#410">[ thread ]</a>
+              <a href="subject.html#410">[ subject ]</a>
+              <a href="author.html#410">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

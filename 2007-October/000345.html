@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] [PATCH] Fix device detection for multiple USB devices
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%5BPATCH%5D%20Fix%20device%20detection%20for%20multiple%20USB%20devices&In-Reply-To=%3C20071020150018.GA19676%40mail1.bwalle.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000343.html">
+   <LINK REL="Next"  HREF="000346.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] [PATCH] Fix device detection for multiple USB devices</H1>
+    <B>Bernhard Walle</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20%5BPATCH%5D%20Fix%20device%20detection%20for%20multiple%20USB%20devices&In-Reply-To=%3C20071020150018.GA19676%40mail1.bwalle.de%3E"
+       TITLE="[Usbprog-pub] [PATCH] Fix device detection for multiple USB devices">Bernhard.Walle at gmx.de
+       </A><BR>
+    <I>Sat Oct 20 17:00:18 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000343.html">[Usbprog-pub] [PATCH] Fix compile warning in lib
+</A></li>
+        <LI>Next message: <A HREF="000346.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#345">[ date ]</a>
+              <a href="thread.html#345">[ thread ]</a>
+              <a href="subject.html#345">[ subject ]</a>
+              <a href="author.html#345">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The avrupdate_find_usbdevice() function assumed that the first device
+in the USB tree is the programmer, because if it's not, the default case always
+returned BLINKDEMO.
+
+This patch fixes this by always walking through all devices. The 'default'
+label only there to make some compilers happy that print a warning if
+a switch block has no default.
+
+The patch also removes the duplicate #defines in the programmer code.
+(I know, this is the &quot;old&quot; one, but the &quot;new&quot; one doesn't actually
+work so I had to use the old one.)
+
+
+Signed-off-by: Bernhard Walle &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">bernhard.walle at gmx.de</A>&gt;
+
+---
+ lib/avrupdate.c    |   21 +++++++++++----------
+ lib/avrupdate.h    |   13 ++++++++-----
+ usbprog-old/main.c |    7 -------
+ 3 files changed, 19 insertions(+), 22 deletions(-)
+
+--- a/lib/avrupdate.c
++++ b/lib/avrupdate.c
+@@ -90,7 +90,7 @@ void avrupdate_startapp(struct usb_dev_h
+ }
+ 
+ 
+-int avrupdate_find_usbdevice()
++int avrupdate_find_usbdevice(void)
+ {
+    struct usb_bus *busses;
+ 
+@@ -117,10 +117,10 @@ int avrupdate_find_usbdevice()
+             case 1003:
+               if(dev-&gt;descriptor.idProduct==0x2104)
+                 return AVRISPMKII;
+-	      if(dev-&gt;descriptor.idProduct==0x2103)
++              if(dev-&gt;descriptor.idProduct==0x2103)
+                 return JTAGICEMKII;
++              break;
+ 
+-            break;
+             case 6017:
+               if(dev-&gt;descriptor.idProduct==0x0c62 || dev-&gt;descriptor.idProduct==0x0c64 || dev-&gt;descriptor.idProduct==0x0c63 || dev-&gt;descriptor.idProduct==0x0c65){
+                 if(dev-&gt;descriptor.bcdDevice==AVRUPDATE)
+@@ -129,16 +129,17 @@ int avrupdate_find_usbdevice()
+                   return USBPROG;
+                 if(dev-&gt;descriptor.bcdDevice==BLINKDEMO)
+                   return BLINKDEMO;
+-		else 
+-		  return BLINKDEMO;
++                else
++                  return BLINKDEMO;
+               }
+-            break;
+-	      default:
+-		return BLINKDEMO;
++              break;
++
++            default:
++              break;
+           }
+         }
+-      }  
+-    return -1;
++      }
++    return UNKNOWN;
+ }
+ 
+ void avrupdate_start_with_vendor_request(short vendorid, short productid)
+--- a/lib/avrupdate.h
++++ b/lib/avrupdate.h
+@@ -5,11 +5,14 @@
+ #define WITHNETWORKSUPPORT	1
+ 
+ 
+-#define	AVRUPDATE		0x00
+-#define	BLINKDEMO		0x01
+-#define	USBPROG			0x02
+-#define AVRISPMKII		0x03
+-#define JTAGICEMKII		0x04
++enum DeviceType {
++	UNKNOWN	    = -1,
++	AVRUPDATE   = 0x00,
++	BLINKDEMO   = 0x01,
++	USBPROG	    = 0x02,
++	AVRISPMKII  = 0x03,
++	JTAGICEMKII = 0x04
++};
+ 
+ void avrupdate_start_with_vendor_request(short vendorid, short productid);
+ 
+--- a/usbprog-old/main.c
++++ b/usbprog-old/main.c
+@@ -20,13 +20,6 @@
+ #include &lt;usb.h&gt;
+ #include &quot;../lib/avrupdate.h&quot;
+ 
+-#define AVRUPDATE   0x00
+-#define BLINKDEMO   0x01
+-#define USBPROG     0x02
+-#define AVRISPMKII  0x03
+-#define JTAGICEMKII 0x04
+-
+-
+ int main(int argc, char **argv)
+ {
+ 	
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000343.html">[Usbprog-pub] [PATCH] Fix compile warning in lib
+</A></li>
+	<LI>Next message: <A HREF="000346.html">[Usbprog-pub] [PATCH] Improve error handling
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#345">[ date ]</a>
+              <a href="thread.html#345">[ thread ]</a>
+              <a href="subject.html#345">[ subject ]</a>
+              <a href="author.html#345">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

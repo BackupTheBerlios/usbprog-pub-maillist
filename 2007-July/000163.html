@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Inbetriebnahme usbprog
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Inbetriebnahme%20usbprog&In-Reply-To=%3C20070720193528.8E1095F901%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000165.html">
+   <LINK REL="Next"  HREF="000164.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Inbetriebnahme usbprog</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Inbetriebnahme%20usbprog&In-Reply-To=%3C20070720193528.8E1095F901%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] Inbetriebnahme usbprog">sauter at sistecs.de
+       </A><BR>
+    <I>Fri Jul 20 21:35:19 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000165.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+        <LI>Next message: <A HREF="000164.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#163">[ date ]</a>
+              <a href="thread.html#163">[ thread ]</a>
+              <a href="subject.html#163">[ subject ]</a>
+              <a href="author.html#163">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Fabian,
+
+das kling einwenig nach schlechten L&#246;tstellen. Vielleicht kannst du etwas
+L&#246;tzinn von den Beinchen des ATMega32 mit L&#246;tlitze absaugen.
+
+Und oft ist zuwenig L&#246;tzinn beim Quarz bei dem einem Beinchen, bei dem
+keine Leitung weggeht. Dort geht die Leitung auf der anderen Seite weg.
+D.h. es muss soviel L&#246;tzinn reinlaufen das auf der anderen Seite ein
+guter Kontakt enstanden ist.
+
+Ebenfalls wuerd ich gut die Flussmittelreste entfernen.
+
+Gruss Bene
+
+Am 20.7.2007 schrieb &quot;Fabian Greif&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">fabian.greif at rwth-aachen.de</A>&gt;:
+
+&gt;<i>Hallo,
+</I>&gt;<i>
+</I>&gt;<i>ich bin gerade dabei einen usbprog aufzubauen, scheitere aber am letzten
+</I>&gt;<i>Schritt: das aufspielen einer Firmware aus dem Pool.
+</I>&gt;<i>
+</I>&gt;<i>Fusebits sind korrekt eingestellt, usbprog_base.hex von der Webseite
+</I>&gt;<i>aufgespielt, der 24 MHz Quarz l&#228;uft und der AVR bekommt auch seine 16
+</I>&gt;<i>MHz vom Clkout Pin (beides nachgemessen), trotzdem will der USB Teil 
+</I>&gt;<i>nicht so richtig funktionieren.
+</I>&gt;<i>Testweise habe ich auch versucht eine selbst compilierte Firmware aus 
+</I>&gt;<i>dem SVN aufzuspielen (und dabei einige kleinere Warnings beseitigt), das 
+</I>&gt;<i>Ergebnis bleibt aber das selbe.
+</I>&gt;<i>Der Bootloadercode wird auf jeden Fall gestartet, das zeigen einige
+</I>&gt;<i>kleinere Debug-LED Ausgaben die ich eingebaut habe. Trotzdem will die
+</I>&gt;<i>Kommunikation nicht funktionieren.
+</I>&gt;<i>
+</I>&gt;<i>Ich arbeite unter Ubuntu, dmesg zeigt mir an das etwas gefunden wurde:
+</I>&gt;<i>
+</I>&gt;&gt;<i> [  919.644000] usb 2-1: new full speed USB device using uhci_hcd and address 17
+</I>&gt;&gt;<i> [  919.796000] usb 2-1: config 1 interface 0 altsetting 0 has 1 endpoint descriptor, different from the interface descriptor's value: 2
+</I>&gt;&gt;<i> [  919.796000] usb 2-1: configuration #1 chosen from 1 choice
+</I>&gt;<i>
+</I>&gt;<i>Sobald man aber irgendwie versucht sich genauere Informationen zu
+</I>&gt;<i>verschaffen (sei es per lsusb oder dem usbprog Program) scheitert
+</I>&gt;<i>irgendwas:
+</I>&gt;<i>
+</I>&gt;&gt;<i> [  955.376000] usb 2-1: USB disconnect, address 17
+</I>&gt;&gt;<i> [  955.492000] usb 2-1: new full speed USB device using uhci_hcd and address 18
+</I>&gt;&gt;<i> [  955.612000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  955.836000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  956.052000] usb 2-1: new full speed USB device using uhci_hcd and address 19
+</I>&gt;&gt;<i> [  956.172000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  956.396000] usb 2-1: device descriptor read/64, error -71
+</I>&gt;&gt;<i> [  956.612000] usb 2-1: new full speed USB device using uhci_hcd and address 20
+</I>&gt;&gt;<i> [  957.020000] usb 2-1: device not accepting address 20, error -71
+</I>&gt;&gt;<i> [  957.132000] usb 2-1: new full speed USB device using uhci_hcd and address 21
+</I>&gt;&gt;<i> [  957.540000] usb 2-1: device not accepting address 21, error -71
+</I>&gt;<i>
+</I>&gt;<i>Leider kenne ich mich mit USB bisher noch nicht gut genug aus, um daraus
+</I>&gt;<i>irgendetwas herauslesen zu k&#246;nnen.
+</I>&gt;<i>
+</I>&gt;<i>Hat jemand eine Idee was das Problem sein k&#246;nnte?
+</I>&gt;<i>
+</I>&gt;<i>Gr&#252;&#223;e
+</I>&gt;<i>Fabian Greif
+</I>&gt;<i>_______________________________________________
+</I>&gt;<i>Usbprog-pub mailing list
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Usbprog-pub at lists.berlios.de</A>
+</I>&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">https://lists.berlios.de/mailman/listinfo/usbprog-pub</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000165.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+	<LI>Next message: <A HREF="000164.html">[Usbprog-pub] Inbetriebnahme usbprog
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#163">[ date ]</a>
+              <a href="thread.html#163">[ thread ]</a>
+              <a href="subject.html#163">[ subject ]</a>
+              <a href="author.html#163">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] Regarding UsbProg and OpenOcd
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Regarding%20UsbProg%20and%20OpenOcd&In-Reply-To=%3C1351719856.49033.YahooMailNeo%40web132202.mail.ird.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] Regarding UsbProg and OpenOcd</H1>
+    <B>Gvidas Sidlauskas</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20Regarding%20UsbProg%20and%20OpenOcd&In-Reply-To=%3C1351719856.49033.YahooMailNeo%40web132202.mail.ird.yahoo.com%3E"
+       TITLE="[Usbprog-pub] Regarding UsbProg and OpenOcd">gvidasdj at yahoo.co.uk
+       </A><BR>
+    <I>Wed Oct 31 22:44:16 CET 2012</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#468">[ date ]</a>
+              <a href="thread.html#468">[ thread ]</a>
+              <a href="subject.html#468">[ subject ]</a>
+              <a href="author.html#468">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear All,
+
+I have usbprog v3 hardware and want to use it with openocd. The problem is that when I conect device there is output. Can I ignore this errors?
+
+
+openocd -f usbprog.cfg
+Open On-Chip Debugger 0.5.0 (2011-08-26-10:27)
+Licensed under GNU GPL v2
+For bug reports, read
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <A HREF="http://openocd.berlios.de/doc/doxygen/bugs.html">http://openocd.berlios.de/doc/doxygen/bugs.html</A>
+Warn : Adapter driver 'usbprog' did not declare which transports it allows; assuming legacy JTAG-only
+Info : only one transport option; autoselect 'jtag'
+RCLK - adaptive
+trst_and_srst srst_pulls_trst srst_gates_jtag trst_push_pull srst_open_drain
+tms sequence is&#160; long
+usb_set_debug: Setting debugging level to 10 (on)
+usb_os_init: Found USB VFS at /dev/bus/usb
+usb_os_find_busses: Found 002
+usb_os_find_busses: Found 001
+usb_os_find_devices: Found 007 on 002
+skipping descriptor 0x0
+skipped 1 class/vendor specific endpoint descriptors
+Descriptor data still left
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 005 on 002
+skipped 1 class/vendor specific interface descriptors
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 004 on 002
+skipping descriptor 0xB
+skipped 1 class/vendor specific endpoint descriptors
+skipped 6 class/vendor specific interface descriptors
+skipping descriptor 0x25
+skipped 1 class/vendor specific endpoint descriptors
+skipped 19 class/vendor specific interface descriptors
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 002 on 002
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 001 on 002
+
+error obtaining child information: Inappropriate ioctl for device
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 003 on 001
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 002 on 001
+usb_os_find_devices: couldn't get connect info
+usb_os_find_devices: Found 001 on 001
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+error obtaining child information: Operation not permitted
+Info : USB JTAG Interface ready!
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from khz to jtag_speed not implemented
+Error: Translation from jtag_speed to khz not implemented
+Info : adapter-specific clock speed value -1075143288
+Warn : There are no enabled taps.&#160; AUTO PROBING MIGHT NOT WORK!!
+Error: JTAG scan chain interrogation failed: all zeroes
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: IR capture error at bit 0, saw 0x00 not 0x...3
+Warn : Bypassing JTAG setup events due to errors
+Warn : gdb services need one or more targets defined
+
+
+Best regards,
+Gvidas
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/usbprog-pub/attachments/20121031/c0629c59/attachment.html">https://lists.berlios.de/pipermail/usbprog-pub/attachments/20121031/c0629c59/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#468">[ date ]</a>
+              <a href="thread.html#468">[ thread ]</a>
+              <a href="subject.html#468">[ subject ]</a>
+              <a href="author.html#468">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

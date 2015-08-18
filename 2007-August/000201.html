@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] FUSE Bits
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20FUSE%20Bits&In-Reply-To=%3C20070803105500.E0B17F8A0E%40mail.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000200.html">
+   <LINK REL="Next"  HREF="000204.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] FUSE Bits</H1>
+    <B>Benedikt Sauter</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20FUSE%20Bits&In-Reply-To=%3C20070803105500.E0B17F8A0E%40mail.berlios.de%3E"
+       TITLE="[Usbprog-pub] FUSE Bits">sauter at sistecs.de
+       </A><BR>
+    <I>Fri Aug  3 12:54:44 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000200.html">[Usbprog-pub] FUSE Bits
+</A></li>
+        <LI>Next message: <A HREF="000204.html">[Usbprog-pub] FUSE Bits
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>mit d9 nutz ich den Bootloader!
+
+Das hat eine verdrehte Logik. Der Bootloader wird nie zuerst gestartet
+sondern immer die Firmware. Der Bootloader wird nur &#252;ber die aktuelle
+Firmware geziel aktiviert, das geht in dem ich einfach an Adresse 28.000
+ca oder so h&#252;pfe.
+
+Das allererste mal ist ja nur der Bootloader und keine Firmware auf dem
+Adapter. Das heisst man kann da nicht aus der Firmware in den Bootloader
+springen. Aber wenn man  man usbprog_base.hex l&#228;dt wird man sicher mal
+gesehene haben das er 32 KB flashed. Das heisst in Anwendungsbreich
+stehen haufen NOPs. Der Befehlsz&#228;hler wird so zum Bootloader hingef&#252;hrt.
+
+Keine Ahnung warum ich mich damals fuer das entschieden hab aber hatte
+nen Grund :-)
+
+Gruss Bene
+
+
+
+Am 3.8.2007 schrieb &quot;Fred Sonnenrein&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">Fred.Sonnenrein at gmx.de</A>&gt;:
+
+&gt;<i>Hallo Bene
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> die damit usbprog_base.hex startet und richtig arbeitet
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> lfuse 0xe0
+</I>&gt;&gt;<i> und hfuse 0xd9
+</I>&gt;<i>
+</I>&gt;<i>Mit <A HREF="http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=&amp;P=ATmega32">http://palmavr.sourceforge.net/cgi-bin/fc.cgi?P_PREV=&amp;P=ATmega32</A>
+</I>&gt;<i>einfach ermittelt:
+</I>&gt;<i>
+</I>&gt;<i>BODLEVEL=1
+</I>&gt;<i>BODEN=1
+</I>&gt;<i>-&gt; keine Brown-Out-Detection (sollte besser anders sein...)
+</I>&gt;<i>SUT1=1
+</I>&gt;<i>SUT0=0
+</I>&gt;<i>-&gt; Startup-Time = 6 CK + 64 ms
+</I>&gt;<i>CKSEL3..0 = 0000
+</I>&gt;<i>-&gt; externer Takt
+</I>&gt;<i>OCDEN=1
+</I>&gt;<i>-&gt; On-Chipo-Debug disabled
+</I>&gt;<i>JTAGEN=1
+</I>&gt;<i>-&gt; JTAG aus
+</I>&gt;<i>SPIEN=0
+</I>&gt;<i>-&gt; Serial program download enabled
+</I>&gt;<i>CKOPT=1
+</I>&gt;<i>-&gt; ??? h&#228;ngt mit externem Takt zusammen
+</I>&gt;<i>EESAVE=1
+</I>&gt;<i>-&gt; Chip erase l&#246;scht auch EEPROM
+</I>&gt;<i>BOOTSZ1..0 = 00
+</I>&gt;<i>-&gt; Boot start adress = $3800
+</I>&gt;<i>BOOTRST=1
+</I>&gt;<i>-&gt; Reset startet bei 0
+</I>&gt;<i>
+</I>&gt;<i>wenn avrprog_base drauf ist, mu&#223; BOOTRST=0 sein,
+</I>&gt;<i>daher 0xE0 und 0xD8
+</I>&gt;<i>
+</I>&gt;<i>Fred
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000200.html">[Usbprog-pub] FUSE Bits
+</A></li>
+	<LI>Next message: <A HREF="000204.html">[Usbprog-pub] FUSE Bits
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>

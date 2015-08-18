@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Usbprog-pub] USBPROG LINUX UBUNTU 904
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/usbprog-pub/2009-May/index.html" >
+   <LINK REL="made" HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20USBPROG%20LINUX%20UBUNTU%20904&In-Reply-To=%3C20090504105613.193080%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000442.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Usbprog-pub] USBPROG LINUX UBUNTU 904</H1>
+    <B>Gerd Angerer</B> 
+    <A HREF="mailto:usbprog-pub%40lists.berlios.de?Subject=Re%3A%20%5BUsbprog-pub%5D%20USBPROG%20LINUX%20UBUNTU%20904&In-Reply-To=%3C20090504105613.193080%40gmx.net%3E"
+       TITLE="[Usbprog-pub] USBPROG LINUX UBUNTU 904">Gerd.AG at gmx.de
+       </A><BR>
+    <I>Mon May  4 12:56:13 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000442.html">[Usbprog-pub] I2C for USBProg
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#441">[ date ]</a>
+              <a href="thread.html#441">[ thread ]</a>
+              <a href="subject.html#441">[ subject ]</a>
+              <a href="author.html#441">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo
+
+Also ich br&#228;uchte mal eure HILFE.
+Ubuntu 9.04 64bit
+
+
+Ich habe hier eine STK500v2 &#252;ber com1 und eine USBProgV3 &#252;ber usb
+1. Problem usbProg und avrdude geht nur mit sudo
+2. kann nichts auslesen mit dem usbprog
+unten steht das Ergebnis von lsusb
+und das log vom aufruf mit usb
+
+--------------------------------
+flash lesen  mit STK500V2
+avrdude -p m644 -F -c stk500v2 -P /dev/ttyS0 -v -U
+flash:r:/home/gerd/Desktop/info.hex:i
+IO aber mit USB Prog nicht
+
+--------------------------------
+mit USBprog
+avrdude -p m644 -F -c avrisp2 -P usb -v -U
+flash:r:/home/gerd/Desktop/info.hex:i
+
+--------------------------------
+<A HREF="https://lists.berlios.de/mailman/listinfo/usbprog-pub">gerd at q6600</A>:~$ lsusb
+Bus 002 Device 004: ID 0204:6025 Chipsbank Microelectronics Co., Ltd
+CBM2080 Flash drive controller
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 008 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 007 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 013: ID 03eb:2104 Atmel Corp. AVR ISP mkII
+Bus 001 Device 003: ID 05e3:0607 Genesys Logic, Inc.
+Bus 001 Device 007: ID 05e3:0606 Genesys Logic, Inc. USB 2.0 Hub /
+D-Link DUB-H4 USB 2.0 Hub
+Bus 001 Device 006: ID 05e3:0606 Genesys Logic, Inc. USB 2.0 Hub /
+D-Link DUB-H4 USB 2.0 Hub
+Bus 001 Device 002: ID 05e3:0606 Genesys Logic, Inc. USB 2.0 Hub /
+D-Link DUB-H4 USB 2.0 Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 003: ID 085c:0300 ColorVision, Inc.
+Bus 004 Device 002: ID 045e:0039 Microsoft Corp. IntelliMouse Optical
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+
+---------------------------------------------------------------
+avrdude: Version 5.5, compiled on Jan 28 2009 at 12:31:29
+         Copyright (c) 2000-2005 Brian Dean, <A HREF="http://www.bdmicro.com/">http://www.bdmicro.com/</A>
+
+         System wide configuration file is &quot;/etc/avrdude.conf&quot;
+         User configuration file is &quot;/home/gerd/.avrduderc&quot;
+         User configuration file does not exist or is not a regular
+file, skipping
+
+         Using Port            : usb
+         Using Programmer      : avrisp2
+avrdude: usbdev_open(): Found AVRISP mk2 Clone, serno: 0000A00128255
+         AVR Part              : ATMEGA644
+         Chip Erase delay      : 9000 us
+         PAGEL                 : PD7
+         BS2                   : PA0
+         RESET disposition     : dedicated
+         RETRY pulse           : SCK
+         serial program mode   : yes
+         parallel program mode : yes
+         Timeout               : 200
+         StabDelay             : 100
+         CmdexeDelay           : 25
+         SyncLoops             : 32
+         ByteDelay             : 0
+         PollIndex             : 3
+         PollValue             : 0x53
+         Memory Detail         :
+
+                                  Block Poll               Page
+Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages
+MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------
+----- ----- ---------
+           eeprom        65    10   128    0 no       2048    8      0
+9000  9000 0xff 0xff
+           flash         33     6   256    0 yes     65536  256    256
+4500  4500 0xff 0xff
+           lock           0     0     0    0 no          1    0      0
+9000  9000 0x00 0x00
+           lfuse          0     0     0    0 no          1    0      0
+9000  9000 0x00 0x00
+           hfuse          0     0     0    0 no          1    0      0
+9000  9000 0x00 0x00
+           efuse          0     0     0    0 no          1    0      0
+9000  9000 0x00 0x00
+           signature      0     0     0    0 no          3    0      0
+0     0 0x00 0x00
+           calibration    0     0     0    0 no          1    0      0
+0     0 0x00 0x00
+
+         Programmer Type : STK500V2
+         Description     : Atmel AVR ISP mkII
+         Programmer Model: AVRISP mkII
+         Hardware Version: 0
+         Firmware Version: 9.09
+         Vtarget         : 5.0 V
+         SCK period      : 0.12 us
+
+avrdude: stk500v2_command(): command failed
+avrdude: initialization failed, rc=-1
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100%
+0.00s
+
+avrdude: Device signature = 0x000000
+avrdude: Yikes!  Invalid device signature.
+avrdude: Expected signature for ATMEGA644 is 1E 96 09
+avrdude: safemode: lfuse reads as 0
+avrdude: safemode: hfuse reads as 0
+avrdude: safemode: efuse reads as 0
+avrdude: reading flash memory:
+
+Reading | ################################################## | 100%
+1.45s
+
+avrdude: writing output file &quot;/home/gerd/Desktop/info-usb.hex&quot;
+
+avrdude: safemode: lfuse reads as 0
+avrdude: safemode: hfuse reads as 0
+avrdude: safemode: efuse reads as 0
+avrdude: safemode: Fuses OK
+
+avrdude done.  Thank you.
+
+-- 
+<A HREF="http://www.inputsammler.purespace.de">http://www.inputsammler.purespace.de</A>
+
+Psssst! Schon vom neuen GMX MultiMessenger geh&#246;rt? Der kann`s mit allen: <A HREF="http://www.gmx.net/de/go/multimessenger01">http://www.gmx.net/de/go/multimessenger01</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000442.html">[Usbprog-pub] I2C for USBProg
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#441">[ date ]</a>
+              <a href="thread.html#441">[ thread ]</a>
+              <a href="subject.html#441">[ subject ]</a>
+              <a href="author.html#441">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/usbprog-pub">More information about the Usbprog-pub
+mailing list</a><br>
+</body></html>
